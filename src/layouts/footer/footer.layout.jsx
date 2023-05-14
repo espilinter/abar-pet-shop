@@ -11,7 +11,7 @@ import "./footer.layout.css"
 
 const Footer = () => {
     return (
-        <footer className="bg-[#dcdcdc] background pb-28">
+        <footer className="bg-[#dcdcdc] background pb-28 shadow">
             <div className="flex w-98% 1220:w-90% m-auto pt-40">
                 <div className="w-26% h-134">
                     <div className=" flex">
@@ -50,7 +50,7 @@ const Footer = () => {
                         <a href="#" className="font-normal text-12 1150:text-14 leading-10 block text-right">حریم خصوصی</a>
                     </div>
                     <div className="w-278">
-                        <h2 className="text-right font-bold text-12 1150:text-14 1150:text-16 mb-24 text-[#1E1E1E]">تماس با ما</h2>
+                        <h2 className="text-right font-bold text-14 1150:text-16 mb-24 text-[#1E1E1E]">تماس با ما</h2>
                         <div className="text-right flex">
                             <FiMapPin className=" inline-block w-20 mt-7 " />
                             <p className=" font-normal text-14 leading-8 inline-block w-246 text-right">تهران - يوسف آباد - خيابان فتحی شقاقی
@@ -58,15 +58,14 @@ const Footer = () => {
                         </div>
                         <div className="text-right">
                             <FiPhoneCall className="inline-block w-20" />
-                            <p className="font-normal text-14 leading-10 text-right inline-block">021-88558407</p>
+                            <p className="font-normal text-16 leading-10 text-right inline-block">021-88558407</p>
                         </div>
                         <div className="text-right">
                             <FiPhoneCall className="inline-block w-20" />
-                            <p className="font-normal text-14 leading-10  inline-block">021-88558407</p>
+                            <p className="font-normal text-16 leading-10  inline-block">021-88558407</p>
                         </div>
                     </div>
                 </div>
-
             </div>
             <div className="w-90% m-auto bg-[#6E6E6E] text-[#6E6E6E] h-1 block mt-114"></div>
             <div className="h-83 w-90% pt-40 flex justify-between m-auto">

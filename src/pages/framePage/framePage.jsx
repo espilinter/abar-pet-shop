@@ -14,7 +14,7 @@ const FramePage = () => {
                 <meta name="description" content="appDescription" />
             </Helmet>
             <PageContainer>
-                <div className="">
+                <div className="bg-[#dcdcdc]">
                     <div className="w-full">
                         <img className="w-full " src={background1} />
                     </div>

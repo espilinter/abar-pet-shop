@@ -3,10 +3,6 @@
 
 }
 
-.glas {
-    backdrop-filter: blur(1px);
-}
-
 .background {
     background-image: url("../../assets/image/2.png");
     background-repeat: no-repeat;
