@@ -1,0 +1,4 @@
+.glass {
+    backdrop-filter: blur(10px);
+    /* left: calc(50% - 1300px/2) */
+}
