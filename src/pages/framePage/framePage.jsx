@@ -14,15 +14,17 @@ const FramePage = () => {
                 <meta name="description" content="appDescription" />
             </Helmet>
             <PageContainer>
-                <div className="w-full ">
-                    <img className="w-full " src={background1} />
-                </div>
-                {/* <div className="w-100 h-129">
+                <div className="">
+                    <div className="w-full">
+                        <img className="w-full " src={background1} />
+                    </div>
+                    {/* <div className="w-100 h-129">
                     <div className="bg-[#cccccc] rounded-full w-100 h-100 pt-14">
                         <img width="72" src={system} className=" mx-14" />
                     </div>
                     <p className="block mt-8 leading-5">تهران درمان</p>
                 </div> */}
+                </div>
             </PageContainer>
 
         </Fragment>

@@ -1,0 +1,14 @@
+.shadow {
+    filter: drop-shadow(0px -8px 16px rgba(0, 0, 0, 0.16));
+
+}
+
+.glas {
+    backdrop-filter: blur(1px);
+}
+
+.background {
+    background-image: url("../../assets/image/2.png");
+    background-repeat: no-repeat;
+    background-position: 50% 55px;
+}

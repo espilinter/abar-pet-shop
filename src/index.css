@@ -7,12 +7,16 @@
   src: url("/src/assets/font/Iranian\ Sans.ttf") format("truetype");
 }
 
+@import url('https://v1.fontapi.ir/css/Yekan');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-  font-family: "iransans";
+  /* font-family: "iransans"; */
+  font-family: Yekan, sans-serif;
   direction: rtl;
   /* background: #ffffff80; */
+
 }

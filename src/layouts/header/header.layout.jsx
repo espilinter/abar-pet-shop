@@ -3,6 +3,7 @@ import search from "../../assets/image/Vector.png"
 import { CiSearch } from "react-icons/ci";
 import lines from "../../assets/image/3line.png"
 import arrow from "../../assets/image/arrow-down.png"
+import { FiPlus } from "react-icons/fi";
 import "./heder.layout.css"
 const Header = () => {
     return (
@@ -27,10 +28,10 @@ const Header = () => {
                 </button>
             </div>
             <div className=" h-40 flex justify-between ">
-                <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment">استخدام در هلدینگ</div>
+                <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal">استخدام در هلدینگ</div>
                 <div className=" flex ">
                     <div className="w-1 h-38 mt-1 bg-[#8A8A8A]  text-[#ffffff8c] "></div>
-                    <div className="w-111 h-40 bg-[#728A2D] text-white leading-10 mr-8 rounded-md"><p className="text-18 inline-block">+</p> درج آگهی</div>
+                    <div className="w-111 h-40 bg-[#728A2D] text-white leading-10 mr-8 rounded-md flex pr-10"><FiPlus className="w-20 h-20 mt-10 ml-5" /> <p>درج آگهی</p></div>
                     <div className="w-111 h-40 text-[#728A2D] leading-10 border mr-8 border-[#728A2D] rounded-md">ورود / ثبت نام</div>
                 </div>
             </div>
