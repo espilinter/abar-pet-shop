@@ -14,7 +14,7 @@ const Footer = () => {
                 </div>
                 <div></div>
                 <div></div>
-                <div></div>
+                <div></div>git push -u origin master
                 <div></div>
             </div>
             <div></div> */}
