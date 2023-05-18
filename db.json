@@ -1,0 +1,100 @@
+{
+  "similarSystems": [
+    {
+      "id": 1,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    },
+    {
+      "id": 2,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    },
+    {
+      "id": 3,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    },
+    {
+      "id": 4,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    },
+    {
+      "id": 5,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    },
+    {
+      "id": 6,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    },
+    {
+      "id": 7,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    },
+    {
+      "id": 8,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    },
+    {
+      "id": 9,
+      "name": "تهران درمان",
+      "img": "https://picsum.photos/72/72",
+      "link": "https://tehrandarmaan.ir/"
+    }
+  ],
+  "categury": [
+    {
+      "id": 1,
+      "title": "مربی حیوانات",
+      "img": "https://picsum.photos/200"
+    },
+    {
+      "id": 2,
+      "title": "مربی حیوانات",
+      "img": "https://picsum.photos/200"
+    },
+    {
+      "id": 3,
+      "title": "مربی حیوانات",
+      "img": "https://picsum.photos/200"
+    },
+    {
+      "id": 4,
+      "title": "مربی حیوانات",
+      "img": "https://picsum.photos/200"
+    },
+    {
+      "id": 5,
+      "title": "مربی حیوانات",
+      "img": "https://picsum.photos/200"
+    },
+    {
+      "id": 6,
+      "title": "مربی حیوانات",
+      "img": "https://picsum.photos/200"
+    },
+    {
+      "id": 7,
+      "title": "مربی حیوانات",
+      "img": "https://picsum.photos/200"
+    },
+    {
+      "id": 8,
+      "title": "مربی حیوانات",
+      "img": "https://picsum.photos/200"
+    }
+  ]
+}

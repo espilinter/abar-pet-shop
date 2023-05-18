@@ -1,3 +1,24 @@
 .bacground {
     background-image: url("../../assets/image/Frame44326.png");
 }
+
+.shadows {
+    box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.12);
+}
+
+.shadowCircle {
+    box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.12);
+}
+
+.shadowBox {
+    box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.5px);
+}
+
+.transitionShadow {
+    transition: box-shadow 1s;
+}
+
+.transitionBg {
+    transition: background-color 1s;
+}

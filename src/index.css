@@ -9,6 +9,7 @@
 
 @import url('https://v1.fontapi.ir/css/Yekan');
 
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +18,6 @@
   /* font-family: "iransans"; */
   font-family: Yekan, sans-serif;
   direction: rtl;
-  /* background: #ffffff80; */
+  /* background: #728a2d33; */
 
 }

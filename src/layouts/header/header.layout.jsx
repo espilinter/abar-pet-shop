@@ -7,7 +7,7 @@ import { FiPlus } from "react-icons/fi";
 import "./heder.layout.css"
 const Header = () => {
     return (
-        <header className="w-90% h-104 rounded-3xl top-32 flex px-24 py-32 bg-[#ffffff8c] text-14 glass fixed right-5% justify-between">
+        <header className="w-90% h-104 rounded-3xl top-32 flex px-24 py-32 bg-[#ffffff8c] text-14 glass fixed right-5% justify-between zIndex">
             <div className="w-15% h-40 flex ">
                 <img src={logo} className="w-105 h-40" />
                 <img src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />
@@ -38,5 +38,4 @@ const Header = () => {
         </header >
     )
 }
-
 export default Header;
