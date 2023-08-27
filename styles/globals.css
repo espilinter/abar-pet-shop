@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: iransans;
+  src: url(../assets/font/IRANSANSWEB.TTF);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "iransans";
+  direction: rtl;
+  /* background: #7fd30026; */
+}
+
+.swiper-slide {
+  width: 400px !important;
+  height: 300px !important;
+}
