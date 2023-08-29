@@ -188,8 +188,7 @@ const FramePage = () => {
 
     return (
         <div className="bg-[#f4f4f4] pb-96">
-            <div className="w-full">
-                <Image alt="" className="h-[100vh]" src={background1} />
+            <div className="w-full h-[100vh] bg-[url('../assets/image/framePage.png')] bg-top bg-cover bg-no-repeat">
             </div>
             <div className="mt-40">
                 <Title title="سامانه های مشابه" />
