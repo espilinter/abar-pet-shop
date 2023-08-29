@@ -8,24 +8,24 @@ function toFarsiNumber(n) {
 
 const ElectedMembersCard = (props) => {
     return (
-        <div className={`${styles.bgBlur} w-310 h-455 rounded-[12px] p-16`}>
-            <Image className="w-150 h-150  m-auto rounded-full" src={props.img} />
-            <h3 className="font-medium text-20 leading-[30px]">پت شاپ بول داگ</h3>
-            <div className="h-1 w-274 bg-[#535353] m-auto mt-32"></div>
-            <div className="flex justify-between mr-16 ml-16 mt-15">
-                <p className="text-14 text-[#535353] h-24 inline-block leading-[24px]">مسئول :</p>
-                <p className="text-14 text-[#535353] h-24 inline-block leading-[24px]">{props.manager}</p>
+        <div className={`${styles.bgBlur} w-248 1200:w-310 h-364 1200:h-455 rounded-[12px] p-12 1200:p-16`}>
+            <Image alt="" className="w-120 1200:w-150 h-120 1200:h-150 m-auto rounded-full" src={props.img} />
+            <h3 className="font-medium text-16 1200:text-20 leading-[24px] 1200:leading-[30px]">پت شاپ بول داگ</h3>
+            <div className="h-1 w-98% bg-[#535353] m-auto mt-25 1200:mt-32"></div>
+            <div className="flex justify-between mx-12 1200:mx-16 mt-12 1200:mt-15">
+                <p className="text-12 1200:text-14 text-[#535353] h-20 1200:h-24 inline-block leading-[20px] 1200:leading-[24px]">مسئول :</p>
+                <p className="text-12 1200:text-14 text-[#535353] h-20 1200:h-24 inline-block leading-[20px] 1200:leading-[24px]">{props.manager}</p>
             </div>
-            <div className="flex justify-between mr-16 ml-16 mt-15">
-                <p className="text-14 text-[#535353] h-24 inline-block leading-[24px]">استان/شهر :</p>
-                <p className="text-14 text-[#535353] h-24 inline-block leading-[24px]">{props.state}/{props.city}</p>
+            <div className="flex justify-between mx-12 1200:mx-16 mt-12 1200:mt-15">
+                <p className="text-12 1200:text-14 text-[#535353] h-20 1200:h-24 inline-block leading-[20px] 1200:leading-[24px]">استان/شهر :</p>
+                <p className="text-12 1200:text-14 text-[#535353] h-20 1200:h-24 inline-block leading-[20px] 1200:leading-[24px]">{props.state}/{props.city}</p>
             </div>
-            <div className="flex justify-between mr-16 ml-16 mt-15">
-                <p className="text-14 text-[#535353] h-24 inline-block leading-[24px]">{toFarsiNumber(`آگهی ها : ${props.adNumber}`)}</p>
-                <p className="text-14 text-[#535353] h-24 inline-block leading-[24px]">{toFarsiNumber(`عضویت : ${props.membershipPeriod} ماه`)}</p>
+            <div className="flex justify-between mx-12 1200:mx-16 mt-12 1200:mt-15">
+                <p className="text-12 1200:text-14 text-[#535353] h-20 1200:h-24 inline-block leading-[20px] 1200:leading-[24px]">{toFarsiNumber(`آگهی ها : ${props.adNumber}`)}</p>
+                <p className="text-12 1200:text-14 text-[#535353] h-20 1200:h-24 inline-block leading-[20px] 1200:leading-[24px]">{toFarsiNumber(`عضویت : ${props.membershipPeriod} ماه`)}</p>
             </div>
-            <div className="h-1 w-274 bg-[#535353] m-auto mt-14"></div>
-            <button className="w-274 h-38 text-[#728A2D] border rounded-[6px] border-[#728A2D] font-medium mt-30 ">اطلاعات بیشتر</button>
+            <div className="h-1 w-98% bg-[#535353] m-auto mt-14"></div>
+            <button className="w-98% h-30 1200:h-38 text-[#728A2D] border rounded-[6px] border-[#728A2D] font-medium mt-24 1200:mt-30 ">اطلاعات بیشتر</button>
         </div>
     )
 }

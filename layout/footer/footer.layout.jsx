@@ -17,14 +17,14 @@ const Footer = () => {
                 <div className="w-26% h-134">
                     <div className=" flex">
                         <div className="h-134">
-                            <Image src={kelidLogo} className="" />
+                            <Image alt="" src={kelidLogo} className="" />
                         </div>
                         <p className="w-209 text-12 mt-14 text-right mr-16">بزرگترین سامانه کارآفرینی و ایجاد اشتغال جوانان و دانشجویان ایران در فضای مجازی و واقعی و در زمینه تبلیغات ، خرید و فروش ، خدمات ، گردشگری ، واردات و صادرات ، بازرگانی و روابط بین المللی ایران</p>
 
                     </div>
                     <div className=" flex mt-40">
                         <div className="h-134 mt-20">
-                            <Image src={logoBlack} />
+                            <Image alt="" src={logoBlack} />
                         </div>
                         <p className="w-209 text-12 mt-14 text-right mr-16">از نزدیک به یک قرن پیش پرچم دار خرید و فروش ملک در ایران بوده ایم. پس از گذشت 30 سال از آغاز تجارت در این حوزه درسال 1377 شمسی به پشتوانه کسب رضایت مشتریان گام در مسیر تولید انبوه صنعتی نهادیم.</p>
                     </div>
@@ -84,27 +84,27 @@ const Footer = () => {
 
                 <div className="flex w-168 h-40 justify-between mt-[21.5px]">
                     <div className="w-32 h-32">
-                        <Image src={instegeram} />
+                        <Image alt="" src={instegeram} />
                     </div>
                     <div className="w-32 h-32">
-                        <Image src={telegram} />
+                        <Image alt="" src={telegram} />
                     </div>
                     <div className="w-32 h-32">
-                        <Image src={watsapp} />
+                        <Image alt="" src={watsapp} />
                     </div>
                 </div>
                 <div className="flex">
                     <div className="w-75 h-85">
-                        <Image src={Enamad} />
+                        <Image alt="" src={Enamad} />
                     </div>
                     <div className="w-75 h-85 mr-16">
-                        <Image src={Enamad} />
+                        <Image alt="" src={Enamad} />
                     </div>
                     <div className="w-75 h-85 mr-16">
-                        <Image src={Enamad} />
+                        <Image alt="" src={Enamad} />
                     </div>
                     <div className="w-75 h-85 mr-16">
-                        <Image src={Enamad} />
+                        <Image alt="" src={Enamad} />
                     </div>
                 </div>
             </div>

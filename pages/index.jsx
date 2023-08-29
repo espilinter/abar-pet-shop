@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import background1 from "../assets/image/Frame44326.png";
+import background1 from "../assets/image/framePage.png";
 import ad1 from "../assets/image/ad1.png"
 import system from "../assets/image/image3.png"
 import dot3 from "../assets/image/dot3.png"
@@ -19,6 +19,7 @@ import CategoryCard from "../components/CategoryCard/CategoryCard";
 import AdvertiseCard from "../components/advertiseCard/AdvertiseCard";
 import Image from "next/image";
 import SwiperCoverflow from "@/components/SwiperCoverflow/SwiperCoverflow";
+import ArticleCard from "@/components/ArticleCard/ArticleCard";
 
 const FramePage = () => {
     const [data, setData] = useState([])
@@ -41,7 +42,7 @@ const FramePage = () => {
     const [allMembership, setAllMembership] = useState(147)
     const [advertisegData, setAdvertisegData] = useState([])
     const [electedMembersData, setElectedMembersData] = useState([])
-
+    const articleCard = [1, 2, 3, 4]
     useEffect(() => {
         fetchData()
         fetchCategoryData()
@@ -128,33 +129,6 @@ const FramePage = () => {
         return n.toString().replace(/\d/g, x => farsiDigits[x]);
     }
 
-    // function steper() {
-    //     for (let i = 1; i; i++) {
-    //         setTimeout(() => {
-    //             if ((i % 3) === 1) {
-    //                 setSecondCircleColor("border-2 border-[#B9B9B9]")
-    //                 setFirstLineColor("bg-[#B9B9B9]")
-    //                 setThirdCircleColor("border-2 border-[#B9B9B9]")
-    //                 setSecondLineColor("bg-[#B9B9B9]")
-    //                 setFirstBoxShadow("[0_0_16px_-2px_rgba(0,0,0,0.1)] backdrop-blur-[2.5px]")
-    //                 setThirdBoxShadow("")
-    //             }
-    //             if ((i % 3) === 2) {
-    //                 setSecondCircleColor("bg-[#728A2D]")
-    //                 setFirstLineColor("bg-[#728A2D]")
-    //                 setFirstBoxShadow("")
-    //                 setSecondBoxShadow("[0_0_16px_-2px_rgba(0,0,0,0.1)] backdrop-blur-[2.5px]")
-    //             }
-    //             if ((i % 3) === 0) {
-    //                 setThirdCircleColor("bg-[#728A2D]")
-    //                 setSecondLineColor("bg-[#728A2D]")
-    //                 setSecondBoxShadow("")
-    //                 setThirdBoxShadow("[0_0_16px_-2px_rgba(0,0,0,0.1)] backdrop-blur-[2.5px]")
-    //             }
-    //         }, i * 2000);
-    //     }
-    // }
-
     function firstStep() {
         setSecondCircleColor("border-2 border-[#B9B9B9]")
         setFirstLineColor("bg-[#B9B9B9]")
@@ -213,65 +187,63 @@ const FramePage = () => {
     }
 
     return (
-        <div className="bg-[#f4f4f4]">
+        <div className="bg-[#f4f4f4] pb-96">
             <div className="w-full">
-                <Image className="w-full " src={background1} />
+                <Image alt="" className="h-[100vh]" src={background1} />
             </div>
             <div className="mt-40">
                 <Title title="سامانه های مشابه" />
             </div>
-            <div className="w-1080 h-129 m-auto mt-40 flex">
-                <div className="flex m-auto">
-                    {data.slice(0, 6).map((item) => (<SimilarSystemsCard item={item} img={system} />))}
-                    <div className="w-40 h-129 ml-68">
-                        <div className="bg-[#ffffff] w-40 h-40 rounded-full mt-40"><Image src={dot3} className="p-9" /></div>
-                        <p className="text-12 mt-28">بیشتر</p>
-                    </div>
+            <div className="w-90% 1400:w-70% h-130 m-auto mt-40 flex justify-around">
+                {data.slice(0, 6).map((item) => (<SimilarSystemsCard item={item} img={system} />))}
+                <div className="w-40 h-130"  >
+                    <div className="bg-[#ffffff] w-40 h-40 rounded-full mt-40"><Image alt="" src={dot3} className="p-9" width={40} /></div>
+                    <p className="text-12 mt-28 ">بیشتر</p>
                 </div>
             </div>
             <div className="w-[1300] m-auto mt-80">
-                <Image className="m-auto" src={ad1} />
+                <Image alt="" className="m-auto" src={ad1} />
             </div>
             <div className="mt-40">
                 <Title title="دسته بندی" />
             </div>
-            <div className="w-90% m-auto grid grid-cols-4 gap-y-[68px] mt-48">
+            <div className="w-90% m-auto grid grid-cols-4  1440:gap-y-[68px] mt-48">
                 {categoryData.map((item) => (<CategoryCard item={item} img={system} />))}
             </div>
             <div className="mt-154">
                 <Title title="چرا ابر پت شاپ" />
             </div>
-            <div className="flex w-75% m-auto">
-                <div className="m-auto w-336 h-318 relative mt-80 ">
-                    <div className="w-96 h-96 rounded-full bg-white pt-24 mr-120 z-[2] absolute mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
-                        <Image src={timer1} className="w-48 h-48 m-auto" />
+            <div className="flex w-90% 1440:w-75% m-auto">
+                <div className="m-auto w-268 h-254 1220:w-336 1220:h-318 relative mt-80">
+                    <div className="w-76 1220:w-96 h-76 1220:h-96 rounded-full bg-white pt-19 1220:pt-24 mr-96 1220:mr-120 z-[2] absolute mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
+                        <Image alt="" src={timer1} className="w-38 1220:w-48 h-38 1220:h-48 m-auto" />
                     </div>
-                    <div className="w-336 h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-88 m-auto bg-white z-0 rounded-[18px] ">
-                        <div className="w-256 h-190 m-auto">
-                            <h2 className="text-20 font-bold ">انتخاب اقتصادی</h2>
-                            <p className="text-16 mt-17 w-256 text-[#616161] leading-8">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
+                    <div className="w-268 h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
+                        <div className="w-212 1220:w-256 h-152 1220:h-190 m-auto">
+                            <h2 className="text-16 1220:text-20 font-bold ">انتخاب اقتصادی</h2>
+                            <p className="text-13 1220:text-16 mt-17 w-204 1220:w-256 text-[#616161] leading-8 text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
                         </div>
                     </div>
                 </div>
-                <div className="m-auto w-336 h-318 relative mt-224">
-                    <div className="w-96 h-96 rounded-full bg-white pt-24 mr-120 z-[2] absolute mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
-                        <Image src={timer1} className="w-48 h-48 m-auto" />
+                <div className="m-auto w-268 h-254 1220:w-336 1220:h-318 relative mt-216">
+                    <div className="w-76 1220:w-96 h-76 1220:h-96 rounded-full bg-white pt-19 1220:pt-24 mr-96 1220:mr-120 z-[2] absolute mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
+                        <Image alt="" src={timer1} className="w-38 1220:w-48 h-38 1220:h-48 m-auto" />
                     </div>
-                    <div className="w-336 h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-88 m-auto bg-white z-0 rounded-[18px] ">
-                        <div className="w-256 h-190 m-auto">
-                            <h2 className="text-20 font-bold ">انتخاب اقتصادی</h2>
-                            <p className="text-16 mt-17 w-256 text-[#616161] leading-8">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
+                    <div className="w-268 h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
+                        <div className="w-212 1220:w-256 h-152 1220:h-190 m-auto">
+                            <h2 className="text-16 1220:text-20 font-bold ">انتخاب اقتصادی</h2>
+                            <p className="text-13 1220:text-16 mt-17 w-204 1220:w-256 text-[#616161] leading-8 text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
                         </div>
                     </div>
                 </div>
-                <div className="m-auto w-336 h-318 relative mt-80 ">
-                    <div className="w-96 h-96 rounded-full bg-white pt-24 mr-120 z-[2] absolute mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
-                        <Image src={timer1} className="w-48 h-48 m-auto" />
+                <div className="m-auto w-268 h-254 1220:w-336 1220:h-318 relative mt-80">
+                    <div className="w-76 1220:w-96 h-76 1220:h-96 rounded-full bg-white pt-19 1220:pt-24 mr-96 1220:mr-120 z-[2] absolute mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
+                        <Image alt="" src={timer1} className="w-38 1220:w-48 h-38 1220:h-48 m-auto" />
                     </div>
-                    <div className="w-336 h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-88 m-auto bg-white z-0 rounded-[18px] ">
-                        <div className="w-256 h-190 m-auto">
-                            <h2 className="text-20 font-bold ">انتخاب اقتصادی</h2>
-                            <p className="text-16 mt-17 w-256 text-[#616161] leading-8">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
+                    <div className="w-268 h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
+                        <div className="w-212 1220:w-256 h-152 1220:h-190 m-auto">
+                            <h2 className="text-16 1220:text-20 font-bold ">انتخاب اقتصادی</h2>
+                            <p className="text-13 1220:text-16 mt-17 w-204 1220:w-256 text-[#616161] leading-8 text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
                         </div>
                     </div>
                 </div>
@@ -281,19 +253,19 @@ const FramePage = () => {
             </div>
             <div className="flex gap-x-[7%] w-90% m-auto mt-48">
                 <div className={`w-388 h-298 rounded-[16px] ${firstBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
-                    <Image src={user} className="w-100 h-100 m-auto" />
+                    <Image alt="" src={user} className="w-100 h-100 m-auto" />
                     <h3 className="text-18 mt-16">1.ثبت نام</h3>
                     <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20">به راحتی با یک کلیک می‌شود در لینک‌بورد ثبت نام کرد</p>
                     <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6">ثبت نام</div>
                 </div>
                 <div className={`w-388 h-298 rounded-[16px] ${secondBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
-                    <Image src={note} className="w-100 h-100 m-auto" />
+                    <Image alt="" src={note} className="w-100 h-100 m-auto" />
                     <h3 className="text-18 mt-16">۲. میان آگهی ها جستجو کنید</h3>
                     <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20">مراحل ساده ثبت آگهی در دسته‌بندی های مختلف</p>
                     <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6">آگهی ها</div>
                 </div>
                 <div className={`w-388 h-298 rounded-[16px] ${thirdBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
-                    <Image src={addSquare} className="w-100 h-100 m-auto" />
+                    <Image alt="" src={addSquare} className="w-100 h-100 m-auto" />
                     <h3 className="text-18 mt-16">۳. آگهی خود را ثبت کنید </h3>
                     <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20">مراحل ساده ثبت آگهی در دسته‌بندی های مختلف</p>
                     <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6 transition-colors duration-1000">ثبت آگهی</div>
@@ -306,13 +278,13 @@ const FramePage = () => {
                 <div className={`w-42% h-2 ${secondtLineColor} mt-17 transition-colors duration-1000`}></div>
                 <div className={`rounded-full ${thirdCircleColor} w-36 h-36 transition-colors duration-1000`}></div>
             </div>
-            <div className="m-auto flex w-81% justify-between mt-212" onScroll={() => { console.log("++++++") }}>
-                <div className="w-246 h-246 bg-[#728a2d33] pt-16 rounded-full mt-78">
+            <div className="m-auto flex w-90% 1150:w-80% justify-between mt-212">
+                <div className="w-184 lg:w-246 h-184 lg:h-246 bg-[#728a2d33] pt-16 rounded-full mt-78">
                     <div className="w-213 h-213 m-auto relative">
-                        <Image src={dots} className=" absolute mt-[-20px]" />
+                        <Image alt="" src={dots} className=" absolute mt-[-20px]" />
                         <div className="w-174 h-174 m-auto mt-20">
                             <CircularProgressbarWithChildren value={firstCircleFill} strokeWidth={5} styles={buildStyles({ pathColor: '#728A2D', rotation: 0.5, trailColor: 'none' })} className="" >
-                                <p className="text-35 leading-[60px] mt-[-10px]">{toFarsiNumber(allAd)}</p>
+                                <p className="text-35 leading-[60px] mt-[-10px]">{allAd}</p>
                                 <p className="font-medium">تمام آگهی ها</p>
                             </CircularProgressbarWithChildren>
                         </div>
@@ -320,10 +292,10 @@ const FramePage = () => {
                 </div>
                 <div className="w-376 h-376 bg-[#728a2d33] pt-16 rounded-full">
                     <div className="w-325 h-325 m-auto mt-10">
-                        <Image src={dots} className=" absolute mt-[-35px]" />
+                        <Image alt="" src={dots} className=" absolute mt-[-35px]" />
                         <div className="w-250 h-250 m-auto mt-50">
                             <CircularProgressbarWithChildren value={secondCircleFill} strokeWidth={5} styles={buildStyles({ pathColor: '#728A2D', rotation: 0.5, trailColor: 'none' })} className="" >
-                                <p className="text-[62px] font-medium leading-[107px] mt-[-40px]">{toFarsiNumber(activeAd)}</p>
+                                <p className="text-[62px] font-medium leading-[107px] mt-[-40px]">{activeAd}</p>
                                 <p className="font-medium text-24">تعداد آگهی فعال</p>
                             </CircularProgressbarWithChildren>
                         </div>
@@ -331,10 +303,10 @@ const FramePage = () => {
                 </div>
                 <div className="w-246 h-246 bg-[#728a2d33] pt-16 rounded-full mt-78">
                     <div className="w-213 h-213 m-auto relative">
-                        <Image src={dots} className=" absolute mt-[-20px]" />
+                        <Image alt="" src={dots} className=" absolute mt-[-20px]" />
                         <div className="w-174 h-174 m-auto mt-20">
                             <CircularProgressbarWithChildren value={thirdCircleFill} strokeWidth={5} styles={buildStyles({ pathColor: '#728A2D', rotation: 0.5, trailColor: 'none' })} className="" >
-                                <p className="text-35 leading-[60px] mt-[-10px]">{toFarsiNumber(membership)}</p>
+                                <p className="text-35 leading-[60px] mt-[-10px]">{membership}</p>
                                 <p className="font-medium">تمام آگهی ها</p>
                             </CircularProgressbarWithChildren>
                         </div>
@@ -346,8 +318,10 @@ const FramePage = () => {
                 <Title title="آگهی های ویژه" />
             </div>
             <div>
-                <div className="flex w-80% h-307 m-auto justify-between mt-80">
-                    {advertisegData.slice(0, 5).map((item) => (<AdvertiseCard img={item.img} title={item.title} phonNumber={item.phonNumber1} city={item.city} state={item.state} type={item.type} category={item.category1} />))}
+                <div className="overflow-y-scroll 1400:overflow-y-hidden ">
+                    <div className="flex w-80% h-307 m-auto justify-between mt-80 min-w-[1200px] px-30">
+                        {advertisegData.slice(0, 5).map((item) => (<AdvertiseCard img={item.img} title={item.title} phonNumber={item.phonNumber1} city={item.city} state={item.state} type={item.type} category={item.category1} />))}
+                    </div>
                 </div>
                 <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">مشاهده همه</button></a>
             </div>
@@ -355,17 +329,26 @@ const FramePage = () => {
                 <Title title="اعضای منتخب" />
             </div>
             <div>
-                <div className="w-71% mt-80 m-auto flex justify-between">
+                <div className="w-90% 1400:w-71% mt-80 m-auto flex justify-between">
                     {electedMembersData.slice(0, 3).map((item) => (<ElectedMembersCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod}
                     />))}
                 </div>
                 <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">مشاهده همه</button></a>
             </div>
-            <div className="mt-135">
+            <div className="mt-128">
                 <Title title="نظرات" />
+                <div className="w-90% m-auto mt-80 h-315">
+                    <SwiperCoverflow />
+                </div>
             </div>
-            <div className="w-78% m-auto mt-80 h-315">
-                <SwiperCoverflow />
+            <div className="mt-128 w-90% m-auto">
+                <Title title="مقالات" />
+                <div className="flex justify-around mt-80">
+                    {articleCard.map((item) => (
+                        <ArticleCard />
+                    ))}
+                </div>
+                <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">همه مقالات</button></a>
             </div>
         </div>
     )

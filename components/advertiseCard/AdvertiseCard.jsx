@@ -36,7 +36,7 @@ const Advertising = (props) => {
     }
 
     return (
-        <div className={`w-200 h-307 ${styles.shadow1}`}>
+        <div className={`w-200 h-307 ${styles.shadow1} rounded`}>
             <div className={` w-200 h-200 ${styles.backGround}`} />
             <div className="h-166 rounded-t-[16px] rounded-b-[8px] bg-white mt-[-60px] w-200 pt-8 px-16">
                 <div className="w-full h-28 flex justify-between">
@@ -44,21 +44,21 @@ const Advertising = (props) => {
                     <div className={`w-60 h-20 bg-[#7fd30026] text-[#728A2D] text-10 p-3 px-8 rounded-[4px] border-[0.5px] border-[#728A2D] ${adType}`}>اگهی ویژه</div>
                 </div>
                 <div className="167px flex">
-                    <Image className="w-18 h-18 mt-2" src={shop} />
+                    <Image alt="" className="w-18 h-18 mt-2" src={shop} />
                     <p className="text-[#1E1E1E] text-14 mr-10">{props.title}</p>
                 </div>
                 <div className="167px flex mt-8">
-                    <Image className="w-18 h-18 mt-2" src={call} />
+                    <Image alt="" className="w-18 h-18 mt-2" src={call} />
                     <p className="text-[#1E1E1E] text-10 mr-10 pt-3">{toFarsiNumber(props.phonNumber)}</p>
                 </div>
                 <div className="167px flex mt-8 justify-between">
                     <div className="flex">
-                        <Image className="w-18 h-18 mt-2" src={location} />
+                        <Image alt="" className="w-18 h-18 mt-2" src={location} />
                         <p className="text-[#1E1E1E] text-12 mr-10 leading-[20px]">{props.state}</p>
                         <p className="text-[#535353] text-10 mt-3 mr-8 leading-[17px]">{props.city}</p>
                     </div>
                     <div className="w-13 mt-3" onClick={bookMark}>
-                        <Image src={mark} />
+                        <Image alt="" src={mark} />
                     </div>
                 </div>
                 <div className="w-168 bg-[#B9B9B9] h-1 mt-15"></div>

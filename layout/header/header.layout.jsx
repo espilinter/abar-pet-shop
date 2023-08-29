@@ -10,13 +10,13 @@ const Header = () => {
     return (
         <header className="w-90% h-104 rounded-3xl top-32 flex px-24 py-32 bg-[#ffffff8c] text-14 backdrop-blur-[10px] fixed right-5% justify-between z-10">
             <div className="w-15% h-40 flex ">
-                <Image src={logo} className="w-105 h-40" />
-                <Image src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />
+                <Image alt="" src={logo} className="w-105 h-40" />
+                <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />
                 <div className="w-1 h-38 mt-1 bg-[#8A8A8A] mr-16 text-[#ffffff8c] hidden 1050:inline-block">.</div>
             </div>
             <div className="w-46% h-40 justify-between text-[#728A2D] leading-10 mr-1%">
                 <button className="mr-1">
-                    <Image src={lines} className="inline-block" />
+                    <Image alt="" src={lines} className="inline-block" />
                     <p className="inline-block mr-7">دسته بندی</p>
                 </button>
                 <a href="#" className="mr-2% 1150:mr-4% inline-block">صفحه اصلی</a>
@@ -25,7 +25,7 @@ const Header = () => {
                 <a href="#" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</a>
                 <button className="mr-2% 1150:mr-4% inline-block">
                     <p className="inline-block">انتخاب استان</p>
-                    <Image src={arrow} className="inline-block mr-8" />
+                    <Image alt="" src={arrow} className="inline-block mr-8" />
                 </button>
             </div>
             <div className=" h-40 flex justify-between ">
