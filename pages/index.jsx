@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import fs from 'fs'
+import path from 'path'
 import background1 from "../assets/image/framePage.png";
 import ad1 from "../assets/image/ad1.png"
 import system from "../assets/image/image3.png"
@@ -7,6 +9,9 @@ import timer1 from "../assets/image/timer1.png"
 import user from "../assets/image/user.png"
 import dots from "../assets/image/dots.png"
 import note from "../assets/image/note.png"
+import bg1 from "../assets/image/bg1.png"
+import bg2 from "../assets/image/bg2.png"
+import bg3 from "../assets/image/bg3.png"
 import addSquare from "../assets/image/add-square.png"
 import electedLogo from "../assets/image/electedLogo.png"
 import ElectedMembersCard from "../components/electedMembersCard/ElectedMembersCard"
@@ -20,10 +25,10 @@ import AdvertiseCard from "../components/advertiseCard/AdvertiseCard";
 import Image from "next/image";
 import SwiperCoverflow from "@/components/SwiperCoverflow/SwiperCoverflow";
 import ArticleCard from "@/components/ArticleCard/ArticleCard";
+import { revalidatePath } from "next/cache";
 
-const FramePage = () => {
+const FramePage = (props) => {
     const [data, setData] = useState([])
-    const [categoryData, setCategoryData] = useState([])
     const [secondCircleColor, setSecondCircleColor] = useState("border-2 border-[#B9B9B9]")
     const [firstLineColor, setFirstLineColor] = useState("bg-[#B9B9B9]")
     const [thirdCircleColor, setThirdCircleColor] = useState("border-2 border-[#B9B9B9]")
@@ -40,23 +45,16 @@ const FramePage = () => {
     const [thirdCircleFill, setThirdCircleFill] = useState(0)
     const [membership, setMembership] = useState(0)
     const [allMembership, setAllMembership] = useState(147)
-    const [advertisegData, setAdvertisegData] = useState([])
-    const [electedMembersData, setElectedMembersData] = useState([])
     const articleCard = [1, 2, 3, 4]
     useEffect(() => {
-        fetchData()
-        fetchCategoryData()
+        setData(props.data)
         firstStep()
-        fetchAdvertisegData()
-        fetchElectedMembersData()
-        // steper()
     }, [])
 
     useEffect(() => {
         let a = false;
         const handleScroll = (event) => {
             if (window.scrollY >= 3300 && a === false) {
-                console.log(window.scrollY);
                 firstCounterFunction()
                 firstCircleFillFunction()
                 secondCounterFunction()
@@ -72,9 +70,6 @@ const FramePage = () => {
         };
     }, []);
 
-    useEffect(() => {
-
-    }, [fetchData])
 
     function firstCounterFunction() {
         for (let i = 0; i <= allAdNumber; i++) {
@@ -162,39 +157,18 @@ const FramePage = () => {
         }, 2000);
     }
 
-    function fetchData() {
-        axios.get("http://localhost:3001/similarSystems").then((response) => {
-            setData(response.data);
-        });
-    }
-
-    function fetchCategoryData() {
-        axios.get("http://localhost:3001/categury").then((response) => {
-            setCategoryData(response.data);
-        });
-    }
-
-    function fetchAdvertisegData() {
-        axios.get("http://localhost:3001/advertise").then((response) => {
-            setAdvertisegData(response.data);
-        });
-    }
-
-    function fetchElectedMembersData() {
-        axios.get("http://localhost:3001/electedMembers").then((response) => {
-            setElectedMembersData(response.data);
-        });
-    }
-
     return (
-        <div className="bg-[#f4f4f4] pb-96">
+        <div className="bg-[#f4f4f4] pb-96 relative">
+            {/* <Image alt="" src={bg3} className="absolute left-0 top-[4472px] w-full" />
+            <Image alt="" src={bg2} className="absolute top-[2772px] right-0" />
+            <Image alt="" src={bg1} className="absolute top-[2843px]" /> */}
             <div className="w-full h-[100vh] bg-[url('../assets/image/framePage.png')] bg-top bg-cover bg-no-repeat">
             </div>
             <div className="mt-40">
                 <Title title="سامانه های مشابه" />
             </div>
             <div className="w-90% 1400:w-70% h-130 m-auto mt-40 flex justify-around">
-                {data.slice(0, 6).map((item) => (<SimilarSystemsCard item={item} img={system} />))}
+                {data.similarSystems && data.similarSystems.slice(0, 6).map((item) => (<SimilarSystemsCard item={item} img={system} />))}
                 <div className="w-40 h-130"  >
                     <div className="bg-[#ffffff] w-40 h-40 rounded-full mt-40"><Image alt="" src={dot3} className="p-9" width={40} /></div>
                     <p className="text-12 mt-28 ">بیشتر</p>
@@ -207,7 +181,7 @@ const FramePage = () => {
                 <Title title="دسته بندی" />
             </div>
             <div className="w-90% m-auto grid grid-cols-4  1440:gap-y-[68px] mt-48">
-                {categoryData.map((item) => (<CategoryCard item={item} img={system} />))}
+                {data.categury && data.categury.map((item) => (<CategoryCard item={item} img={system} />))}
             </div>
             <div className="mt-154">
                 <Title title="چرا ابر پت شاپ" />
@@ -319,7 +293,7 @@ const FramePage = () => {
             <div>
                 <div className="overflow-y-scroll 1400:overflow-y-hidden ">
                     <div className="flex w-80% h-307 m-auto justify-between mt-80 min-w-[1200px] px-30">
-                        {advertisegData.slice(0, 5).map((item) => (<AdvertiseCard img={item.img} title={item.title} phonNumber={item.phonNumber1} city={item.city} state={item.state} type={item.type} category={item.category1} />))}
+                        {data.advertise && data.advertise.slice(0, 5).map((item) => (<AdvertiseCard img={item.img} title={item.title} phonNumber={item.phonNumber1} city={item.city} state={item.state} type={item.type} category={item.category1} />))}
                     </div>
                 </div>
                 <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">مشاهده همه</button></a>
@@ -329,7 +303,7 @@ const FramePage = () => {
             </div>
             <div>
                 <div className="w-90% 1400:w-71% mt-80 m-auto flex justify-between">
-                    {electedMembersData.slice(0, 3).map((item) => (<ElectedMembersCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod}
+                    {data.electedMembers && data.electedMembers.slice(0, 3).map((item) => (<ElectedMembersCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod}
                     />))}
                 </div>
                 <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">مشاهده همه</button></a>
@@ -337,14 +311,14 @@ const FramePage = () => {
             <div className="mt-128">
                 <Title title="نظرات" />
                 <div className="w-90% m-auto mt-80 h-315">
-                    <SwiperCoverflow />
+                    <SwiperCoverflow data={data.commentCards} />
                 </div>
             </div>
             <div className="mt-128 w-90% m-auto">
                 <Title title="مقالات" />
                 <div className="flex justify-around mt-80">
-                    {articleCard.map((item) => (
-                        <ArticleCard />
+                    {data.articleCards && data.articleCards.map((item) => (
+                        <ArticleCard item={item} />
                     ))}
                 </div>
                 <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">همه مقالات</button></a>
@@ -352,4 +326,33 @@ const FramePage = () => {
         </div>
     )
 }
+
+
+export async function getStaticProps() {
+    const filePath = path.join(process.cwd(), 'db.json');
+    const jsonData = await fs.readFileSync(filePath);
+    const data = JSON.parse(jsonData);
+
+    //handle error 404
+    if (data.framePage.length === 0) {
+        return { notFound: true }
+    }
+
+    //handle any error
+    // if (!data) {
+    //     return {
+    //         redirect: {
+    //             destination: "/error500"
+    //         }
+    //     }
+    // }
+    return {
+        props: {
+            data: data.framePage
+        },
+        revalidate: 3600,
+    }
+}
+
+
 export default FramePage;

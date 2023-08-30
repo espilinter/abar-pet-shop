@@ -17,7 +17,7 @@ import { Navigation } from 'swiper/modules';
 import arrowCircle from "../../assets/image/arrow-circle-right.png"
 import Image from 'next/image';
 
-export default function SwiperCoverflow() {
+export default function SwiperCoverflow(props) {
     const sliderRef = useRef(null);
 
     const handlePrev = useCallback(() => {
@@ -29,7 +29,6 @@ export default function SwiperCoverflow() {
         if (!sliderRef.current) return;
         sliderRef.current.swiper.slideNext();
     }, []);
-    let a = [1, 2, 3, 4, 5, 6, 7, 8]
     return (
         <>
             <div className='flex items-center gap-x-30'>
@@ -59,9 +58,9 @@ export default function SwiperCoverflow() {
                     className="mySwiper h-315 "
                     navigation={true}
                 >
-                    {a.map((item) => (
+                    {props.data && props.data.map((item) => (
                         <SwiperSlide className='pt-7'>
-                            <CommentCard />
+                            <CommentCard item={item} />
                         </SwiperSlide>
                     ))}
                 </Swiper >

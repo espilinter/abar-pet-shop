@@ -1,425 +1,491 @@
 {
-  "similarSystems": [
-    {
-      "id": 1,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    },
-    {
-      "id": 2,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    },
-    {
-      "id": 3,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    },
-    {
-      "id": 4,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    },
-    {
-      "id": 5,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    },
-    {
-      "id": 6,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    },
-    {
-      "id": 7,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    },
-    {
-      "id": 8,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    },
-    {
-      "id": 9,
-      "name": "تهران درمان",
-      "img": "https://picsum.photos/72/72",
-      "link": "https://tehrandarmaan.ir/"
-    }
-  ],
-  "categury": [
-    {
-      "id": 1,
-      "title": "مربی حیوانات",
-      "img": "https://picsum.photos/200"
-    },
-    {
-      "id": 2,
-      "title": "مربی حیوانات",
-      "img": "https://picsum.photos/200"
-    },
-    {
-      "id": 3,
-      "title": "مربی حیوانات",
-      "img": "https://picsum.photos/200"
-    },
-    {
-      "id": 4,
-      "title": "مربی حیوانات",
-      "img": "https://picsum.photos/200"
-    },
-    {
-      "id": 5,
-      "title": "مربی حیوانات",
-      "img": "https://picsum.photos/200"
-    },
-    {
-      "id": 6,
-      "title": "مربی حیوانات",
-      "img": "https://picsum.photos/200"
-    },
-    {
-      "id": 7,
-      "title": "مربی حیوانات",
-      "img": "https://picsum.photos/200"
-    },
-    {
-      "id": 8,
-      "title": "مربی حیوانات",
-      "img": "https://picsum.photos/200"
-    }
-  ],
-  "advertise": [
-    {
-      "id": 1,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png",
-      "date": ""
-    },
-    {
-      "id": 2,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 3,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 4,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 5,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 6,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 7,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 8,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 9,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 10,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 11,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 12,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    },
-    {
-      "id": 13,
-      "title": "پت شاپ پت ویل",
-      "phonNumber1": "021-22334455",
-      "phonNumber2": "021-22334455",
-      "telegram": "@pet_shop",
-      "whatsapp": "09191919119",
-      "instagram": "@pet_shop",
-      "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
-      "category1": "دسته بندی سطح1",
-      "category2": "دسته بندی سطح2",
-      "category3": "دسته بندی سطح3",
-      "state": "تهران",
-      "city": "تهران",
-      "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
-      "facilities": [
-        "پزشک",
-        "لوازم حیوانات اهلی"
-      ],
-      "type": "vip",
-      "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
-    }
-  ],
-  "electedMembers": [
-    {
-      "id": 1,
-      "manager": "فرشاد صادقی",
-      "state": "تهران",
-      "city": "تهران",
-      "adNumber": "2",
-      "membershipPeriod": "8"
-    },
-    {
-      "id": 2,
-      "manager": "فرشاد صادقی",
-      "state": "تهران",
-      "city": "تهران",
-      "adNumber": "2",
-      "membershipPeriod": "8"
-    },
-    {
-      "id": 3,
-      "manager": "فرشاد صادقی",
-      "state": "تهران",
-      "city": "تهران",
-      "adNumber": "2",
-      "membershipPeriod": "8"
-    },
-    {
-      "id": 4,
-      "manager": "فرشاد صادقی",
-      "state": "تهران",
-      "city": "تهران",
-      "adNumber": "2",
-      "membershipPeriod": "8"
-    }
-  ],
+  "framePage": {
+    "similarSystems": [
+      {
+        "id": 1,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      },
+      {
+        "id": 2,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      },
+      {
+        "id": 3,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      },
+      {
+        "id": 4,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      },
+      {
+        "id": 5,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      },
+      {
+        "id": 6,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      },
+      {
+        "id": 7,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      },
+      {
+        "id": 8,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      },
+      {
+        "id": 9,
+        "name": "تهران درمان",
+        "img": "https://picsum.photos/72/72",
+        "link": "https://tehrandarmaan.ir/"
+      }
+    ],
+    "categury": [
+      {
+        "id": 1,
+        "title": "مربی حیوانات",
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 2,
+        "title": "مربی حیوانات",
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 3,
+        "title": "مربی حیوانات",
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 4,
+        "title": "مربی حیوانات",
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 5,
+        "title": "مربی حیوانات",
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 6,
+        "title": "مربی حیوانات",
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 7,
+        "title": "مربی حیوانات",
+        "img": "https://picsum.photos/200"
+      },
+      {
+        "id": 8,
+        "title": "مربی حیوانات",
+        "img": "https://picsum.photos/200"
+      }
+    ],
+    "advertise": [
+      {
+        "id": 1,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png",
+        "date": ""
+      },
+      {
+        "id": 2,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 3,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 4,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 5,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 6,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 7,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 8,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 9,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 10,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 11,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 12,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      },
+      {
+        "id": 13,
+        "title": "پت شاپ پت ویل",
+        "phonNumber1": "021-22334455",
+        "phonNumber2": "021-22334455",
+        "telegram": "@pet_shop",
+        "whatsapp": "09191919119",
+        "instagram": "@pet_shop",
+        "address": "تهران ، خیابان آزادی ، پلاک 2 ، واحد4",
+        "category1": "دسته بندی سطح1",
+        "category2": "دسته بندی سطح2",
+        "category3": "دسته بندی سطح3",
+        "state": "تهران",
+        "city": "تهران",
+        "description": "فروشگاه ما خیلی خوبه یعنی خیلی خیلی خوبه و هیچ فروشگاهی به پای ما نمیرسه خلاصه که آدم باید احمق باشه که بخواد بره فروشگاه دیگه ای ، تازه هر کس از فروشگاه ما خرید کنه توی قرعه کشی یک دستگاه پت باکس شرکت داده میشه",
+        "facilities": [
+          "پزشک",
+          "لوازم حیوانات اهلی"
+        ],
+        "type": "vip",
+        "img": "https://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png"
+      }
+    ],
+    "electedMembers": [
+      {
+        "id": 1,
+        "manager": "فرشاد صادقی",
+        "state": "تهران",
+        "city": "تهران",
+        "adNumber": "2",
+        "membershipPeriod": "8"
+      },
+      {
+        "id": 2,
+        "manager": "فرشاد صادقی",
+        "state": "تهران",
+        "city": "تهران",
+        "adNumber": "2",
+        "membershipPeriod": "8"
+      },
+      {
+        "id": 3,
+        "manager": "فرشاد صادقی",
+        "state": "تهران",
+        "city": "تهران",
+        "adNumber": "2",
+        "membershipPeriod": "8"
+      },
+      {
+        "id": 4,
+        "manager": "فرشاد صادقی",
+        "state": "تهران",
+        "city": "تهران",
+        "adNumber": "2",
+        "membershipPeriod": "8"
+      }
+    ],
+    "articleCards": [
+      {
+        "date": "۸ آبان ۱۴۰۱",
+        "header": "انواع حیوانات خانگی",
+        "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده..."
+      },
+      {
+        "date": "۸ آبان ۱۴۰۱",
+        "header": "انواع حیوانات خانگی",
+        "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده..."
+      },
+      {
+        "date": "۸ آبان ۱۴۰۱",
+        "header": "انواع حیوانات خانگی",
+        "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده..."
+      },
+      {
+        "date": "۸ آبان ۱۴۰۱",
+        "header": "انواع حیوانات خانگی",
+        "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده..."
+      },
+      {
+        "date": "۸ آبان ۱۴۰۱",
+        "header": "انواع حیوانات خانگی",
+        "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده..."
+      },
+      {
+        "date": "۸ آبان ۱۴۰۱",
+        "header": "انواع حیوانات خانگی",
+        "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده..."
+      }
+    ],
+    "commentCards": [
+      {
+        "name": "محمد محمدی",
+        "comment": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده...",
+        "date": "۲۱ / اردیبهشت / ۱۴۰۲"
+      },
+      {
+        "name": "محمد محمدی",
+        "comment": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده...",
+        "date": "۲۱ / اردیبهشت / ۱۴۰۲"
+      },
+      {
+        "name": "محمد محمدی",
+        "comment": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده...",
+        "date": "۲۱ / اردیبهشت / ۱۴۰۲"
+      },
+      {
+        "name": "محمد محمدی",
+        "comment": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده...",
+        "date": "۲۱ / اردیبهشت / ۱۴۰۲"
+      },
+      {
+        "name": "محمد محمدی",
+        "comment": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده...",
+        "date": "۲۱ / اردیبهشت / ۱۴۰۲"
+      },
+      {
+        "name": "محمد محمدی",
+        "comment": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده...",
+        "date": "۲۱ / اردیبهشت / ۱۴۰۲"
+      }
+    ]
+  },
   "header": {
     "categorys": [
       {

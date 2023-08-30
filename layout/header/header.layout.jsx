@@ -10,28 +10,31 @@ import box from "../../assets/image/box.png"
 import categoryArrow from "../../assets/image/categoryArrow.png"
 import { useEffect, useState } from "react";
 import axios from "axios";
+// import fs from 'fs'
+// import path from 'path'
 
-
-const Header = () => {
+const Header = (props) => {
     const [data, setData] = useState([])
     const [subCategory, setSubCategory] = useState([])
     const [categoryModal, setCategoryModal] = useState("opacity-0 h-0")
-
+    const [categoryDisplay, setCategoryDisplay] = useState("hidden")
     function openCategoryModal(params) {
-        categoryModal === "opacity-0 h-0" ? setCategoryModal("opacity-100 h-472") : setCategoryModal("opacity-0 h-0")
+        if (categoryModal === "opacity-0 h-0") {
+            setCategoryDisplay("")
+            setTimeout(() => { setCategoryModal("opacity-100 h-472") }, (200))
+        } else {
+            setCategoryModal("opacity-0 h-0")
+            setTimeout(() => { setCategoryDisplay("hidden") }, (200))
+        }
     }
 
     function categoryClickHandler(event) {
         setSubCategory(data.categorys[event.currentTarget.id])
-        console.log(data);
-        console.log(data.categorys);
-        console.log(data.categorys[event.currentTarget.id]);
     }
 
     useEffect(() => {
         axios.get("http://localhost:3001/header").then((response) => {
             setData(response.data);
-            console.log(response.data);
         });
     }, [])
 
@@ -47,7 +50,7 @@ const Header = () => {
                     <Image alt="" src={lines} className="inline-block" />
                     <p className="inline-block mr-7">دسته بندی</p>
                     {/* <div className="bg-[#00000035] w-full h-[100vh] absolute  cursor-default"></div> */}
-                    <div className={` absolute bg-white w-[826px] px-40 py-32 flex gap-x-40 justify-start cursor-default transition-all duration-200 ${categoryModal}`}>
+                    <div className={` absolute bg-white w-[826px] px-40 py-32 flex gap-x-40 justify-start cursor-default transition-all duration-200 ${categoryModal} ${categoryDisplay}`}>
                         <ul className="border-l-2 border-l-[#6E6E6E] w-230 text-[#1E1E1E] font-bold flex flex-col gap-12">
                             {data.categorys && data.categorys.map((item, index) => (
                                 <li className="w-196 h-40 flex items-center justify-between p-8 cursor-pointer" id={index} onMouseEnter={categoryClickHandler}><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>{item.title}</span></span><Image src={categoryArrow} className="h-24" /></li>
@@ -64,51 +67,6 @@ const Header = () => {
                                         <li>دسته‌بندی سطح 3</li>
                                     </ul>
                                 </li>))}
-                            {/* <li>
-                                <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                                <ul className="text-[#6E6E6E] text-14 font-normal">
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                                <ul className="text-[#6E6E6E] text-14 font-normal">
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                                <ul className="text-[#6E6E6E] text-14 font-normal">
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                                <ul className="text-[#6E6E6E] text-14 font-normal">
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                                <ul className="text-[#6E6E6E] text-14 font-normal">
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                    <li>دسته‌بندی سطح 3</li>
-                                </ul>
-                            </li> */}
                         </ul>
                     </div>
                 </button>
@@ -132,4 +90,5 @@ const Header = () => {
         </header >
     )
 }
+
 export default Header;
