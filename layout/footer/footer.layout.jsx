@@ -12,7 +12,7 @@ import "../../styles/layout/footer.layout.module.css"
 
 const Footer = () => {
     return (
-        <footer className="bg-[#dcdcdc] background pb-28 drop-shadow-[0_-8px_16px_rgba(0,0,0,0.16)]">
+        <footer className=" pb-28 shadow-[0px_-8px_16px_0px_rgba(0,0,0,0.16)] mt-30 bg-[url('../assets/image/2.png')] bg-no-repeat bg-[center_top_55px]">
             <div className="flex w-98% 1220:w-90% m-auto pt-40">
                 <div className="w-26% h-134">
                     <div className=" flex">

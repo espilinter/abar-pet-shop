@@ -53,7 +53,9 @@ export default function SwiperCoverflow(props) {
                         slideShadows: false,
                         scale: 0.85,
                     }}
-
+                    loop={true}
+                    loopedSlides={3}
+                    loopAdditionalSlides={3}
                     modules={[EffectCoverflow, Navigation]}
                     className="mySwiper h-315 "
                     navigation={true}

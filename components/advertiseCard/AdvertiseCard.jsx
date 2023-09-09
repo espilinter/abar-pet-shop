@@ -36,26 +36,26 @@ const Advertising = (props) => {
     }
 
     return (
-        <div className={`w-200 h-307 ${styles.shadow1} rounded`}>
-            <div className={` w-200 h-200 ${styles.backGround}`} />
+        <div className={`w-200 h-307 shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] rounded-t-2xl`}>
+            <div className={` w-200 h-200 bg-[url('../assets/image/category.png')] rounded-t-2xl`} />
             <div className="h-166 rounded-t-[16px] rounded-b-[8px] bg-white mt-[-60px] w-200 pt-8 px-16">
                 <div className="w-full h-28 flex justify-between">
                     <p className="text-10 text-[#6B6B6B] mt-4">همین الان</p>
                     <div className={`w-60 h-20 bg-[#7fd30026] text-[#728A2D] text-10 p-3 px-8 rounded-[4px] border-[0.5px] border-[#728A2D] ${adType}`}>اگهی ویژه</div>
                 </div>
-                <div className="167px flex">
+                <div className="167px flex mt-13">
                     <Image alt="" className="w-18 h-18 mt-2" src={shop} />
-                    <p className="text-[#1E1E1E] text-14 mr-10">{props.title}</p>
+                    <p className="text-[#1E1E1E] text-14 mr-10">{props.item.title}</p>
                 </div>
-                <div className="167px flex mt-8">
+                {/* <div className="167px flex mt-8">
                     <Image alt="" className="w-18 h-18 mt-2" src={call} />
                     <p className="text-[#1E1E1E] text-10 mr-10 pt-3">{toFarsiNumber(props.phonNumber)}</p>
-                </div>
-                <div className="167px flex mt-8 justify-between">
+                </div> */}
+                <div className="167px flex mt-20 justify-between">
                     <div className="flex">
                         <Image alt="" className="w-18 h-18 mt-2" src={location} />
-                        <p className="text-[#1E1E1E] text-12 mr-10 leading-[20px]">{props.state}</p>
-                        <p className="text-[#535353] text-10 mt-3 mr-8 leading-[17px]">{props.city}</p>
+                        <p className="text-[#1E1E1E] text-12 mr-10 leading-[20px]">{props.item.state}</p>
+                        <p className="text-[#535353] text-10 mt-3 mr-8 leading-[17px]">{props.item.city}</p>
                     </div>
                     <div className="w-13 mt-3" onClick={bookMark}>
                         <Image alt="" src={mark} />
@@ -63,7 +63,7 @@ const Advertising = (props) => {
                 </div>
                 <div className="w-168 bg-[#B9B9B9] h-1 mt-15"></div>
                 <div className="w-168 h-14 flex justify-between mt-10">
-                    <p className="text-10 text-[#535353]">{props.category}</p>
+                    <p className="text-10 text-[#535353]">{props.item.category1}</p>
                     <p className="text-10 text-[#535353]">آگهی (22)</p>
                 </div>
             </div>

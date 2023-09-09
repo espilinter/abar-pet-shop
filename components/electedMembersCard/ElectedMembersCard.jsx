@@ -8,7 +8,7 @@ function toFarsiNumber(n) {
 
 const ElectedMembersCard = (props) => {
     return (
-        <div className={`${styles.bgBlur} w-248 1200:w-310 h-364 1200:h-455 rounded-[12px] p-12 1200:p-16`}>
+        <div className={` backdrop-blur-[2.5px] shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] w-248 1200:w-310 h-364 1200:h-455 rounded-[12px] p-12 1200:p-16`}>
             <Image alt="" className="w-120 1200:w-150 h-120 1200:h-150 m-auto rounded-full" src={props.img} />
             <h3 className="font-medium text-16 1200:text-20 leading-[24px] 1200:leading-[30px]">پت شاپ بول داگ</h3>
             <div className="h-1 w-98% bg-[#535353] m-auto mt-25 1200:mt-32"></div>
