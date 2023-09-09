@@ -36,9 +36,9 @@ const Advertising = (props) => {
     }
 
     return (
-        <div className={`w-200 h-307 shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] rounded-t-2xl`}>
-            <div className={` w-200 h-200 bg-[url('../assets/image/category.png')] rounded-t-2xl`} />
-            <div className="h-166 rounded-t-[16px] rounded-b-[8px] bg-white mt-[-60px] w-200 pt-8 px-16">
+        <div className={`w-200 h-307 shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] rounded-xl`}>
+            <div className={` w-200 h-200 bg-[url('../assets/image/category.png')] rounded-t-xl`} />
+            <div className="h-166 rounded-t-[16px] rounded-b-xl bg-white mt-[-60px] w-200 pt-8 px-16">
                 <div className="w-full h-28 flex justify-between">
                     <p className="text-10 text-[#6B6B6B] mt-4">همین الان</p>
                     <div className={`w-60 h-20 bg-[#7fd30026] text-[#728A2D] text-10 p-3 px-8 rounded-[4px] border-[0.5px] border-[#728A2D] ${adType}`}>اگهی ویژه</div>

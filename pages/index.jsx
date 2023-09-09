@@ -49,8 +49,9 @@ const Home = (props) => {
     useEffect(() => {
         setData(props.data)
         firstStep()
+        const x = window.matchMedia("(max-width: 700px)")
+        console.log(x);
     }, [])
-
     useEffect(() => {
         let a = false;
         const handleScroll = (event) => {
@@ -300,8 +301,8 @@ const Home = (props) => {
                 </div>
                 <div>
                     <div className="overflow-y-scroll 1400:overflow-y-hidden ">
-                        <div className="flex w-80% h-307 m-auto justify-between mt-80 min-w-[1200px] px-30">
-                            {data.advertise && data.advertise.slice(0, 5).map((item) => (<AdvertiseCard item={item} />))}
+                        <div className="flex w-80% m-auto justify-between mt-80 min-w-[1200px] px-3 py-10 [&>*:nth-child(6)]:hidden 1600:[&>*:nth-child(6)]:inline-block">
+                            {data.advertise && data.advertise.slice(0, 6).map((item) => (<AdvertiseCard item={item} />))}
                         </div>
                     </div>
                     <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">مشاهده همه</button></a>
@@ -310,8 +311,8 @@ const Home = (props) => {
                     <Title title="اعضای منتخب" />
                 </div>
                 <div>
-                    <div className="w-90% 1400:w-71% mt-80 m-auto flex justify-between">
-                        {data.electedMembers && data.electedMembers.slice(0, 3).map((item) => (<ElectedMembersCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod}
+                    <div className="w-90% 1400:w-71% mt-80 m-auto flex justify-between [&>*:nth-child(4)]:hidden 1600:[&>*:nth-child(4)]:inline-block">
+                        {data.electedMembers && data.electedMembers.slice(0, 4).map((item) => (<ElectedMembersCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod}
                         />))}
                     </div>
                     <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">مشاهده همه</button></a>
@@ -324,8 +325,8 @@ const Home = (props) => {
                 </div>
                 <div className="mt-128 w-90% m-auto">
                     <Title title="مقالات" />
-                    <div className="flex justify-around mt-80">
-                        {data.articleCards && data.articleCards.slice(0, 4).map((item) => (
+                    <div className="flex justify-around mt-80 [&>*:nth-child(5)]:hidden 1600:[&>*:nth-child(5)]:inline-block ">
+                        {data.articleCards && data.articleCards.slice(0, 5).map((item) => (
                             <ArticleCard item={item} />
                         ))}
                     </div>
