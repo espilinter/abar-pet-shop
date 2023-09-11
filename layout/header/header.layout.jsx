@@ -84,11 +84,11 @@ const Header = (props) => {
                     </button>
                 </div>
                 <div className=" h-40 flex justify-between ">
-                    <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal">استخدام در هلدینگ</div>
+                    <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center">استخدام در هلدینگ</div>
                     <div className=" flex ">
                         <div className="w-1 h-38 mt-1 bg-[#8A8A8A]  text-[#ffffff8c] "></div>
                         <div className="w-111 h-40 bg-[#728A2D] text-white leading-10 mr-8 rounded-md flex pr-10"><FiPlus className="w-20 h-20 mt-10 ml-5" /> <p>درج آگهی</p></div>
-                        <div className="w-111 h-40 text-[#728A2D] leading-10 border mr-8 border-[#728A2D] rounded-md">ورود / ثبت نام</div>
+                        <div className="w-111 h-40 text-[#728A2D] leading-10 border mr-8 border-[#728A2D] text-center rounded-md">ورود / ثبت نام</div>
                     </div>
                 </div>
             </header >
@@ -101,7 +101,7 @@ const Header = (props) => {
                     <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />
                     <div className="w-1 h-38 mt-1 bg-[#8A8A8A] mr-16 text-[#ffffff8c] hidden 1050:inline-block">.</div>
                 </div>
-                <div className="w-46% h-40 justify-between text-[#535353] leading-10 mr-1%">
+                <div className="w-46% h-40 justify-between text-center text-[#535353] leading-10 mr-1%">
                     <button className="mr-1 relative" onMouseEnter={openCategoryModal} onMouseLeave={openCategoryModal}>
                         <Image alt="" src={lines2} className="inline-block" />
                         <p className="inline-block mr-7">دسته بندی</p>
@@ -136,11 +136,11 @@ const Header = (props) => {
                     </button>
                 </div>
                 <div className=" h-40 flex justify-between ">
-                    <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal">استخدام در هلدینگ</div>
+                    <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center">استخدام در هلدینگ</div>
                     <div className=" flex ">
                         <div className="w-1 h-38 mt-1 bg-[#8A8A8A]  text-[#ffffff8c] "></div>
                         <div className="w-111 h-40 bg-[#728A2D] text-white leading-10 mr-8 rounded-md flex pr-10"><FiPlus className="w-20 h-20 mt-10 ml-5" /> <p>درج آگهی</p></div>
-                        <div className="w-111 h-40 text-[#728A2D] leading-10 border mr-8 border-[#728A2D] rounded-md">ورود / ثبت نام</div>
+                        <div className="w-111 text-center h-40 text-[#728A2D] leading-10 border mr-8 border-[#728A2D] rounded-md">ورود / ثبت نام</div>
                     </div>
                 </div>
             </header >

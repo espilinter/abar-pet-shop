@@ -31,7 +31,7 @@ export default function SwiperCoverflow(props) {
     }, []);
     return (
         <>
-            <div className='flex items-center gap-x-30'>
+            <div className='flex items-center gap-x-30 commentSwiper'>
                 <button className=" h-50 w-100" onClick={handlePrev}><Image alt="" src={arrowCircle} /></button>
                 <Swiper
                     ref={sliderRef}

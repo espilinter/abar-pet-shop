@@ -12,7 +12,7 @@ import Image from 'next/image';
 const AdSwiper = (props) => {
     return (
         <>
-            <div className={`AdSwiper w-full ${props.className}`}>
+            <div className={`AdSwiper ${props.className}`}>
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={30}
@@ -24,15 +24,10 @@ const AdSwiper = (props) => {
                     modules={[Pagination, Navigation]}
                     className="mySwiper"
                 >
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
-                    <SwiperSlide><Image src={ad2} /></SwiperSlide>
+                    {props.data && props.data.map((item) => (
+                        <SwiperSlide ><img src={item} className='rounded-2xl' /></SwiperSlide>
+                    ))}
+
                 </Swiper>
             </div>
         </>

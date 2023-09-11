@@ -202,7 +202,7 @@ const Home = (props) => {
                         </div>
                         <div className="w-268 h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
                             <div className="w-212 1220:w-256 h-152 1220:h-190 m-auto">
-                                <h2 className="text-16 1220:text-20 font-bold ">انتخاب اقتصادی</h2>
+                                <h2 className="text-16 1220:text-20 font-bold text-center ">انتخاب اقتصادی</h2>
                                 <p className="text-13 1220:text-16 mt-17 w-204 1220:w-256 text-[#616161] leading-8 text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
                             </div>
                         </div>
@@ -213,7 +213,7 @@ const Home = (props) => {
                         </div>
                         <div className="w-268 h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
                             <div className="w-212 1220:w-256 h-152 1220:h-190 m-auto">
-                                <h2 className="text-16 1220:text-20 font-bold ">انتخاب اقتصادی</h2>
+                                <h2 className="text-16 1220:text-20 font-bold text-center">انتخاب اقتصادی</h2>
                                 <p className="text-13 1220:text-16 mt-17 w-204 1220:w-256 text-[#616161] leading-8 text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
                             </div>
                         </div>
@@ -224,7 +224,7 @@ const Home = (props) => {
                         </div>
                         <div className="w-268 h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
                             <div className="w-212 1220:w-256 h-152 1220:h-190 m-auto">
-                                <h2 className="text-16 1220:text-20 font-bold ">انتخاب اقتصادی</h2>
+                                <h2 className="text-16 1220:text-20 font-bold text-center">انتخاب اقتصادی</h2>
                                 <p className="text-13 1220:text-16 mt-17 w-204 1220:w-256 text-[#616161] leading-8 text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، </p>
                             </div>
                         </div>
@@ -236,21 +236,21 @@ const Home = (props) => {
                 <div className="flex gap-x-[7%] w-90% m-auto mt-48">
                     <div className={`w-388 h-298 rounded-[16px] ${firstBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
                         <Image alt="" src={user} className="w-100 h-100 m-auto" />
-                        <h3 className="text-18 mt-16">1.ثبت نام</h3>
-                        <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20">به راحتی با یک کلیک می‌شود در لینک‌بورد ثبت نام کرد</p>
-                        <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6">ثبت نام</div>
+                        <h3 className="text-18 mt-16 text-center">1.ثبت نام</h3>
+                        <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20 text-center">به راحتی با یک کلیک می‌شود در لینک‌بورد ثبت نام کرد</p>
+                        <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6 text-center">ثبت نام</div>
                     </div>
                     <div className={`w-388 h-298 rounded-[16px] ${secondBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
                         <Image alt="" src={note} className="w-100 h-100 m-auto" />
-                        <h3 className="text-18 mt-16">۲. میان آگهی ها جستجو کنید</h3>
-                        <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20">مراحل ساده ثبت آگهی در دسته‌بندی های مختلف</p>
-                        <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6">آگهی ها</div>
+                        <h3 className="text-18 mt-16 text-center">۲. میان آگهی ها جستجو کنید</h3>
+                        <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20 text-center">مراحل ساده ثبت آگهی در دسته‌بندی های مختلف</p>
+                        <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6 text-center">آگهی ها</div>
                     </div>
                     <div className={`w-388 h-298 rounded-[16px] ${thirdBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
                         <Image alt="" src={addSquare} className="w-100 h-100 m-auto" />
-                        <h3 className="text-18 mt-16">۳. آگهی خود را ثبت کنید </h3>
-                        <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20">مراحل ساده ثبت آگهی در دسته‌بندی های مختلف</p>
-                        <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6 transition-colors duration-1000">ثبت آگهی</div>
+                        <h3 className="text-18 mt-16 text-center">۳. آگهی خود را ثبت کنید </h3>
+                        <p className="font-medium text-15 text-[#8A8A8A] leading-[30px] mt-20 text-center">مراحل ساده ثبت آگهی در دسته‌بندی های مختلف</p>
+                        <div className="w-96 h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6 transition-colors duration-1000 text-center">ثبت آگهی</div>
                     </div>
                 </div>
                 <div className="mt-40 w-71% mr-[16.5%]  flex ">
@@ -299,23 +299,23 @@ const Home = (props) => {
                 <div>
                     <Title title="آگهی های ویژه" />
                 </div>
-                <div>
+                <div className=" text-center">
                     <div className="overflow-y-scroll 1400:overflow-y-hidden ">
                         <div className="flex w-80% m-auto justify-between mt-80 min-w-[1200px] px-3 py-10 [&>*:nth-child(6)]:hidden 1600:[&>*:nth-child(6)]:inline-block">
                             {data.advertise && data.advertise.slice(0, 6).map((item) => (<AdvertiseCard item={item} />))}
                         </div>
                     </div>
-                    <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">مشاهده همه</button></a>
+                    <a className=" text-center"><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]  text-center">مشاهده همه</button></a>
                 </div>
                 <div className="mt-102">
                     <Title title="اعضای منتخب" />
                 </div>
-                <div>
+                <div className=" text-center">
                     <div className="w-90% 1400:w-71% mt-80 m-auto flex justify-between [&>*:nth-child(4)]:hidden 1600:[&>*:nth-child(4)]:inline-block">
                         {data.electedMembers && data.electedMembers.slice(0, 4).map((item) => (<ElectedMembersCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod}
                         />))}
                     </div>
-                    <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">مشاهده همه</button></a>
+                    <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">مشاهده همه</button></a>
                 </div>
                 <div className="mt-128">
                     <Title title="نظرات" />
@@ -323,14 +323,14 @@ const Home = (props) => {
                         <SwiperCoverflow data={data.commentCards} />
                     </div>
                 </div>
-                <div className="mt-128 w-90% m-auto">
+                <div className="mt-128 w-90% m-auto  text-center">
                     <Title title="مقالات" />
                     <div className="flex justify-around mt-80 [&>*:nth-child(5)]:hidden 1600:[&>*:nth-child(5)]:inline-block ">
                         {data.articleCards && data.articleCards.slice(0, 5).map((item) => (
                             <ArticleCard item={item} />
                         ))}
                     </div>
-                    <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">همه مقالات</button></a>
+                    <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">همه مقالات</button></a>
                 </div>
             </div>
         </div>

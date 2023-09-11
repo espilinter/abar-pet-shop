@@ -77,7 +77,7 @@ const Footer = () => {
                         <input className="text-right w-230 h-50 border border-[#8A8A8A] rounded-[6px] px-12" placeholder="example@gmail.com" />
 
                         <div className="w-107 h-50 rounded-[6px] bg-[#728A2D] mr-8">
-                            <p className="text-white pt-8 leading-8">عضویت</p>
+                            <p className="text-white pt-8 leading-8 text-center">عضویت</p>
                         </div>
                     </div>
                 </div>
