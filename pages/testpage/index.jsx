@@ -1,112 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
-import Image from "next/image";
-import box from "../../assets/image/box.png"
-import categoryArrow from "../../assets/image/categoryArrow.png"
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-    },
-};
-
-// Modal.setAppElement('#yourAppElement');
+import React from "react";
 
 const testpage = () => {
 
-    let subtitle;
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#f00';
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
-
     return (
-        <div className="min-h-[500px]">
-            <button onClick={openModal}>Open Modal</button>
-            <Modal
-                isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-            >
-                <div className={` bg-white w-[826px] h-426 px-40 py-32 flex justify-start cursor-default transition-all duration-200 `}>
-                    <ul className="border-l-2 border-l-[#6E6E6E] w-230 text-[#1E1E1E] font-bold flex flex-col gap-12">
-                        <li className="w-196 h-40 flex items-center justify-between p-8"><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>دسته‌بندی 1</span></span><Image src={categoryArrow} className="h-24" /></li>
-                        <li className="w-196 h-40 flex items-center justify-between p-8"><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>دسته‌بندی 1</span></span><Image src={categoryArrow} className="h-24" /></li>
-                        <li className="w-196 h-40 flex items-center justify-between p-8"><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>دسته‌بندی 1</span></span><Image src={categoryArrow} className="h-24" /></li>
-                        <li className="w-196 h-40 flex items-center justify-between p-8"><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>دسته‌بندی 1</span></span><Image src={categoryArrow} className="h-24" /></li>
-                        <li className="w-196 h-40 flex items-center justify-between p-8"><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>دسته‌بندی 1</span></span><Image src={categoryArrow} className="h-24" /></li>
-                        <li className="w-196 h-40 flex items-center justify-between p-8"><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>دسته‌بندی 1</span></span><Image src={categoryArrow} className="h-24" /></li>
-                        <li className="w-196 h-40 flex items-center justify-between p-8"><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>دسته‌بندی 1</span></span><Image src={categoryArrow} className="h-24" /></li>
-                        <li className="w-196 h-40 flex items-center justify-between p-8"><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>دسته‌بندی 1</span></span><Image src={categoryArrow} className="h-24" /></li>
-                    </ul>
-                    <ul className="grid grid-cols-3 gap-x-60 text-[#1E1E1E]">
-                        <li>
-                            <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                            <ul className="text-[#6E6E6E] text-14 font-normal">
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                            <ul className="text-[#6E6E6E] text-14 font-normal">
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                            <ul className="text-[#6E6E6E] text-14 font-normal">
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                            <ul className="text-[#6E6E6E] text-14 font-normal">
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4 className="font-bold text-16">دسته‌بندی سطح 2</h4>
-                            <ul className="text-[#6E6E6E] text-14 font-normal">
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                                <li>دسته‌بندی سطح 3</li>
-                            </ul>
-                        </li>
-                    </ul>
+        <>
+            <div className="h-[800px] w-full pt-200">
+                <div className="w-[358px] h-[133px] p-2 bg-white rounded-xl shadow flex-col justify-start items-center gap-2 inline-flex">
+                    <div className="self-stretch justify-between items-center inline-flex">
+                        <div className="self-stretch flex-col justify-end items-center gap-4 inline-flex">
+                            <div className="self-stretch h-9 px-3 py-1 rounded-md border border-stone-400 justify-center items-center gap-2 inline-flex">
+                                <div className="text-center text-lime-600 text-sm font-normal font-['IRANYekan']">اطلاعات بیشتر</div>
+                            </div>
+                        </div>
+                        <div className="self-stretch flex-col justify-between items-start inline-flex">
+                            <div className="self-stretch justify-between items-start inline-flex">
+                                <div className="text-center text-neutral-600 text-[10px] font-bold font-['IRANYekan']">محمد محمدی</div>
+                                <div className="text-center text-neutral-600 text-[10px] font-bold font-['IRANYekan']">مسئول : </div>
+                            </div>
+                            <div className="self-stretch justify-between items-start inline-flex">
+                                <div className="text-center text-neutral-600 text-[10px] font-bold font-['IRANYekan']">تهران/یوسف‌آباد</div>
+                                <div className="text-center text-neutral-600 text-[10px] font-bold font-['IRANYekan']">استان/شهر : </div>
+                            </div>
+                            <div className="self-stretch justify-between items-start inline-flex">
+                                <div className="text-center text-neutral-600 text-[10px] font-bold font-['IRANYekan']">عضویت: ۸ ماه</div>
+                                <div className="text-center text-neutral-600 text-[10px] font-bold font-['IRANYekan']">آگهی‌ها : ۲</div>
+                            </div>
+                        </div>
+                        <div className="flex-col justify-center items-center gap-4 inline-flex">
+                            <div className="w-20 h-20 relative shadow">
+                                <img className="w-20 h-20 left-[0.08px] top-0 absolute" src="https://via.placeholder.com/80x80" />
+                            </div>
+                            <div className="text-center text-zinc-800 text-xs font-normal font-['IRANYekan']">پت‌شاپ بول داگ</div>
+                        </div>
+                    </div>
                 </div>
-            </Modal>
-        </div>
-    );
+            </div>
+        </>
+    )
 }
 
 export default testpage;

@@ -19,9 +19,19 @@
   /* background: #7fd30026; */
 }
 
-.commentSwiper .swiper-slide {
-  width: 400px !important;
-  height: 300px !important;
+
+@media screen and (min-width: 760px) {
+  .commentSwiper .swiper-slide {
+    width: 400px !important;
+    height: 300px !important;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .commentSwiper .swiper-slide {
+    width: 150px !important;
+    height: 165px !important;
+  }
 }
 
 body {

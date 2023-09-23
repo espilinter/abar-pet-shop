@@ -6,8 +6,8 @@ import Arrow from "../../assets/image/arrow-left.png"
 const ArticleCard = (props) => {
     return (
         <>
-            <div className="w-208 1220:w-260 h-320 1220:h-400 p-24 rounded-[12px] bg-[#FFFFFF03] flex flex-col gap-y-6 1220:gap-y-8 shadow-[0_0_8px_2px_rgba(0,0,0,0.12)]">
-                <Image alt="" src={ArticleCardImg} />
+            <div className="w-208 1220:w-260 h-320 1220:h-400 p-24 rounded-[12px] bg-[#FFFFFF03] flex flex-col gap-y-6 1220:gap-y-8 shadow-[0_0_8px_2px_rgba(0,0,0,0.12)] ">
+                <Image alt="" src={ArticleCardImg} className="rounded-lg" />
                 <p className="#ACADAC text-9 1220:text-12 block text-right leading-[17px] 1220:leading-[22px]">{props.item.date}</p>
                 <h3 className="text-13 1220:text-16 font-bold leading-[24px] 1200:leading-[30px] text-[#2B2C2B] text-right ">{props.item.header}</h3>
                 <p className="text-[#6D6E6D] text-9 1220:text-12 font-normal text-right leading-[17px] 1220:leading-[22px]">{props.item.description}</p>

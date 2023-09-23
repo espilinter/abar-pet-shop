@@ -16,6 +16,10 @@ const insertAd = (props) => {
         setLevel("3")
     }
 
+    function imageInputHandler(event) {
+        console.log(event.target.files);
+    }
+
     switch (level) {
         case '1':
             return (
@@ -31,16 +35,16 @@ const insertAd = (props) => {
                         </div>
                         <div className=" w-full flex justify-between items-top mt-10">
                             <div>
-                                <h3 className="text-[#535353] text-right rext-16 font-medium leading-[30px]">مرحله 1</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">انتخاب دسته بندی‌ها</p>
+                                <h3 className="text-[#535353] text-right text-14 lg:text-16 font-medium leading-[30px]">مرحله 1</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">انتخاب دسته بندی‌ها</p>
                             </div>
                             <div>
-                                <h3 className="text-[#535353] text-center rext-16 font-medium leading-[30px]">مرحله 2</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">اطلاعات شخص / شرکت</p>
+                                <h3 className="text-[#535353] text-center text-14 lg:text-16 font-medium leading-[30px]">مرحله 2</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">اطلاعات شخص / شرکت</p>
                             </div>
                             <div>
-                                <h3 className="text-[#535353] text-left rext-16 font-medium leading-[30px]">مرحله 3</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">گالری تصاویر / فایل</p>
+                                <h3 className="text-[#535353] text-left text-14 lg:text-16 font-medium leading-[30px]">مرحله 3</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">گالری تصاویر / فایل</p>
                             </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 1440:grid-cols-3  gap-x-20 gap-y-32 m-auto mt-60 ">
@@ -75,16 +79,16 @@ const insertAd = (props) => {
                         </div>
                         <div className=" w-full flex justify-between items-top mt-10">
                             <div>
-                                <h3 className="text-[#535353] text-right rext-16 font-medium leading-[30px]">مرحله 1</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">انتخاب دسته بندی‌ها</p>
+                                <h3 className="text-[#535353] text-right text-14 lg:text-16 font-medium leading-[30px]">مرحله 1</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">انتخاب دسته بندی‌ها</p>
                             </div>
                             <div>
-                                <h3 className="text-[#535353] text-center rext-16 font-medium leading-[30px]">مرحله 2</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">اطلاعات شخص / شرکت</p>
+                                <h3 className="text-[#535353] text-center text-14 lg:text-16 font-medium leading-[30px]">مرحله 2</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">اطلاعات شخص / شرکت</p>
                             </div>
                             <div>
-                                <h3 className="text-[#535353] text-left rext-16 font-medium leading-[30px]">مرحله 3</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">گالری تصاویر / فایل</p>
+                                <h3 className="text-[#535353] text-left text-14 lg:text-16 font-medium leading-[30px]">مرحله 3</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">گالری تصاویر / فایل</p>
                             </div>
                         </div>
                         <div className="grid grid-cols-5 gap-x-20 gap-y-32 m-auto mt-60 ">
@@ -149,32 +153,27 @@ const insertAd = (props) => {
                         </div>
                         <div className=" w-full flex justify-between items-top mt-10">
                             <div>
-                                <h3 className="text-[#535353] text-right rext-16 font-medium leading-[30px]">مرحله 1</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">انتخاب دسته بندی‌ها</p>
+                                <h3 className="text-[#535353] text-right text-14 lg:text-16 font-medium leading-[30px]">مرحله 1</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">انتخاب دسته بندی‌ها</p>
                             </div>
                             <div>
-                                <h3 className="text-[#535353] text-center rext-16 font-medium leading-[30px]">مرحله 2</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">اطلاعات شخص / شرکت</p>
+                                <h3 className="text-[#535353] text-center text-14 lg:text-16 font-medium leading-[30px]">مرحله 2</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">اطلاعات شخص / شرکت</p>
                             </div>
                             <div>
-                                <h3 className="text-[#535353] text-left rext-16 font-medium leading-[30px]">مرحله 3</h3>
-                                <p className="text-[#6E6E6E] text-14 leading-[26px]">گالری تصاویر / فایل</p>
+                                <h3 className="text-[#535353] text-left text-14 lg:text-16 font-medium leading-[30px]">مرحله 3</h3>
+                                <p className="text-[#6E6E6E] text-10 lg:text-14 leading-[26px]">گالری تصاویر / فایل</p>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 1440:grid-cols-3  gap-x-20 gap-y-32 m-auto mt-60 ">
-                            <select className="bg-white w-full h-50 border border-[#DCDCDC] rounded-md " >
-                                <option className="text-right">انتخاب دسته بندی</option>
-                            </select>
-                            <select className="bg-white w-full h-50 border border-[#DCDCDC] rounded-md" >
-                                <option className="text-right">انتخاب زیر دسته بندی</option>
-                            </select>
-                            <select className="bg-white w-full h-50 border border-[#DCDCDC] rounded-md" >
-                                <option className="text-right">انتخاب زیر زیر دسته بندی</option>
-                            </select>
+                        <div className="w-full h-150 bg-white mt-32 rounded-3xl text-center border border-[#B9B9B9] relative justify-center items-center flex flex-col p-16">
+                            <input type="file" className="opacity-0 absolute top-0 h-full cursor-pointer w-full right-0 rounded-3xl" onChange={imageInputHandler} />
+                            <div className="w-48 h-48 rounded-full border-[3px] border-[#728A2D] flex items-center justify-around"><span className="text-40 font-medium text-[#728A2D] h-24 w-24 mt-[-28px] ml-2">+</span></div>
+                            <h3 className="text-[#728A2D] text-16 leading-[30px] mt-12">بارگذاری فایل</h3>
+                            <p className="text-12 leading-[22px] text-[#B9B9B9] mt-4">فایل تا 5MB با فرمت PNG, JPG, GIF</p>
                         </div>
-                        <div className="flex w-full justify-between mt-60 ">
+                        <div className="flex w-full justify-between mt-60">
                             <button className="w-112 text-center h-38 border border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]" onClick={step2Handler}>مرحله قبل</button>
-                            <button className="w-112 h-38 text-center text-white rounded-[6px] text-16 font-medium bg-[#728A2D] leading-[30px]">مرحله بعد</button>
+                            <button className="w-112 h-38 text-white rounded-[6px] text-16 font-medium text-center bg-[#728A2D] leading-[30px]">ثبت آگهی</button>
                         </div>
                     </div >
                 </>

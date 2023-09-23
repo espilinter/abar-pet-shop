@@ -14,8 +14,8 @@ import AdvertiseCard from "../../components/advertiseCard/AdvertiseCard";
 const Ad = (props) => {
     return (
         <>
-            <div className="w-90% m-auto">
-                <div className="flex mt-160 w-full m-auto justify-between ">
+            <div className="w-90% m-auto pt-160 ">
+                <div className="flex w-full m-auto justify-between ">
                     <AdSwiper className="w-75% h-[455px] " data={props.data.slider} />
                     <div className="w-300 h-[455px] bg-white rounded-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] p-16">
                         <Image src={logo} className="m-auto rounded-full" />
