@@ -8,6 +8,7 @@
 }
 
 @import "../styles/components/AdSwiper.css";
+/* @import "./icons/style.css"; */
 
 * {
   margin: 0;
@@ -36,4 +37,531 @@
 
 body {
   background-color: #f4f4f4;
+}
+
+/* /////////////////////icon//////////////////// */
+
+@font-face {
+  font-family: 'abarpetshop';
+  src: url('../assets/font/abarpetshop.eot?q52n0d');
+  src: url('../assets/font/abarpetshop.eot?q52n0d#iefix') format('embedded-opentype'),
+    url('../assets/font/abarpetshop.ttf?q52n0d') format('truetype'),
+    url('../assets/font/abarpetshop.woff?q52n0d') format('woff'),
+    url('../assets/font/abarpetshop.svg?q52n0d#abarpetshop') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="aps-"],
+[class*=" aps-"] {
+  font-family: 'abarpetshop' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.aps-map2:before {
+  content: "\e900";
+}
+
+.aps-menu2:before {
+  content: "\e901";
+}
+
+.aps-pet1:before {
+  content: "\e902";
+}
+
+.aps-profile-add:before {
+  content: "\e903";
+}
+
+.aps-Subtract:before {
+  content: "\e904";
+}
+
+.aps-Subtract-1:before {
+  content: "\e905";
+}
+
+.aps-Subtract-2:before {
+  content: "\e906";
+}
+
+.aps-arrange-square:before {
+  content: "\e907";
+}
+
+.aps-computing:before {
+  content: "\e908";
+}
+
+.aps-First:before {
+  content: "\e909";
+}
+
+.aps-Frame-1064:before {
+  content: "\e90a";
+}
+
+.aps-handshake-1-2:before {
+  content: "\e90b";
+}
+
+.aps-Icons:before {
+  content: "\e90c";
+}
+
+.aps-Last:before {
+  content: "\e90d";
+}
+
+.aps-map:before {
+  content: "\e90e";
+}
+
+.aps-menu:before {
+  content: "\e90f";
+}
+
+.aps-Next:before {
+  content: "\e910";
+}
+
+.aps-pet:before {
+  content: "\e911";
+}
+
+.aps-Prev:before {
+  content: "\e912";
+}
+
+.aps-search-normal1:before {
+  content: "\e913";
+}
+
+.aps-timer1:before {
+  content: "\e914";
+}
+
+.aps-user-add:before {
+  content: "\e915";
+}
+
+.aps-add:before {
+  content: "\e916";
+}
+
+.aps-add-square:before {
+  content: "\e917";
+}
+
+.aps-arrow-circle-down:before {
+  content: "\e918";
+}
+
+.aps-arrow-circle-left:before {
+  content: "\e919";
+}
+
+.aps-arrow-circle-right:before {
+  content: "\e91a";
+}
+
+.aps-arrow-circle-up:before {
+  content: "\e91b";
+}
+
+.aps-arrow-right:before {
+  content: "\e91c";
+}
+
+.aps-book-1:before {
+  content: "\e91d";
+}
+
+.aps-box:before {
+  content: "\e91e";
+}
+
+.aps-calendar-tick:before {
+  content: "\e91f";
+}
+
+.aps-call:before {
+  content: "\e920";
+}
+
+.aps-category-2:before {
+  content: "\e921";
+}
+
+.aps-clipboard-close:before {
+  content: "\e922";
+}
+
+.aps-close-circle:before {
+  content: "\e923";
+}
+
+.aps-dollar-circle:before {
+  content: "\e924";
+}
+
+.aps-edit:before {
+  content: "\e925";
+}
+
+.aps-edit-2:before {
+  content: "\e926";
+}
+
+.aps-element-4:before {
+  content: "\e927";
+}
+
+.aps-eye:before {
+  content: "\e928";
+}
+
+.aps-filter:before {
+  content: "\e929";
+}
+
+.aps-Frame-45532:before {
+  content: "\e92a";
+}
+
+.aps-gallery:before {
+  content: "\e92b";
+}
+
+.aps-gallery-add:before {
+  content: "\e92c";
+}
+
+.aps-hashtag:before {
+  content: "\e92d";
+}
+
+.aps-home-2:before {
+  content: "\e92e";
+}
+
+.aps-house-2:before {
+  content: "\e92f";
+}
+
+.aps-info-circle-1:before {
+  content: "\e930";
+}
+
+.aps-location:before {
+  content: "\e931";
+}
+
+.aps-location-tick:before {
+  content: "\e932";
+}
+
+.aps-logout-1:before {
+  content: "\e933";
+}
+
+.aps-map1:before {
+  content: "\e934";
+}
+
+.aps-menu1:before {
+  content: "\e935";
+}
+
+.aps-message-circle:before {
+  content: "\e936";
+}
+
+.aps-message-question:before {
+  content: "\e937";
+}
+
+.aps-message-text:before {
+  content: "\e938";
+}
+
+.aps-minus:before {
+  content: "\e939";
+}
+
+.aps-minus-square-1:before {
+  content: "\e93a";
+}
+
+.aps-moneys:before {
+  content: "\e93b";
+}
+
+.aps-monitor:before {
+  content: "\e93c";
+}
+
+.aps-note-2:before {
+  content: "\e93d";
+}
+
+.aps-notification:before {
+  content: "\e93e";
+}
+
+.aps-password-check:before {
+  content: "\e93f";
+}
+
+.aps-personalcard:before {
+  content: "\e940";
+}
+
+.aps-profile-2user:before {
+  content: "\e941";
+}
+
+.aps-profile-add-1:before {
+  content: "\e942";
+}
+
+.aps-profile-circle:before {
+  content: "\e943";
+}
+
+.aps-receipt-text-1:before {
+  content: "\e944";
+}
+
+.aps-refresh:before {
+  content: "\e945";
+}
+
+.aps-search-normal:before {
+  content: "\e946";
+}
+
+.aps-share-1-svgrepo-com:before {
+  content: "\e947";
+}
+
+.aps-shop:before {
+  content: "\e948";
+}
+
+.aps-sort:before {
+  content: "\e949";
+}
+
+.aps-star-1:before {
+  content: "\e94a";
+}
+
+.aps-tick-circle-1:before {
+  content: "\e94b";
+}
+
+.aps-timer:before {
+  content: "\e94c";
+}
+
+.aps-timer-start:before {
+  content: "\e94d";
+}
+
+.aps-trash:before {
+  content: "\e94e";
+}
+
+.aps-usd-coin-usdc:before {
+  content: "\e94f";
+}
+
+.aps-user-edit:before {
+  content: "\e950";
+}
+
+.aps-verify:before {
+  content: "\e951";
+}
+
+.aps-wallet-3:before {
+  content: "\e952";
+}
+
+.aps-minus-o:before {
+  content: "\e953";
+}
+
+.aps-minus-square-o:before {
+  content: "\e954";
+}
+
+.aps-add-o:before {
+  content: "\e955";
+}
+
+.aps-add-square-o:before {
+  content: "\e956";
+}
+
+.aps-arrow-circle-down-o:before {
+  content: "\e957";
+}
+
+.aps-arrow-circle-left-o:before {
+  content: "\e958";
+}
+
+.aps-arrow-circle-right-o:before {
+  content: "\e959";
+}
+
+.aps-arrow-down-o:before {
+  content: "\e95a";
+}
+
+.aps-arrow-up-1:before {
+  content: "\e95b";
+}
+
+.aps-arrow-right-1-o:before {
+  content: "\e95c";
+}
+
+.aps-arrow-left-1-o:before {
+  content: "\e95d";
+}
+
+.aps-arrow-down-1-o:before {
+  content: "\e95e";
+}
+
+.aps-arrow-up-o:before {
+  content: "\e95f";
+}
+
+.aps-arrow-right-o:before {
+  content: "\e960";
+}
+
+.aps-arrow-left-o:before {
+  content: "\e961";
+}
+
+.aps-arrow-left-2-o:before {
+  content: "\e962";
+}
+
+.aps-arrow-right-2-o:before {
+  content: "\e963";
+}
+
+.aps-arrow-up-2-o:before {
+  content: "\e964";
+}
+
+.aps-close-circle-o:before {
+  content: "\e965";
+}
+
+.aps-tick-circle-o:before {
+  content: "\e966";
+}
+
+.aps-dollar-circle-o:before {
+  content: "\e967";
+}
+
+.aps-edit-o:before {
+  content: "\e968";
+}
+
+.aps-edit-2-o:before {
+  content: "\e969";
+}
+
+.aps-element-4-o:before {
+  content: "\e96a";
+}
+
+.aps-gallery-o:before {
+  content: "\e96b";
+}
+
+.aps-home-2-o:before {
+  content: "\e96c";
+}
+
+.aps-info-circle-o:before {
+  content: "\e96d";
+}
+
+.aps-location-tick-o:before {
+  content: "\e96e";
+}
+
+.aps-logout-o:before {
+  content: "\e96f";
+}
+
+.aps-message-text-o:before {
+  content: "\e970";
+}
+
+.aps-moneys-o:before {
+  content: "\e971";
+}
+
+.aps-personalcard-o:before {
+  content: "\e972";
+}
+
+.aps-profile-o:before {
+  content: "\e973";
+}
+
+.aps-profile-add-o:before {
+  content: "\e974";
+}
+
+.aps-receipt-text-o:before {
+  content: "\e975";
+}
+
+.aps-shop-o:before {
+  content: "\e976";
+}
+
+.aps-star-o:before {
+  content: "\e977";
+}
+
+.aps-trash-o:before {
+  content: "\e978";
+}
+
+.aps-box-o:before {
+  content: "\e979";
+}
+
+.aps-call-calling-o:before {
+  content: "\e97a";
+}
+
+.aps-note-2-o:before {
+  content: "\e97b";
+}
+
+.aps-book-o:before {
+  content: "\e97c";
 }
