@@ -15,13 +15,13 @@ import CommentCard from '../CommentCard/CommentCard';
 import { Navigation } from 'swiper/modules';
 import { useMediaQuery } from "@uidotdev/usehooks";
 import arrowCircle from "../../assets/image/arrow-circle-right.png"
+import articleCat from "../../assets/image/articleCat.png"
 import Image from 'next/image';
 import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
 
 
 const ArticlesSwiper = () => {
-    const [swiperGap, setSwiperGap] = useState(50)
-    const [swiperEffect, setSwiperEffect] = useState("coverflow")
+
 
     const sliderRef = useRef(null);
 
@@ -35,25 +35,18 @@ const ArticlesSwiper = () => {
         sliderRef.current.swiper.slideNext();
     }, []);
 
-    useEffect(() => {
-        const screen = window.matchMedia("(max-width: 760px)");
-        if (screen.matches) {
-            setSwiperGap(16)
-            setSwiperEffect('Fade')
-        }
-    }, [])
 
     return (
         <>
-            <div className='flex items-center gap-x-30 commentSwiper'>
-                <button className="hidden md:inline-block h-50 w-100" onClick={handlePrev}><Image alt="" src={arrowCircle} /></button>
+            <div className='flex items-center gap-x-30 articleSwiper relative '>
+                <button className="hidden md:inline-block h-50 w-100 absolute z-[2] right-5" onClick={handlePrev}><Image alt="" src={arrowCircle} /></button>
                 <Swiper
                     ref={sliderRef}
                     effect={'Fade'}
                     grabCursor={true}
                     centeredSlides={true}
                     slidesPerView={'auto'}
-                    spaceBetween={5}
+                    spaceBetween={28}
                     // breakpoints={{
                     //     1440: {
                     //         spaceBetween: 40
@@ -71,33 +64,59 @@ const ArticlesSwiper = () => {
                     loopedSlides={3}
                     loopAdditionalSlides={3}
                     modules={[EffectCoverflow, Navigation]}
-                    className="mySwiper h-[550px] "
+                    className="mySwiper h-210 md:h-[460px] "
                     navigation={true}
                 >
-
-                    <SwiperSlide className='pt-7 '>
-                        <div className='w-315 h-460 bg-stone-500'></div>
+                    <SwiperSlide className='pt-7 justify-center flex'>
+                        <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
+                            <Image src={articleCat} className="w-full h-full" />
+                            <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className='pt-7 '>
-                        <div className='w-315 h-460 bg-stone-500'></div>
+                    <SwiperSlide className='pt-7 justify-center flex'>
+                        <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
+                            <Image src={articleCat} className="w-full h-full" />
+                            <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className='pt-7 '>
-                        <div className='w-315 h-460 bg-stone-500'></div>
+                    <SwiperSlide className='pt-7 justify-center flex'>
+                        <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
+                            <Image src={articleCat} className="w-full h-full" />
+                            <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className='pt-7 '>
-                        <div className='w-315 h-460 bg-stone-500'></div>
+                    <SwiperSlide className='pt-7 justify-center flex'>
+                        <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
+                            <Image src={articleCat} className="w-full h-full" />
+                            <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className='pt-7 '>
-                        <div className='w-315 h-460 bg-stone-500'></div>
+                    <SwiperSlide className='pt-7 justify-center flex'>
+                        <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
+                            <Image src={articleCat} className="w-full h-full" />
+                            <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className='pt-7 '>
-                        <div className='w-315 h-460 bg-stone-500'></div>
+                    <SwiperSlide className='pt-7 justify-center flex'>
+                        <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
+                            <Image src={articleCat} className="w-full h-full" />
+                            <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className='pt-7 '>
-                        <div className='w-315 h-460 bg-stone-500'></div>
+                    <SwiperSlide className='pt-7 justify-center flex'>
+                        <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
+                            <Image src={articleCat} className="w-full h-full" />
+                            <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='pt-7 justify-center flex'>
+                        <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
+                            <Image src={articleCat} className="w-full h-full" />
+                            <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
+                        </div>
                     </SwiperSlide>
                 </Swiper >
-                <button className="hidden md:inline-block h-50 w-100" onClick={handleNext} ><Image alt="" src={arrowCircle} className="rotate-180" /></button>
+                <button className="hidden md:inline-block h-50 w-100 absolute z-[2] left-5" onClick={handleNext} ><Image alt="" src={arrowCircle} className="rotate-180" /></button>
             </div>
         </>
     );

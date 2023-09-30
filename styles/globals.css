@@ -20,6 +20,20 @@
   /* background: #7fd30026; */
 }
 
+@media screen and (min-width: 760px) {
+  .articleSwiper .swiper-slide {
+    width: 300px !important;
+    height: 450px !important;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .articleSwiper .swiper-slide {
+    width: 165px !important;
+    height: 210px !important;
+  }
+}
+
 
 @media screen and (min-width: 760px) {
   .commentSwiper .swiper-slide {
