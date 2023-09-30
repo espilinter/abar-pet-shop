@@ -33,7 +33,8 @@ const Articles = (props) => {
                             <p className=" font-semibold mr-45 mt-40">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها </p>
                             <button className="w-155 h-38 bg-[#728A2D] text-white rounded-md flex items-center justify-center gap-x-8 ml-0 mr-auto">
                                 <span className="text-16">مشاهده بیشتر</span>
-                                <i className="aps-arrow-left-1-o text-20"></i></button>
+                                <i className="aps-arrow-left-1-o text-20"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
