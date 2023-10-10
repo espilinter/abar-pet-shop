@@ -268,7 +268,7 @@ const Home = (props) => {
                         <div className="rounded-full bg-[#728A2D] w-36 h-36 transition-colors duration-1000"></div>
                         <div className={`w-2 lg:w-42% lg:h-2 h-225 ${firstLineColor}  transition-colors duration-1000`}></div>
                         <div className={`rounded-full ${secondCircleColor} w-36 h-36 transition-colors duration-1000`}></div>
-                        <div className={`w-2 lg:w-42% lg:h-2 h-225 ${firstLineColor}  transition-colors duration-1000`}></div>
+                        <div className={`w-2 lg:w-42% lg:h-2 h-225 ${secondtLineColor}  transition-colors duration-1000`}></div>
                         <div className={`rounded-full ${thirdCircleColor} w-36 h-36 transition-colors duration-1000`}></div>
                     </div>
                 </div>

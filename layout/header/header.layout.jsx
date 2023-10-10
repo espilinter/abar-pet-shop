@@ -22,7 +22,6 @@ import { usePathname } from "next/navigation"
 
 const Header = (props) => {
     const pathname = usePathname()
-    console.log(pathname);
     const [data, setData] = useState([])
     const [subCategory, setSubCategory] = useState([])
     const [categoryModal, setCategoryModal] = useState("opacity-0 h-0")
@@ -104,7 +103,6 @@ const Header = (props) => {
                         <Image src={map} className="w-24 h-24" />
                         <Image src={searchBlack} className="w-24 h-24" />
                     </div>
-
                 </header>
             </>
         )

@@ -19,7 +19,7 @@ const Category = (props) => {
                 <AdSwiper className="pt-40 w-full" data={props.data.slider} fakeClass={"w-[1300px] h-[300px]"} />
                 <div className="pt-80">
                     <Title title="آگهی‌های پت‌شاپ معمولی" />
-                    <div className="flex w-full justify-between mt-64">
+                    <div className="flex w-full justify-between mt-64 gap-x-16">
                         <div className="w-300 ">
                             <div className="w-full p-8 rounded-xl border border-gray-200 text-right">
                                 <input className="w-full text-right border border-gray-300 py-8 px-24 rounded-lg bg-[#f4f4f4]" type="text" placeholder="جستجو" />
@@ -49,19 +49,19 @@ const Category = (props) => {
                             <input className="w-300 h-50 text-[#B9B9B9] border border-[#B9B9B9] rounded-lg text-right p-12 bg-[#f4f4f4] text-14 mt-14" placeholder="انتخاب شهر" />
                         </div>
                         <div>
-                            <div className="grid grid-cols-4 1750:grid-cols-6 gap-x-40 1500:gap-x-60 1600:grid-cols-5 1600:gap-x-25 gap-y-32">
+                            <div className="grid grid-cols-3 xl:grid-cols-4 1750:grid-cols-6 gap-x-40 1500:gap-x-60 1600:grid-cols-5 1600:gap-x-25 gap-y-32">
                                 {props.data && props.data.advertise.map((item) => (<Advertising item={item} />))}
                             </div>
                             <div className="w-280 h-24 m-auto mt-32 flex justify-between">
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{"<<"}</div>
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{"<"}</div>
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">1</div>
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">2</div>
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">3</div>
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">...</div>
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">4</div>
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{">"}</div>
-                                <div className="w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{">>"}</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{"<<"}</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{"<"}</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">1</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">2</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">3</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">...</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">4</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{">"}</div>
+                                <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{">>"}</div>
                             </div>
                         </div>
                     </div>

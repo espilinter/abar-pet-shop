@@ -53,6 +53,10 @@ body {
   background-color: #f4f4f4;
 }
 
+.ProgressBarStyle>div {
+  direction: ltr !important;
+}
+
 /* /////////////////////icon//////////////////// */
 
 @font-face {
@@ -78,6 +82,85 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.rc-slider-dot-active {
+  border-color: #728A2D !important;
+}
+
+.rc-slider-dot {
+  background-color: unset !important;
+}
+
+.rc-slider-track {
+  background-color: #728A2D !important;
+}
+
+.rc-slider-handle {
+  background-color: #728A2D !important;
+  opacity: 1 !important;
+  border: solid 2px #728A2D !important;
+}
+
+.rc-slider-handle:active {
+  box-shadow: 0 0 5px #728A2D !important;
+}
+
+.rc-slider-handle:focus-visible {
+  box-shadow: 0 0 0 3px #728A2D !important;
+}
+
+.aps-bookmark-o:before {
+  content: "\e97d";
+}
+
+.aps-bookmark:before {
+  content: "\e97e";
+}
+
+.aps-card:before {
+  content: "\e97f";
+}
+
+.aps-edit:before {
+  content: "\e980";
+}
+
+.aps-location .path1:before {
+  content: "\e981";
+}
+
+.aps-location .path2:before {
+  content: "\e982";
+
+}
+
+.aps-location .path3:before {
+  content: "\e983";
+}
+
+.aps-instagram:before {
+  content: "\e984";
+}
+
+.aps-card-o:before {
+  content: "\e986";
+}
+
+.aps-edit-o:before {
+  content: "\e987";
+}
+
+.aps-ellipsis:before {
+  content: "\e988";
+}
+
+.aps-location-o:before {
+  content: "\e989";
+}
+
+.aps-telegram:before {
+  content: "\e98a";
 }
 
 .aps-map2:before {
@@ -228,7 +311,7 @@ body {
   content: "\e924";
 }
 
-.aps-edit:before {
+.aps-edit1:before {
   content: "\e925";
 }
 
@@ -276,7 +359,7 @@ body {
   content: "\e930";
 }
 
-.aps-location:before {
+.aps-location1:before {
   content: "\e931";
 }
 
@@ -496,7 +579,7 @@ body {
   content: "\e967";
 }
 
-.aps-edit-o:before {
+.aps-edit-o1:before {
   content: "\e968";
 }
 
