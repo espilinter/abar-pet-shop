@@ -45,6 +45,11 @@ const Header = (props) => {
             setData(response.data);
         });
     }, [])
+
+    function openAsideHandler(params) {
+
+    }
+
     if (pathname === "/") {
         return (
             <>
@@ -97,7 +102,7 @@ const Header = (props) => {
                     </div>
                 </header >
                 <header className="flex z-10 fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
-                    <button><Image src={lines3} className="w-24 h-24" /></button>
+                    <button onClick={openAsideHandler}><Image src={lines3} className="w-24 h-24" /></button>
                     <div><Image src={logo} /></div>
                     <div className="flex gap-x-8">
                         <Image src={map} className="w-24 h-24" />
