@@ -17,10 +17,14 @@ import arrowdown2 from "../../assets/image/arrowdown2.png"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { usePathname } from "next/navigation"
+import { useDispatch, useSelector } from "react-redux";
+import { handleOpenAsideState } from "@/HandleSlice/HandleSlice";
 // import fs from 'fs'
 // import path from 'path'
 
 const Header = (props) => {
+    const dataState = useSelector((state) => state.states);
+    const dispatch = useDispatch();
     const pathname = usePathname()
     const [data, setData] = useState([])
     const [subCategory, setSubCategory] = useState([])
@@ -47,7 +51,7 @@ const Header = (props) => {
     }, [])
 
     function openAsideHandler(params) {
-
+        dispatch(handleOpenAsideState(true));
     }
 
     if (pathname === "/") {

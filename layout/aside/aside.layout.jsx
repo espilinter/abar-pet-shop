@@ -1,7 +1,11 @@
 import Image from "next/image";
 import logo from "../../assets/image/Logo.png"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { handleOpenAsideState } from "@/HandleSlice/HandleSlice";
 const Aside = (props) => {
+    const dataState = useSelector((state) => state.states);
+    const dispatch = useDispatch();
     const [asideWidth, setAsideWidth] = useState("w-0")
     const [asideDisplay, setAsideDisplay] = useState("hidden")
 
@@ -10,10 +14,24 @@ const Aside = (props) => {
         setTimeout(() => {
             setAsideDisplay("hidden")
         }, 200);
+        dispatch(handleOpenAsideState(false))
     }
+
+    function openAsideHandler(event) {
+        setAsideWidth("w-320")
+        setTimeout(() => {
+            setAsideDisplay("inline-block")
+        }, 100);
+    }
+
+    useEffect(() => {
+        if (dataState.openAsideState) {
+            openAsideHandler()
+        }
+    }, [dataState])
     return (
         <>
-            <aside className={` bg-white fixed lg:hidden z-[11] pt-12 h-[100vh] ${asideWidth} transition-all duration-500`} >
+            <aside className={` bg-white fixed lg:hidden z-[11] pt-12 h-[100vh] ${asideWidth} transition-all duration-500 right-0`} >
                 <div className={` ${asideDisplay} w-full`}>
                     <div className="flex pl-70 pr-12 justify-between">
                         <button className="rotate-45" onClick={closeAsideHandler}>

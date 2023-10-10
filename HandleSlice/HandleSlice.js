@@ -1,23 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { configureStore } from '@reduxjs/toolkit'
 const initialState = {
-    //   hambergerState: true,
-
+    openAsideState: false
 };
 
 export const HandleSlice = createSlice({
     name: "counter",
     initialState,
     reducers: {
-        // handleHambergerState: (state, action) => {
-        //   state.hambergerState = action.payload;
-        // },
-
+        handleOpenAsideState: (state, action) => {
+            state.openAsideState = action.payload;
+        }
     },
 });
 
 export const {
-    //   handleHambergerState
+    handleOpenAsideState
 } = HandleSlice.actions;
 
 export default HandleSlice.reducer;
