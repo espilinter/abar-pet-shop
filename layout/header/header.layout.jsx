@@ -67,7 +67,7 @@ const Header = (props) => {
                             <Image alt="" src={lines} className="inline-block" />
                             <p className="inline-block mr-7">دسته بندی</p>
                             {/* <div className="bg-[#00000035] w-full h-[100vh] absolute  cursor-default"></div> */}
-                            <div className={` absolute bg-white w-[826px] px-40 py-32 flex gap-x-40 justify-start cursor-default transition-all duration-200 ${categoryModal} ${categoryDisplay}`}>
+                            <div className={` absolute bg-white w-[826px] px-40 py-32 flex gap-x-40 justify-start cursor-default transition-all duration-200 ${categoryModal} ${categoryDisplay} `}>
                                 <ul className="border-l-2 border-l-[#6E6E6E] w-230 text-[#1E1E1E] font-bold flex flex-col gap-12">
                                     {data.categorys && data.categorys.map((item, index) => (
                                         <li className="w-196 h-40 flex items-center justify-between p-8 cursor-pointer" id={index} onMouseEnter={categoryClickHandler}><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>{item.title}</span></span><Image src={categoryArrow} className="h-24" /></li>
@@ -97,7 +97,7 @@ const Header = (props) => {
                         </button>
                     </div>
                     <div className=" h-40 flex justify-between ">
-                        <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center">استخدام در هلدینگ</div>
+                        <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center top-0">استخدام در هلدینگ</div>
                         <div className=" flex ">
                             <div className="w-1 h-38 mt-1 bg-[#8A8A8A]  text-[#ffffff8c] "></div>
                             <div className="w-111 h-40 bg-[#728A2D] text-white leading-10 mr-8 rounded-md flex pr-10"><FiPlus className="w-20 h-20 mt-10 ml-5" /> <p>درج آگهی</p></div>
@@ -118,7 +118,7 @@ const Header = (props) => {
     } else {
         return (
             <>
-                <header className="hidden w-full h-104 top-0 lg:flex px-70 py-32 bg-[#ffffff] text-14 backdrop-blur-[10px] fixed right-0 justify-between z-10 shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] ">
+                <header className={`hidden w-full h-104 top-0 lg:flex px-70 py-32 bg-[#ffffff] text-14 backdrop-blur-[10px] fixed right-0 justify-between z-10 shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] `}>
                     <div className="w-18% h-40 flex border-l border-[#8A8A8A] pl-10">
                         <Image alt="" src={logo} className="w-105 h-40" />
                         <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />

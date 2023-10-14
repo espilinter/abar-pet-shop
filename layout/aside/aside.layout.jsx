@@ -31,7 +31,7 @@ const Aside = (props) => {
     }, [dataState])
     return (
         <>
-            <aside className={` bg-white fixed lg:hidden z-[11] pt-12 h-[100vh] ${asideWidth} transition-all duration-500 right-0`} >
+            <aside className={` bg-white fixed lg:hidden z-[12] pt-12 h-[100vh] ${asideWidth} transition-all duration-500 right-0`} >
                 <div className={` ${asideDisplay} w-full`}>
                     <div className="flex pl-70 pr-12 justify-between">
                         <button className="rotate-45" onClick={closeAsideHandler}>
