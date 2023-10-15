@@ -19,24 +19,33 @@ import axios from "axios";
 import { usePathname } from "next/navigation"
 import { useDispatch, useSelector } from "react-redux";
 import { handleOpenAsideState } from "@/HandleSlice/HandleSlice";
+import Link from "next/link";
 // import fs from 'fs'
 // import path from 'path'
 
 const Header = (props) => {
     const dataState = useSelector((state) => state.states);
+    const [stateHeight, setStateHeight] = useState("opacity-0 max-h-0")
+    const [stateDisplay, setStateDisplay] = useState("hidden")
+    const [windowSize, setWindowSize] = useState("")
     const dispatch = useDispatch();
     const pathname = usePathname()
     const [data, setData] = useState([])
     const [subCategory, setSubCategory] = useState([])
     const [categoryModal, setCategoryModal] = useState("opacity-0 h-0")
     const [categoryDisplay, setCategoryDisplay] = useState("hidden")
+    const [cityOrState, setCityOrState] = useState(true)
+    const [searchW, setSearchW] = useState("w-0")
+    const [searchDisplay, setSearchDisplay] = useState("")
     function openCategoryModal(params) {
         if (categoryModal === "opacity-0 h-0") {
             setCategoryDisplay("")
-            setTimeout(() => { setCategoryModal("opacity-100 h-472") }, (200))
+            // setTimeout(() => { setCategoryModal("opacity-100 h-472") }, (200))
+            setCategoryModal("opacity-100 h-472")
         } else {
             setCategoryModal("opacity-0 h-0")
-            setTimeout(() => { setCategoryDisplay("hidden") }, (200))
+            // setTimeout(() => { setCategoryDisplay("hidden") }, (200))
+            setCategoryDisplay("hidden")
         }
     }
 
@@ -45,29 +54,65 @@ const Header = (props) => {
     }
 
     useEffect(() => {
+        window.addEventListener("resize", responsiveHandler)
         axios.get("http://localhost:3001/header").then((response) => {
             setData(response.data);
         });
+        setWindowSize(window.innerWidth);
+        return () => {
+            window.removeEventListener("resize", responsiveHandler);
+        };
     }, [])
+
+    function responsiveHandler(params) {
+        setWindowSize(window.innerWidth);
+    }
 
     function openAsideHandler(params) {
         dispatch(handleOpenAsideState(true));
     }
 
+    function openStateDropdown() {
+        if (stateHeight === "opacity-0 max-h-0") {
+            setStateDisplay("")
+            // setTimeout(() => { setStateHeight("opacity-100 max-h-[594px]") }, (200))
+            setStateHeight("opacity-100 max-h-[594px]")
+        } else {
+            setStateHeight("opacity-0 max-h-0")
+            // setTimeout(() => { setStateDisplay("hidden") }, (200))
+            setStateDisplay("hidden")
+        }
+    }
+
+    function stateClickHandler(params) {
+        setCityOrState(false)
+    }
+
+    function openSearchHandler() {
+        if (searchDisplay === "") {
+            setSearchDisplay("hidden")
+            setSearchW("w-46% border border-[#6E6E6E] p-8")
+        } else {
+            setSearchW("w-0")
+            setSearchDisplay("")
+        }
+    }
+
     if (pathname === "/") {
         return (
             <>
-                <header className="hidden w-90% h-104 rounded-3xl top-32 lg:flex px-24 py-32 bg-[#ffffff8c] text-14 backdrop-blur-[10px] fixed right-5% justify-between z-10">
+                {windowSize >= 1024 ? <header className="hidden w-90% h-104 rounded-3xl top-32 lg:flex px-24 py-32 bg-[#ffffff8c] text-14 backdrop-blur-[10px] fixed right-5% justify-between z-10">
                     <div className="w-200 h-40 flex pl-8 border-l justify-between border-[#8A8A8A]">
                         <Image alt="" src={logo} className="w-105 h-40" />
-                        <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />
+                        <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" onClick={openSearchHandler} />
                     </div>
-                    <div className="w-46% h-40 justify-between text-[#728A2D] leading-10 mr-1%">
+                    <input className={`${searchW} transition-all rounded-lg `} placeholder="جستجو" />
+                    <div className={`w-46% h-40 justify-between text-[#728A2D] leading-10 mr-1% ${searchDisplay}`}>
                         <button className="mr-1 relative" onMouseEnter={openCategoryModal} onMouseLeave={openCategoryModal}>
                             <Image alt="" src={lines} className="inline-block" />
                             <p className="inline-block mr-7">دسته بندی</p>
                             {/* <div className="bg-[#00000035] w-full h-[100vh] absolute  cursor-default"></div> */}
-                            <div className={` absolute bg-white w-[826px] px-40 py-32 flex gap-x-40 justify-start cursor-default transition-all duration-200 ${categoryModal} ${categoryDisplay} `}>
+                            <div className={` absolute rounded-lg bg-white w-[826px] px-40 py-32 flex gap-x-40 justify-start cursor-default transition-all duration-200 ${categoryModal} ${categoryDisplay} `}>
                                 <ul className="border-l-2 border-l-[#6E6E6E] w-230 text-[#1E1E1E] font-bold flex flex-col gap-12">
                                     {data.categorys && data.categorys.map((item, index) => (
                                         <li className="w-196 h-40 flex items-center justify-between p-8 cursor-pointer" id={index} onMouseEnter={categoryClickHandler}><span className="flex items-center gap-x-4"><Image src={box} className="h-24" /><span>{item.title}</span></span><Image src={categoryArrow} className="h-24" /></li>
@@ -87,38 +132,83 @@ const Header = (props) => {
                                 </ul>
                             </div>
                         </button>
-                        <a href="#" className="mr-2% 1150:mr-4% inline-block">صفحه اصلی</a>
-                        <a href="#" className="mr-2% 1150:mr-4% hidden 1150:inline-block">مقالات</a>
-                        <a href="#" className="mr-2% 1150:mr-4% hidden 1220:inline-block">اشتراک</a>
-                        <a href="#" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</a>
-                        <button className="mr-2% 1150:mr-4% inline-block">
+                        <Link href="/" className="mr-2% 1150:mr-4% inline-block">صفحه اصلی</Link>
+                        <Link href="articles" className="mr-2% 1150:mr-4% hidden 1150:inline-block">مقالات</Link>
+                        <Link href="/tariffs" className="mr-2% 1150:mr-4% hidden 1220:inline-block">تعرفه ها</Link>
+                        <Link href="#" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</Link>
+                        <button className={`mr-2% 1150:mr-4% inline-block relative`} onMouseEnter={openStateDropdown} onMouseLeave={openStateDropdown}>
                             <p className="inline-block">انتخاب استان</p>
                             <Image alt="" src={arrow} className="inline-block mr-8" />
+                            <div className={`w-[326px] ${stateHeight} ${stateDisplay} bg-white rounded-lg py-16 px-8 transition-all duration-200 absolute cursor-default`}>
+                                {cityOrState && <div>
+                                    <div className="w-full flex justify-start items-center">
+                                        <i className="aps-arrow-right-o text-stone-900 text-24"></i>
+                                        <span className="text-right text-stone-900 text-base font-bold">انتخاب استان</span>
+                                    </div>
+                                    <div className="flex items-center gap-x-8 border border-[#6E6E6E] rounded-md mt-12 px-12 py-4 h-32">
+                                        <i className="aps-search-normal1 text-24"></i>
+                                        <input className="w-full rounded-md active:border-none focus:border-none h-30" placeholder="جستجو در استان‌ها" />
+                                    </div>
+                                    <div className="w-full h-1 bg-[#DCDCDC] mt-12"></div>
+                                    <div className="px-8 mt-10">
+                                        {data.state && data.state.map((item) => (
+                                            <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer" onClick={stateClickHandler}>
+                                                <span className="text-right text-stone-900 text-sm font-normal">{item}</span>
+                                                <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>}
+                                {!cityOrState && <div>
+                                    <div className="w-full flex justify-start items-center">
+                                        <i className="aps-arrow-right-o text-stone-900 text-24"></i>
+                                        <span className="text-right text-stone-900 text-base font-bold">انتخاب شهر</span>
+                                    </div>
+                                    <div className="flex items-center gap-x-8 border border-[#6E6E6E] rounded-md mt-12 px-12 py-4 h-32">
+                                        <i className="aps-search-normal1 text-24"></i>
+                                        <input className="w-full rounded-md active:border-none focus:border-none h-30" placeholder="جستجو در شهر ها" />
+                                    </div>
+                                    <div className="w-full h-1 bg-[#DCDCDC] mt-12"></div>
+                                    <div className="px-8 mt-10">
+                                        {data.state && data.state.map((item) => (
+                                            <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer" onClick={stateClickHandler}>
+                                                <span className="text-right text-stone-900 text-sm font-normal">{item}</span>
+                                                <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>}
+                            </div>
                         </button>
                     </div>
                     <div className=" h-40 flex justify-between ">
                         <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center top-0">استخدام در هلدینگ</div>
                         <div className=" flex ">
                             <div className="w-1 h-38 mt-1 bg-[#8A8A8A]  text-[#ffffff8c] "></div>
-                            <div className="w-111 h-40 bg-[#728A2D] text-white leading-10 mr-8 rounded-md flex pr-10"><FiPlus className="w-20 h-20 mt-10 ml-5" /> <p>درج آگهی</p></div>
-                            <div className="w-111 h-40 text-[#728A2D] leading-10 border mr-8 border-[#728A2D] text-center rounded-md">ورود / ثبت نام</div>
+                            <Link href="/insertad">
+                                <button className="w-111 h-40 bg-[#728A2D] text-white leading-10 mr-8 rounded-md flex pr-10"><FiPlus className="w-20 h-20 mt-10 ml-5" /> <p>درج آگهی</p></button>
+                            </Link>
+                            <Link href="/login">
+                                <button className="w-111 h-40 text-[#728A2D] leading-10 border mr-8 border-[#728A2D] text-center rounded-md">ورود / ثبت نام</button>
+                            </Link>
                         </div>
                     </div>
                 </header >
-                <header className="flex z-10 fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
-                    <button onClick={openAsideHandler}><Image src={lines3} className="w-24 h-24" /></button>
-                    <div><Image src={logo} /></div>
-                    <div className="flex gap-x-8">
-                        <Image src={map} className="w-24 h-24" />
-                        <Image src={searchBlack} className="w-24 h-24" />
-                    </div>
-                </header>
+                    :
+                    <header className="flex z-10 fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
+                        <button onClick={openAsideHandler}><Image src={lines3} className="w-24 h-24" /></button>
+                        <div><Image src={logo} /></div>
+                        <div className="flex gap-x-8">
+                            <Image src={map} className="w-24 h-24" />
+                            <Image src={searchBlack} className="w-24 h-24" />
+                        </div>
+                    </header>}
             </>
         )
     } else {
         return (
             <>
-                <header className={`hidden w-full h-104 top-0 lg:flex px-70 py-32 bg-[#ffffff] text-14 backdrop-blur-[10px] fixed right-0 justify-between z-10 shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] `}>
+                {windowSize >= 1024 ? <header className={`hidden w-full h-104 top-0 lg:flex px-70 py-32 bg-[#ffffff] text-14 backdrop-blur-[10px] fixed right-0 justify-between z-10 shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] `}>
                     <div className="w-18% h-40 flex border-l border-[#8A8A8A] pl-10">
                         <Image alt="" src={logo} className="w-105 h-40" />
                         <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />
@@ -148,13 +238,53 @@ const Header = (props) => {
                                 </ul>
                             </div>
                         </button>
-                        <a href="#" className="mr-2% 1150:mr-4% inline-block">صفحه اصلی</a>
-                        <a href="#" className="mr-2% 1150:mr-4% hidden 1150:inline-block">مقالات</a>
-                        <a href="#" className="mr-2% 1150:mr-4% hidden 1220:inline-block">اشتراک</a>
-                        <a href="#" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</a>
-                        <button className="mr-2% 1150:mr-4% inline-block">
+                        <Link href="/" className="mr-2% 1150:mr-4% inline-block">صفحه اصلی</Link>
+                        <Link href="articles" className="mr-2% 1150:mr-4% hidden 1150:inline-block">مقالات</Link>
+                        <Link href="/tariffs" className="mr-2% 1150:mr-4% hidden 1220:inline-block">تعرفه ها</Link>
+                        <Link href="#" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</Link>
+                        <button className={`mr-2% 1150:mr-4% inline-block relative`} onMouseEnter={openStateDropdown} onMouseLeave={openStateDropdown}>
                             <p className="inline-block">انتخاب استان</p>
-                            <Image alt="" src={arrowdown2} className="inline-block mr-8" />
+                            <Image alt="" src={arrow} className="inline-block mr-8" />
+                            <div className={`w-[326px] ${stateHeight} ${stateDisplay} bg-white rounded-lg py-16 px-8 transition-all duration-200 absolute cursor-default`}>
+                                {cityOrState && <div>
+                                    <div className="w-full flex justify-start items-center">
+                                        <i className="aps-arrow-right-o text-stone-900 text-24"></i>
+                                        <span className="text-right text-stone-900 text-base font-bold">انتخاب استان</span>
+                                    </div>
+                                    <div className="flex items-center gap-x-8 border border-[#6E6E6E] rounded-md mt-12 px-12 py-4 h-32">
+                                        <i className="aps-search-normal1 text-24"></i>
+                                        <input className="w-full rounded-md active:border-none focus:border-none h-30" placeholder="جستجو در استان‌ها" />
+                                    </div>
+                                    <div className="w-full h-1 bg-[#DCDCDC] mt-12"></div>
+                                    <div className="px-8 mt-10">
+                                        {data.state && data.state.map((item) => (
+                                            <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer" onClick={stateClickHandler}>
+                                                <span className="text-right text-stone-900 text-sm font-normal">{item}</span>
+                                                <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>}
+                                {!cityOrState && <div>
+                                    <div className="w-full flex justify-start items-center">
+                                        <i className="aps-arrow-right-o text-stone-900 text-24"></i>
+                                        <span className="text-right text-stone-900 text-base font-bold">انتخاب شهر</span>
+                                    </div>
+                                    <div className="flex items-center gap-x-8 border border-[#6E6E6E] rounded-md mt-12 px-12 py-4 h-32">
+                                        <i className="aps-search-normal1 text-24"></i>
+                                        <input className="w-full rounded-md active:border-none focus:border-none h-30" placeholder="جستجو در شهر ها" />
+                                    </div>
+                                    <div className="w-full h-1 bg-[#DCDCDC] mt-12"></div>
+                                    <div className="px-8 mt-10">
+                                        {data.state && data.state.map((item) => (
+                                            <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer" onClick={stateClickHandler}>
+                                                <span className="text-right text-stone-900 text-sm font-normal">{item}</span>
+                                                <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>}
+                            </div>
                         </button>
                     </div>
                     <div className=" h-40 flex justify-between ">
@@ -165,15 +295,14 @@ const Header = (props) => {
                             <div className="w-111 text-center h-40 text-[#728A2D] leading-10 border mr-8 border-[#728A2D] rounded-md">ورود / ثبت نام</div>
                         </div>
                     </div>
-
-                </header >
-                <header className="flex z-10 fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
-                    <button><Image src={lines3} className="w-24 h-24" /></button>
-                    <div><Image src={logo} /></div>
-                    <div className="">
-                        <Image src={backButton} className="w-24 h-24" />
-                    </div>
-                </header>
+                </header > :
+                    <header className="flex z-10 fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
+                        <button onClick={openAsideHandler}><Image src={lines3} className="w-24 h-24" /></button>
+                        <div><Image src={logo} /></div>
+                        <div className="">
+                            <Image src={backButton} className="w-24 h-24" />
+                        </div>
+                    </header>}
             </>
         )
     }

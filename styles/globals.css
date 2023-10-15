@@ -57,6 +57,25 @@ body {
   direction: ltr !important;
 }
 
+/* 
+.leaflet-container .leaflet-pane .leaflet-layer .leaflet-tile-container {
+  width: 500px !important;
+  height: 500px !important;
+} */
+@media screen and (min-width: 1024px) {
+  .leaflet-container {
+    width: 100% !important;
+    height: 600px !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .leaflet-container {
+    width: 100% !important;
+    height: 350px !important;
+  }
+}
+
 /* /////////////////////icon//////////////////// */
 
 @font-face {

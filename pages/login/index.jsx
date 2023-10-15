@@ -5,7 +5,7 @@ import logo from "../../assets/image/Logo.png"
 const Login = (props) => {
     return (
         <>
-            <div className="pt-100">
+            <div className="pt-150">
                 <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                     <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
                         <Image className="hidden md:inline-block" src={logo} />
