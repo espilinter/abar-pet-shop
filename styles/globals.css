@@ -76,6 +76,14 @@ body {
   }
 }
 
+.leaflet-top {
+  z-index: 999 !important;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
 /* /////////////////////icon//////////////////// */
 
 @font-face {

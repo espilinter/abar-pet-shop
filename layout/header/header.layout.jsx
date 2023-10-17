@@ -101,7 +101,7 @@ const Header = (props) => {
     if (pathname === "/") {
         return (
             <>
-                {windowSize >= 1024 ? <header className="hidden w-90% h-104 rounded-3xl top-32 lg:flex px-24 py-32 bg-[#ffffff8c] text-14 backdrop-blur-[10px] fixed right-5% justify-between z-10">
+                {windowSize >= 1024 ? <header className="hidden w-90% h-104 rounded-3xl top-32 lg:flex px-24 py-32 bg-[#ffffff8c] text-14 backdrop-blur-[10px] fixed right-5% justify-between z-[1000]">
                     <div className="w-200 h-40 flex pl-8 border-l justify-between border-[#8A8A8A]">
                         <Image alt="" src={logo} className="w-105 h-40" />
                         <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" onClick={openSearchHandler} />
@@ -195,7 +195,7 @@ const Header = (props) => {
                     </div>
                 </header >
                     :
-                    <header className="flex z-10 fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
+                    <header className="flex z-[1000] fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
                         <button onClick={openAsideHandler}><Image src={lines3} className="w-24 h-24" /></button>
                         <div><Image src={logo} /></div>
                         <div className="flex gap-x-8">
@@ -208,7 +208,7 @@ const Header = (props) => {
     } else {
         return (
             <>
-                {windowSize >= 1024 ? <header className={`hidden w-full h-104 top-0 lg:flex px-70 py-32 bg-[#ffffff] text-14 backdrop-blur-[10px] fixed right-0 justify-between z-10 shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] `}>
+                {windowSize >= 1024 ? <header className={`hidden w-full h-104 top-0 lg:flex px-70 py-32 bg-[#ffffff] text-14 backdrop-blur-[10px] fixed right-0 justify-between z-[1000] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] `}>
                     <div className="w-18% h-40 flex border-l border-[#8A8A8A] pl-10">
                         <Image alt="" src={logo} className="w-105 h-40" />
                         <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />
@@ -296,7 +296,7 @@ const Header = (props) => {
                         </div>
                     </div>
                 </header > :
-                    <header className="flex z-10 fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
+                    <header className="flex z-[1000] fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
                         <button onClick={openAsideHandler}><Image src={lines3} className="w-24 h-24" /></button>
                         <div><Image src={logo} /></div>
                         <div className="">

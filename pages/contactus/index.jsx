@@ -9,12 +9,12 @@ import contactPNG from "../../assets/image/contactPNG.png"
 const ContactUs = () => {
     return (
         <>
-            <div className="pt-150 px-20 sm:px-68">
+            <div className="pt-60 lg:pt-150 px-20 sm:px-68">
                 <div className="text-[#BDBDBD] text-12 font-extrabold hidden md:flex ">
                     <a href="#">صفحه اصلی</a>/<a href="#"> دسته بندی </a>/<p>زیر دسته بندی</p>
                 </div>
 
-                <Title title="تماس با ما" className="mr-68 ml-auto mt-36" />
+                <Title title="تماس با ما" className="mr-0 ml-auto mt-36" />
 
                 <div className="w-full lg:h-[600px] m-auto mt-28 relative">
                     <div className="lg:absolute top-40 right-40 backdrop-blur-md bg-white lg:bg-[#728A2D26] h-[520px] w-full lg:w-[340px]  rounded-[26px] z-[900] flex flex-col px-16 py-32 gap-y-16 mb-54 lg:mb-auto">
