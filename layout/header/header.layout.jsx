@@ -182,7 +182,7 @@ const Header = (props) => {
                         </button>
                     </div>
                     <div className=" h-40 flex justify-between ">
-                        <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center top-0">استخدام در هلدینگ</div>
+                        <button className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center top-0 cursor-pointer">استخدام در هلدینگ</button>
                         <div className=" flex ">
                             <div className="w-1 h-38 mt-1 bg-[#8A8A8A]  text-[#ffffff8c] "></div>
                             <Link href="/insertad">
@@ -288,7 +288,7 @@ const Header = (props) => {
                         </button>
                     </div>
                     <div className=" h-40 flex justify-between ">
-                        <div className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center">استخدام در هلدینگ</div>
+                        <button className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center cursor-pointer">استخدام در هلدینگ</button>
                         <div className=" flex ">
                             <div className="w-1 h-38 mt-1 bg-[#8A8A8A]  text-[#ffffff8c] "></div>
                             <div className="w-111 h-40 bg-[#728A2D] text-white leading-10 mr-8 rounded-md flex pr-10"><FiPlus className="w-20 h-20 mt-10 ml-5" /> <p>درج آگهی</p></div>

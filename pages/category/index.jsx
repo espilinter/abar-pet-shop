@@ -15,12 +15,12 @@ const Category = (props) => {
 
     return (
         <>
-            <div className="w-90% m-auto pt-104">
+            <div className="w-90% m-auto pt-60 lg:pt-100">
                 <AdSwiper className="pt-40 w-full" data={props.data.slider} fakeClass={"w-[1300px] h-[300px]"} />
-                <div className="pt-80">
+                <div className=" pt-40 lg:pt-80">
                     <Title title="آگهی‌های پت‌شاپ معمولی" />
-                    <div className="flex w-full justify-between mt-64 gap-x-16">
-                        <div className="w-300 ">
+                    <div className="flex w-full justify-between mt-16 md:mt-64 gap-x-50">
+                        <div className="w-300 lg:inline-block hidden">
                             <div className="w-full p-8 rounded-xl border border-gray-200 text-right">
                                 <input className="w-full text-right border border-gray-300 py-8 px-24 rounded-lg bg-[#f4f4f4]" type="text" placeholder="جستجو" />
                                 <h3 className="text-16 font-bold text-right mt-8">فیلتر های اعمال شده</h3>
@@ -48,8 +48,8 @@ const Category = (props) => {
                             <input className="w-300 h-50 text-[#B9B9B9] border border-[#B9B9B9] rounded-lg text-right p-12 bg-[#f4f4f4] text-14 mt-14" placeholder="انتخاب استان" />
                             <input className="w-300 h-50 text-[#B9B9B9] border border-[#B9B9B9] rounded-lg text-right p-12 bg-[#f4f4f4] text-14 mt-14" placeholder="انتخاب شهر" />
                         </div>
-                        <div>
-                            <div className="grid grid-cols-3 xl:grid-cols-4 1750:grid-cols-6 gap-x-40 1500:gap-x-60 1600:grid-cols-5 1600:gap-x-25 gap-y-32">
+                        <div className="w-full">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 1750:grid-cols-6 gap-x-40 1500:gap-x-60 1600:grid-cols-5 1600:gap-x-25 gap-y-32 ">
                                 {props.data && props.data.advertise.map((item) => (<Advertising item={item} />))}
                             </div>
                             <div className="w-280 h-24 m-auto mt-32 flex justify-between">
@@ -66,14 +66,18 @@ const Category = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-128 w-90% m-auto" >
+                <div className="md:mt-80 mt-40 w-90% m-auto" >
                     <Title title="مقالات" />
-                    <div className="flex justify-between mt-80 [&>*:nth-child(5)]:hidden 1600:[&>*:nth-child(5)]:inline-block ">
-                        {props.data.articleCards && props.data.articleCards.slice(0, 5).map((item) => (
-                            <ArticleCard item={item} />
-                        ))}
+                    <div className="w-full overflow-x-scroll">
+                        <div className="flex justify-between 20 md:mt-40 1440:[&>*:nth-child(5)]:hidden 1650:[&>*:nth-child(5)]:inline-block min-w-[1200px] 1220:min-w-[1400px] 1440:min-w-[1150px] p-10">
+                            {props.data.articleCards && props.data.articleCards.slice(0, 5).map((item) => (
+                                <ArticleCard item={item} />
+                            ))}
+                        </div>
                     </div>
-                    <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]">همه مقالات</button></a>
+                </div>
+                <div className="w-full flex justify-center">
+                    <a className=""><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">همه مقالات</button></a>
                 </div>
             </div>
         </>
