@@ -35,7 +35,6 @@ const ArticlesSwiper = () => {
         sliderRef.current.swiper.slideNext();
     }, []);
 
-
     return (
         <>
             <div className='flex items-center gap-x-30 articleSwiper relative '>

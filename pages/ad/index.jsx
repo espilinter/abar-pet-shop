@@ -37,8 +37,8 @@ const Ad = (props) => {
                             </div>
                         </div>
                         <div className="flex gap-y-16 flex-col md:flex-row gap-x-8 md:mt-24 justify-between">
-                            <buton className="py-4 px-12 bg-[#728A2D] rounded-md w-135 h-38 text-white text-center leading-[30px]">ورود به سایت</buton>
-                            <buton className="py-4 px-12 text-[#728A2D] rounded-md w-135 h-38 bg-white leading-[30px] border border-[#728A2D] flex items-center justify-around text-center"><span>ذخیره آگهی</span><Image src={unsave} className="w-12 h-15" /></buton>
+                            <button className="py-4 px-12 bg-[#728A2D] rounded-md w-135 h-38 text-white text-center leading-[30px]">ورود به سایت</button>
+                            <button className="py-4 px-12 text-[#728A2D] rounded-md w-135 h-38 bg-white leading-[30px] border border-[#728A2D] flex items-center justify-around text-center"><span>ذخیره آگهی</span><Image src={unsave} className="w-12 h-15" /></button>
                         </div>
                     </div>
                 </div>

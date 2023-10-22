@@ -47,6 +47,7 @@ const Home = (props) => {
     const [allMembership, setAllMembership] = useState(147)
     const articleCard = [1, 2, 3, 4]
     useEffect(() => {
+        console.log(props.pashm);
         setData(props.data)
         firstStep()
         const x = window.matchMedia("(max-width: 700px)")
@@ -357,12 +358,11 @@ export async function getStaticProps() {
     const filePath = path.join(process.cwd(), 'db.json');
     const jsonData = await fs.readFileSync(filePath);
     const data = JSON.parse(jsonData);
-
+    const pashm = await axios.get(`${process.env.BASE_API}/home/provinces`)
     //handle error 404
     if (data.framePage.length === 0) {
         return { notFound: true }
     }
-
     //handle any error
     // if (!data) {
     //     return {
@@ -373,7 +373,8 @@ export async function getStaticProps() {
     // }
     return {
         props: {
-            data: data.framePage
+            data: data.framePage,
+            pashm: pashm.data
         },
         revalidate: 3600,
     }

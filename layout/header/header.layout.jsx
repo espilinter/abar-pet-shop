@@ -20,11 +20,15 @@ import { usePathname } from "next/navigation"
 import { useDispatch, useSelector } from "react-redux";
 import { handleOpenAsideState } from "@/HandleSlice/HandleSlice";
 import Link from "next/link";
+import ButtonFilled from "@/components/ButtonFilled/BurronFilled";
+import ButtonLight from "@/components/ButtonLight/ButtonLight";
+import CityCard from "@/components/CityCard/CityCard";
+
 // import fs from 'fs'
 // import path from 'path'
 
 const Header = (props) => {
-    const dataState = useSelector((state) => state.states);
+    // const dataState = useSelector((state) => state.states);
     const [stateHeight, setStateHeight] = useState("opacity-0 max-h-0")
     const [stateDisplay, setStateDisplay] = useState("hidden")
     const [windowSize, setWindowSize] = useState("")
@@ -37,6 +41,10 @@ const Header = (props) => {
     const [cityOrState, setCityOrState] = useState(true)
     const [searchW, setSearchW] = useState("w-0")
     const [searchDisplay, setSearchDisplay] = useState("")
+    const [provinceData, setProvinceData] = useState([])
+    const [cityeData, setCityeData] = useState([])
+    const [selectedCitys, setSelectedCitys] = useState([])
+
     function openCategoryModal(params) {
         if (categoryModal === "opacity-0 h-0") {
             setCategoryDisplay("")
@@ -58,6 +66,9 @@ const Header = (props) => {
         axios.get("http://localhost:3001/header").then((response) => {
             setData(response.data);
         });
+        axios.get(`https://api.abarpetshop.com/api/v1/home/provinces`).then((res) => {
+            setProvinceData(res.data.data);
+        })
         setWindowSize(window.innerWidth);
         return () => {
             window.removeEventListener("resize", responsiveHandler);
@@ -84,8 +95,11 @@ const Header = (props) => {
         }
     }
 
-    function stateClickHandler(params) {
+    function stateClickHandler(id) {
         setCityOrState(false)
+        axios.get(`https://api.abarpetshop.com/api/v1/home/cities/${id}`).then((res) => {
+            setCityeData(res.data.data);
+        })
     }
 
     function openSearchHandler() {
@@ -96,6 +110,15 @@ const Header = (props) => {
             setSearchW("w-0")
             setSearchDisplay("")
         }
+    }
+
+    function backButtonHandler() {
+        setCityOrState(true)
+    }
+
+    function acceptButtonHandler(params) {
+        console.log(selectedCitys);
+        setSelectedCitys([])
     }
 
     if (pathname === "/") {
@@ -135,14 +158,13 @@ const Header = (props) => {
                         <Link href="/" className="mr-2% 1150:mr-4% inline-block">صفحه اصلی</Link>
                         <Link href="articles" className="mr-2% 1150:mr-4% hidden 1150:inline-block">مقالات</Link>
                         <Link href="/tariffs" className="mr-2% 1150:mr-4% hidden 1220:inline-block">تعرفه ها</Link>
-                        <Link href="#" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</Link>
+                        <Link href="contactus" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</Link>
                         <button className={`mr-2% 1150:mr-4% inline-block relative`} onMouseEnter={openStateDropdown} onMouseLeave={openStateDropdown}>
                             <p className="inline-block">انتخاب استان</p>
                             <Image alt="" src={arrow} className="inline-block mr-8" />
                             <div className={`w-[326px] ${stateHeight} ${stateDisplay} bg-white rounded-lg py-16 px-8 transition-all duration-200 absolute cursor-default`}>
-                                {cityOrState && <div>
+                                <div className={`${!cityOrState ? "hidden" : ""}`}>
                                     <div className="w-full flex justify-start items-center">
-                                        <i className="aps-arrow-right-o text-stone-900 text-24"></i>
                                         <span className="text-right text-stone-900 text-base font-bold">انتخاب استان</span>
                                     </div>
                                     <div className="flex items-center gap-x-8 border border-[#6E6E6E] rounded-md mt-12 px-12 py-4 h-32">
@@ -150,18 +172,19 @@ const Header = (props) => {
                                         <input className="w-full rounded-md active:border-none focus:border-none h-30" placeholder="جستجو در استان‌ها" />
                                     </div>
                                     <div className="w-full h-1 bg-[#DCDCDC] mt-12"></div>
-                                    <div className="px-8 mt-10">
-                                        {data.state && data.state.map((item) => (
-                                            <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer" onClick={stateClickHandler}>
-                                                <span className="text-right text-stone-900 text-sm font-normal">{item}</span>
+                                    <div className="px-8 mt-10 overflow-y-scroll h-[470px]">
+                                        {provinceData && provinceData.map((item) => (
+                                            <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer" onClick={() => { stateClickHandler(item.id) }}>
+                                                <span className="text-right text-stone-900 text-sm font-normal">{item.title}</span>
                                                 <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i>
                                             </div>
                                         ))}
+
                                     </div>
-                                </div>}
-                                {!cityOrState && <div>
+                                </div>
+                                <div className={`${cityOrState ? "hidden" : ""}`}>
                                     <div className="w-full flex justify-start items-center">
-                                        <i className="aps-arrow-right-o text-stone-900 text-24"></i>
+                                        <i className="aps-arrow-right-o text-stone-900 text-24 cursor-pointer" onClick={backButtonHandler}></i>
                                         <span className="text-right text-stone-900 text-base font-bold">انتخاب شهر</span>
                                     </div>
                                     <div className="flex items-center gap-x-8 border border-[#6E6E6E] rounded-md mt-12 px-12 py-4 h-32">
@@ -169,15 +192,28 @@ const Header = (props) => {
                                         <input className="w-full rounded-md active:border-none focus:border-none h-30" placeholder="جستجو در شهر ها" />
                                     </div>
                                     <div className="w-full h-1 bg-[#DCDCDC] mt-12"></div>
-                                    <div className="px-8 mt-10">
-                                        {data.state && data.state.map((item) => (
-                                            <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer" onClick={stateClickHandler}>
-                                                <span className="text-right text-stone-900 text-sm font-normal">{item}</span>
-                                                <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i>
-                                            </div>
+                                    <div className="px-8 mt-10 overflow-y-scroll h-[430px]">
+                                        <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer"
+                                        >
+                                            <span className="text-right text-stone-900 text-sm font-normal">تمام شهر ها</span>
+                                            {/* <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i> */}
+                                            <input type="checkbox" className="w-20 h-20 rounded-lg" />
+                                        </div>
+                                        {cityeData && cityeData.map((item) => (
+                                            // <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer">
+                                            //     <lable className="text-right text-stone-900 text-sm font-normal" for={item.title}>{item.title}</lable>
+                                            //     {/* <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i> */}
+                                            //     <input type="checkbox" className="w-20 h-20 rounded-lg" id={item.title} onClick={cityClickHandler} />
+                                            // </div>
+                                            <CityCard item={item} setSelectedCitys={setSelectedCitys}
+                                                selectedCitys={selectedCitys} />
                                         ))}
                                     </div>
-                                </div>}
+                                    <div className="flex justify-between bg-white mt-10">
+                                        <ButtonLight text="لغو" className="w-48%" />
+                                        <ButtonFilled text="تایید" className="w-48%" onClick={acceptButtonHandler} />
+                                    </div>
+                                </div>
                             </div>
                         </button>
                     </div>
@@ -211,9 +247,10 @@ const Header = (props) => {
                 {windowSize >= 1024 ? <header className={`hidden w-full h-104 top-0 lg:flex px-70 py-32 bg-[#ffffff] text-14 backdrop-blur-[10px] fixed right-0 justify-between z-[1000] shadow-[0_5px_10px_0_rgba(0,0,0,0.25)] `}>
                     <div className="w-18% h-40 flex border-l border-[#8A8A8A] pl-10">
                         <Image alt="" src={logo} className="w-105 h-40" />
-                        <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" />
+                        <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" onClick={openSearchHandler} />
                     </div>
-                    <div className="w-46% h-40 justify-between text-center text-[#535353] leading-10 mr-1%">
+                    <input className={`${searchW} transition-all rounded-lg `} placeholder="جستجو" />
+                    <div className={`w-46% h-40 justify-between text-center text-[#535353] leading-10 mr-1% ${searchDisplay}`}>
                         <button className="mr-1 relative" onMouseEnter={openCategoryModal} onMouseLeave={openCategoryModal}>
                             <Image alt="" src={lines2} className="inline-block" />
                             <p className="inline-block mr-7">دسته بندی</p>
@@ -241,14 +278,13 @@ const Header = (props) => {
                         <Link href="/" className="mr-2% 1150:mr-4% inline-block">صفحه اصلی</Link>
                         <Link href="articles" className="mr-2% 1150:mr-4% hidden 1150:inline-block">مقالات</Link>
                         <Link href="/tariffs" className="mr-2% 1150:mr-4% hidden 1220:inline-block">تعرفه ها</Link>
-                        <Link href="#" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</Link>
+                        <Link href="contactus" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</Link>
                         <button className={`mr-2% 1150:mr-4% inline-block relative`} onMouseEnter={openStateDropdown} onMouseLeave={openStateDropdown}>
                             <p className="inline-block">انتخاب استان</p>
                             <Image alt="" src={arrow} className="inline-block mr-8" />
                             <div className={`w-[326px] ${stateHeight} ${stateDisplay} bg-white rounded-lg py-16 px-8 transition-all duration-200 absolute cursor-default`}>
-                                {cityOrState && <div>
+                                {<div className={cityOrState ? "" : "hidden"}>
                                     <div className="w-full flex justify-start items-center">
-                                        <i className="aps-arrow-right-o text-stone-900 text-24"></i>
                                         <span className="text-right text-stone-900 text-base font-bold">انتخاب استان</span>
                                     </div>
                                     <div className="flex items-center gap-x-8 border border-[#6E6E6E] rounded-md mt-12 px-12 py-4 h-32">
@@ -265,9 +301,9 @@ const Header = (props) => {
                                         ))}
                                     </div>
                                 </div>}
-                                {!cityOrState && <div>
+                                {<div className={!cityOrState ? "" : "hidden"}>
                                     <div className="w-full flex justify-start items-center">
-                                        <i className="aps-arrow-right-o text-stone-900 text-24"></i>
+                                        <i className="aps-arrow-right-o text-stone-900 text-24 cursor-pointer" onClick={backButtonHandler}></i>
                                         <span className="text-right text-stone-900 text-base font-bold">انتخاب شهر</span>
                                     </div>
                                     <div className="flex items-center gap-x-8 border border-[#6E6E6E] rounded-md mt-12 px-12 py-4 h-32">
