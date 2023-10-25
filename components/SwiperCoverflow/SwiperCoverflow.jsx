@@ -71,10 +71,10 @@ export default function SwiperCoverflow(props) {
                     loopAdditionalSlides={3}
                     modules={[EffectCoverflow, Navigation]}
                     className="mySwiper h-315 "
-                    navigation={true}
+                    navigation={false}
                 >
                     {props.data && props.data.map((item) => (
-                        <SwiperSlide className='pt-7 '>
+                        <SwiperSlide className='pt-7 ' key={item.id}>
                             <CommentCard item={item} />
                         </SwiperSlide>
                     ))}

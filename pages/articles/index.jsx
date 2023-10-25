@@ -24,7 +24,7 @@ const Articles = (props) => {
                 <div className="overflow-scroll mt-5 md:mt-80">
                     <div className="pr-50  w-full flex gap-x-18  md:[&>*:nth-child(3)]:hidden xl:[&>*:nth-child(3)]:inline-block md:[&>*:nth-child(4)]:hidden 1440:[&>*:nth-child(4)]:inline-block min-w-[1350px] md:min-w-[950px]">
                         {props.data.cards.slice(0, 4).map((item) => (
-                            <ArticleCardPopular />
+                            <ArticleCardPopular key={item.id} />
                         ))}
                         <div className="hidden md:inline-block mr-22 w-400">
                             <div className="w-220 self-start">
@@ -71,7 +71,7 @@ const Articles = (props) => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 1500:grid-cols-6 1750:grid-cols-7 w-full px-16 md:px-60 mt-130 gap-y-32">
                     {props.data.cards.map((item) => (
-                        <div className="flex justify-center">
+                        <div className="flex justify-center" key={item.id}>
                             <ArticlePageCards />
                         </div>
                     ))}

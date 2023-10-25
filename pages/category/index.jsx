@@ -29,14 +29,14 @@ const Category = (props) => {
                             <h3 className="text-14 text-[#B9B9B9] mt-24 text-right">دسته‌بندی خود را انتخاب کنید:</h3>
                             <div>
                                 {props.data && props.data.category.map((item) => (
-                                    <div className="text-right text-14 mt-14 text-[#B9B9B9]">
+                                    <div className="text-right text-14 mt-14 text-[#B9B9B9]" key={item.id}>
                                         <div className="text-right items-center flex gap-x-8" onClick={categoryClickHandler} id={item.id}>
                                             <input type="radio" name="category" id={"category" + item.id} className="w-24 h-24" />
                                             <label className="text-right cursor-pointer" htmlFor={"category" + item.id} >{item.title}</label>
                                         </div>
                                         <div className={`pr-32 h-0 transition-all overflow-hidden ${+item.id === +accordion ? `h-${item.subCategory.length * 40}` : "h-0"}`}>
                                             {item.subCategory.map((item) => (
-                                                <div className="flex items-center gap-x-8 my-16">
+                                                <div className="flex items-center gap-x-8 my-16" key={item.id}>
                                                     <input type="checkbox" id={"subCategory" + item.id} className="w-24 h-24 accent-[#728A2D] rounded-3xl " />
                                                     <label className="text-right text-14 text-[#6E6E6E] h-24 cursor-pointer">{item.title}</label>
                                                 </div>
@@ -50,7 +50,7 @@ const Category = (props) => {
                         </div>
                         <div className="w-full">
                             <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 1750:grid-cols-6 gap-x-40 1500:gap-x-60 1600:grid-cols-5 1600:gap-x-25 gap-y-32 ">
-                                {props.data && props.data.advertise.map((item) => (<Advertising item={item} />))}
+                                {props.data && props.data.advertise.map((item) => (<Advertising item={item} key={item.id} />))}
                             </div>
                             <div className="w-280 h-24 m-auto mt-32 flex justify-between">
                                 <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{"<<"}</div>
@@ -71,7 +71,7 @@ const Category = (props) => {
                     <div className="w-full overflow-x-scroll">
                         <div className="flex justify-between 20 md:mt-40 1440:[&>*:nth-child(5)]:hidden 1650:[&>*:nth-child(5)]:inline-block min-w-[1200px] 1220:min-w-[1400px] 1440:min-w-[1150px] p-10">
                             {props.data.articleCards && props.data.articleCards.slice(0, 5).map((item) => (
-                                <ArticleCard item={item} />
+                                <ArticleCard item={item} key={item.id} />
                             ))}
                         </div>
                     </div>

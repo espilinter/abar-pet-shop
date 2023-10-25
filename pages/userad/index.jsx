@@ -45,14 +45,14 @@ const UserAd = (props) => {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 1200:grid-cols-4 1750:grid-cols-6 gap-x-40 1500:gap-x-60 1600:grid-cols-5 1600:gap-x-25 gap-y-32 w-full sm:w-80%" style={{ direction: "ltr" }} >
-                        {props.data && props.data.advertise.map((item) => (<UserAdvertiseCard item={item} />)
+                        {props.data && props.data.advertise.map((item) => (<UserAdvertiseCard item={item} key={item.id} />)
                         )}
                     </div>
                 </div>
                 <div className="overflow-y-scroll 1400:overflow-y-hidden ">
                     <div className="flex w-full m-auto justify-between mt-80 min-w-[900px] md:min-w-[1200px] px-3 py-10 [&>*:nth-child(6)]:hidden 1600:[&>*:nth-child(6)]:inline-block [&>*:nth-child(7)]:hidden 1500:[&>*:nth-child(7)]:inline-block ">
                         {props.data && props.data.advertise.slice(0, 7).map((item) => (
-                            <AdvertiseCard item={item} />
+                            <AdvertiseCard item={item} key={item.id} />
                         ))}
                     </div>
                 </div>

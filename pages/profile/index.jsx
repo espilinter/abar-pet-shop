@@ -142,7 +142,7 @@ const Profile = (props) => {
                                     <div className="flex flex-col gap-y-8">
                                         <label className="text-right text-stone-900 text-sm font-normal">لینک شبکه های اجتماعی</label>
                                         {linksArray.map((item) => (
-                                            <div className="flex gap-x-16">
+                                            <div className="flex gap-x-16" key={item.id}>
                                                 <input type="text" className="border border-[#DCDCDC] p-12 h-48 w-[372px] bg-[#f4f4f4] rounded-md" />
                                                 <select className="border border-[#DCDCDC] p-12 h-48 max-w-[90px] bg-[#f4f4f4] rounded-md" >
                                                     <option value="telegram">تلگرام</option>
@@ -206,13 +206,13 @@ const Profile = (props) => {
                             case "myAd":
                                 return (
                                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-24 mt-40 gap-y-32 ">
-                                        {data.map((item) => (<ProfileAdCard />))}
+                                        {data.map((item) => (<ProfileAdCard key={item.id} />))}
                                     </div>
                                 )
                             case "saved":
                                 return (
                                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-24 mt-40 gap-y-32 ">
-                                        {data.map((item) => (<SavedCard />))}
+                                        {data.map((item) => (<SavedCard key={item.id} />))}
                                     </div>
                                 )
                             default:

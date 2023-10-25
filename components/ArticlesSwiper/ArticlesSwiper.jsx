@@ -19,10 +19,7 @@ import articleCat from "../../assets/image/articleCat.png"
 import Image from 'next/image';
 import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
 
-
 const ArticlesSwiper = () => {
-
-
     const sliderRef = useRef(null);
 
     const handlePrev = useCallback(() => {

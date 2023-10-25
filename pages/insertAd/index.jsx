@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const insertAd = (props) => {
+const InsertAd = (props) => {
     const [level, setLevel] = useState("1")
 
 
@@ -185,4 +185,4 @@ const insertAd = (props) => {
 
 }
 
-export default insertAd;
+export default InsertAd;

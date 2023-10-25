@@ -54,7 +54,7 @@ const Ad = (props) => {
                 <div className="overflow-y-scroll 1400:overflow-y-hidden ">
                     <div className="flex w-full m-auto justify-between mt-80 min-w-[900px] md:min-w-[1200px] px-3 py-10 [&>*:nth-child(6)]:hidden 1600:[&>*:nth-child(6)]:inline-block [&>*:nth-child(7)]:hidden 1500:[&>*:nth-child(7)]:inline-block ">
                         {props.data && props.data.advertise.slice(0, 7).map((item) => (
-                            <AdvertiseCard item={item} />
+                            <AdvertiseCard item={item} key={item.id} />
                         ))}
                     </div>
                 </div>

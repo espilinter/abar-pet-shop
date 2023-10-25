@@ -66,7 +66,7 @@ const Header = (props) => {
         axios.get("http://localhost:3001/header").then((response) => {
             setData(response.data);
         });
-        axios.get(`https://api.abarpetshop.com/api/v1/home/provinces`).then((res) => {
+        axios.get(`${process.env.BASE_API}/home/provinces`).then((res) => {
             setProvinceData(res.data.data);
         })
         setWindowSize(window.innerWidth);
@@ -97,7 +97,7 @@ const Header = (props) => {
 
     function stateClickHandler(id) {
         setCityOrState(false)
-        axios.get(`https://api.abarpetshop.com/api/v1/home/cities/${id}`).then((res) => {
+        axios.get(`${process.env.BASE_API}/home/cities/${id}`).then((res) => {
             setCityeData(res.data.data);
         })
     }

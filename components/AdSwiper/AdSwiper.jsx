@@ -25,7 +25,7 @@ const AdSwiper = (props) => {
                     className="mySwiper"
                 >
                     {props.data && props.data.map((item) => (
-                        <SwiperSlide ><img src={item} className='rounded-2xl' /></SwiperSlide>
+                        <SwiperSlide key={item.id}><img src={item} className='rounded-2xl' /></SwiperSlide>
                     ))}
 
                 </Swiper>

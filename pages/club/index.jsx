@@ -20,7 +20,7 @@ const Club = (props) => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 1440:grid-cols-4 1750:grid-cols-5 mt-48 gap-y-43 gap-x-40 ">
                     {props.data && props.data.electedMembers.map((item) => (
-                        <ClubCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod} />
+                        <ClubCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod} key={item.id} />
                     ))}
                 </div>
                 <div className="w-280 h-24 m-auto mt-32 flex justify-between">

@@ -185,7 +185,7 @@ const Home = (props) => {
                 </div>
                 <div className="w-full lg:w-90% 1400:w-70% h-120 items-center sm:h-170 m-auto md:mt-40 pt-12 overflow-x-scroll 900:overflow-x-hidden 900:mr-auto">
                     <div className="flex gap-x-40 p-10 900:justify-around m-auto items-center ">
-                        {data.similarSystems && data.similarSystems.slice(0, 6).map((item) => (<SimilarSystemsCard item={item} img={system} />))}
+                        {data.similarSystems && data.similarSystems.slice(0, 6).map((item) => (<SimilarSystemsCard item={item} img={system} key={item.id} />))}
                         <div className="w-60 h-72 sm:h-130 pl-20"  >
                             <div className="bg-[#ffffff] w-40 h-40 rounded-full sm:mt-40"><Image alt="" src={dot3} className="p-9" width={40} /></div>
                             <p className="text-12 mt-8 900:mt-28 text-center">بیشتر</p>
@@ -200,7 +200,7 @@ const Home = (props) => {
                 </div>
                 <div className="w-full 1440:w-90% m-auto mt-16 md:mt-48 overflow-x-scroll 1440:overflow-x-hidden">
                     <div className="min-w-[800px] sm:min-w-[1400px] flex 1440:grid 1440:grid-cols-4 1440:gap-y-[68px] 1440:h-[700px] sm:h-250 h-120">
-                        {data.categury && data.categury.map((item) => (<CategoryCard item={item} img={system} />))}
+                        {data.categury && data.categury.map((item) => (<CategoryCard item={item} img={system} key={item.id} />))}
                     </div>
                 </div>
                 <div className="mt-60 md:mt-154">
@@ -314,7 +314,7 @@ const Home = (props) => {
                 <div className=" text-center">
                     <div className="overflow-x-scroll 1400:overflow-x-hidden mt-32 md:mt-80 h-260 md:h-330">
                         <div className="flex w-80% gap-16 sm:justify-between sm:m-auto min-w-[1050px] sm:min-w-[1200px] px-16 sm:px-3 py-10 [&>*:nth-child(6)]:inline-block md:[&>*:nth-child(6)]:hidden 1600:[&>*:nth-child(6)]:inline-block h-260 md:h-330">
-                            {data.advertise && data.advertise.slice(0, 6).map((item) => (<AdvertiseCard item={item} />))}
+                            {data.advertise && data.advertise.slice(0, 6).map((item) => (<AdvertiseCard item={item} key={item.id} />))}
                         </div>
                     </div>
                     <a className=" text-center"><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]  text-center">مشاهده همه</button></a>
@@ -326,7 +326,7 @@ const Home = (props) => {
                     <div className=" overflow-x-scroll md:overflow-x-hidden">
                         <div className="w-90% 1400:w-71% mt-32 md:mt-80 mb-10 m-auto flex justify-between [&>*:nth-child(4)]:hidden 1600:[&>*:nth-child(4)]:inline-block min-w-[620px]">
                             {data.electedMembers && data.electedMembers.slice(0, 4).map((item) => (<ElectedMembersCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod}
-                            />))}
+                                key={item.id} />))}
                         </div>
                     </div>
                     <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">مشاهده همه</button></a>
@@ -342,7 +342,7 @@ const Home = (props) => {
                     <div className="overflow-x-scroll mt-26 md:">
                         <div className="flex justify-around 900:[&>*:nth-child(5)]:hidden 1600:[&>*:nth-child(5)]:inline-block py-10 min-w-[1150px] 900:min-w-[900px]">
                             {data.articleCards && data.articleCards.slice(0, 5).map((item) => (
-                                <ArticleCard item={item} />
+                                <ArticleCard item={item} key={item.id} />
                             ))}
                         </div>
                     </div>
