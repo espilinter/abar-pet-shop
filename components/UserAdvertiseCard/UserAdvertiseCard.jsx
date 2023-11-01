@@ -33,7 +33,7 @@ const UserAdvertiseCard = (props) => {
     return (
         <div className={`w-full sm:w-157 md:w-200 h-132 sm:h-238 md:h-307 shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] rounded-xl relative flex sm:inline-block bg-white p-16 sm:p-0 gap-x-16`}>
             {/* <div className={`w-157 md:w-200 h-157 md:h-200 bg-[url('../assets/image/category.png')] rounded-t-xl `} /> */}
-            <Image src={pic} className="h-100 sm:h-auto w-100 sm:w-full self-center " />
+            <Image alt={""} src={pic} className="h-100 sm:h-auto w-100 sm:w-full self-center " />
             <div className="sm:h-141 md:h-166 rounded-t-[16px] rounded-b-xl bg-white sm:mt-[-60px] w-full sm:w-157 md:w-200 sm:pt-8 sm:px-16 sm:absolute sm:bottom-0">
                 <div className="w-full h-16 md:h-28 flex justify-between">
                     <p className="text-10 text-[#6B6B6B] mt-0 sm:mt-4">همین الان</p>

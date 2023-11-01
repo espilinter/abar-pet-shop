@@ -16,7 +16,7 @@ const Club = (props) => {
                     <div className="">
                         <input className="w-200 h-40 px-24 py-8 bg-[#f4f4f4] text-[#6E6E6E] rounded-md border border-[#8A8A8A]" placeholder="جستجو" />
                     </div>
-                    <div className="flex items-center"><p>مرتب سازی</p><Image src={sort} className="w-24 h-24" /></div>
+                    <div className="flex items-center"><p>مرتب سازی</p><Image alt={""} src={sort} className="w-24 h-24" /></div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 1440:grid-cols-4 1750:grid-cols-5 mt-48 gap-y-43 gap-x-40 ">
                     {props.data && props.data.electedMembers.map((item) => (

@@ -6,7 +6,7 @@ import axios from "axios";
 import InputOTP from "@/components/InputOTP/InputOtp";
 
 const Login = (props) => {
-    const [switchCase, setSwitchCase] = useState("5")
+    const [switchCase, setSwitchCase] = useState("1")
     const [phoneInputValue, setPhoneInputValue] = useState("")
     const [passwordInputValue, setPasswordInputValue] = useState("")
     const [firstNameInputValue, setFirstNameInputValue] = useState("")
@@ -56,10 +56,9 @@ const Login = (props) => {
             otp: otp
         }
         axios.post("https://api.abarpetshop.com/api/v1/login-otp", object).then((res) => {
-            // localStorage.setItem("Authorization_token", res.data.token)
-            console.log(res.data);
+            localStorage.setItem("Authorization_token", res.data.token)
         })
-        // .then(() => { window.location.href = "/profile"; })
+            .then(() => { window.location.href = "/profile"; })
     }
 
     // function sendOTPButton() {
@@ -85,12 +84,26 @@ const Login = (props) => {
                 password: passwordInputValue,
                 email: emailInputValue
             }
-            axios.post("https://api.abarpetshop.com/api/v1/check-otp", object).then((res) => {
-                // localStorage.setItem("Authorization_token", res.data.token)
-                console.log(res.data);
+            axios.post("https://api.abarpetshop.com/api/v1/register", object).then((res) => {
+                localStorage.setItem("Authorization_token", res.data.token)
             })
-            // .then(() => { window.location.href = "/profile"; })
+                .then(() => { window.location.href = "/profile"; })
         }
+    }
+
+    function checkOTPButton(params) {
+        let object = {
+            login_token: loginToken,
+            mobile: phoneInputValue,
+            otp: otp
+        }
+        axios.post("https://api.abarpetshop.com/api/v1/check-otp", object).then((res) => {
+            // localStorage.setItem("Authorization_token", res.data.token)
+            if (res.data.checkOtp === "true" || res.data.checkOtp === true) {
+                setSwitchCase("5")
+            }
+        })
+        // .then(() => { window.location.href = "/profile"; })
     }
 
     function phoneInputChangeHandler(event) {
@@ -123,7 +136,7 @@ const Login = (props) => {
                 <div className="pt-150">
                     <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
-                            <Image className="hidden md:inline-block" src={logo} />
+                            <Image alt={""} className="hidden md:inline-block" src={logo} />
                             <div className=" py-48 px-0 lg:px-48 ">
                                 <i className="hidden md:inline-block aps-home-2-o text-24"></i>
                                 <input className="w-full h-50 p-10 rounded-md border border-[#8A8A8A] text-16 text-[#5e5e5e] bg-[#F1F1F1] md:bg-[#F3FBDF] md:mt-120" placeholder="شماره موبایل" value={phoneInputValue} onChange={phoneInputChangeHandler} />
@@ -131,7 +144,7 @@ const Login = (props) => {
                             </div>
                         </div>
                         <div className="w-full md:w-50% bg-white md:rounded-l-3xl flex items-center justify-center p-32 pr-0 relative">
-                            <Image src={animals} />
+                            <Image alt={""} src={animals} />
                             <div className="absolute top-16 left-16 flex flex-col gap-y-16 items-end">
                                 <div className="hidden w-fit rounded-full bg-[#E4F7E8] px-24 py-6 h-38 md:flex justify-center items-center">
                                     <p className="text-14 font-medium text-[#21C45D] ">کد ورود ارسال شد</p>
@@ -149,7 +162,7 @@ const Login = (props) => {
                 <div className="pt-150">
                     <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
-                            <Image className="hidden md:inline-block " src={logo} />
+                            <Image alt={""} className="hidden md:inline-block " src={logo} />
                             <div className=" py-48 px-0 lg:px-48 flex flex-col items-center">
                                 <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto"></i>
                                 <input className="w-full h-50 p-10 rounded-md border border-[#8A8A8A] text-16 text-[#5e5e5e] bg-[#F1F1F1] md:bg-[#F3FBDF] md:mt-120" placeholder="رمز عبور" value={passwordInputValue} onChange={passwordInputChangeHandler} />
@@ -158,7 +171,7 @@ const Login = (props) => {
                             </div>
                         </div>
                         <div className="w-full md:w-50% bg-white md:rounded-l-3xl flex items-center justify-center p-32 pr-0 relative">
-                            <Image src={animals} />
+                            <Image alt={""} src={animals} />
                             <div className="absolute top-16 left-16 flex flex-col gap-y-16 items-end">
                                 <div className="hidden w-fit rounded-full bg-[#E4F7E8] px-24 py-6 h-38 md:flex justify-center items-center">
                                     <p className="text-14 font-medium text-[#21C45D] ">کد ورود ارسال شد</p>
@@ -176,7 +189,7 @@ const Login = (props) => {
                 <div className="pt-150">
                     <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
-                            <Image className="hidden md:inline-block " src={logo} />
+                            <Image alt={""} className="hidden md:inline-block " src={logo} />
                             <div className=" py-48 px-0 lg:px-48 flex flex-col items-center">
                                 <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto mb-[100px]"></i>
                                 <InputOTP setOtp={setOtp} otp={otp} />
@@ -185,7 +198,7 @@ const Login = (props) => {
                             </div>
                         </div>
                         <div className="w-full md:w-50% bg-white md:rounded-l-3xl flex items-center justify-center p-32 pr-0 relative">
-                            <Image src={animals} />
+                            <Image alt={""} src={animals} />
                             <div className="absolute top-16 left-16 flex flex-col gap-y-16 items-end">
                                 <div className="hidden w-fit rounded-full bg-[#E4F7E8] px-24 py-6 h-38 md:flex justify-center items-center">
                                     <p className="text-14 font-medium text-[#21C45D] ">کد ورود ارسال شد</p>
@@ -203,7 +216,7 @@ const Login = (props) => {
                 <div className="pt-150">
                     <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
-                            <Image className="hidden md:inline-block " src={logo} />
+                            <Image alt={""} className="hidden md:inline-block " src={logo} />
                             <div className=" py-48 px-0 lg:px-48 flex flex-col items-center">
                                 <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto mb-[100px]"></i>
                                 <InputOTP setOtp={setOtp} otp={otp} />
@@ -212,7 +225,7 @@ const Login = (props) => {
                             </div>
                         </div>
                         <div className="w-full md:w-50% bg-white md:rounded-l-3xl flex items-center justify-center p-32 pr-0 relative">
-                            <Image src={animals} />
+                            <Image alt={""} src={animals} />
                             <div className="absolute top-16 left-16 flex flex-col gap-y-16 items-end">
                                 <div className="hidden w-fit rounded-full bg-[#E4F7E8] px-24 py-6 h-38 md:flex justify-center items-center">
                                     <p className="text-14 font-medium text-[#21C45D] ">کد ورود ارسال شد</p>
@@ -230,7 +243,7 @@ const Login = (props) => {
                 <div className="pt-150">
                     <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
-                            <Image className="hidden md:inline-block" src={logo} />
+                            <Image alt={""} className="hidden md:inline-block" src={logo} />
                             <div className=" py-48 px-0 lg:px-48 ">
                                 <i className="hidden md:inline-block aps-home-2-o text-24"></i>
                                 <div className="flex flex-col gap-y-36 mt-45">
@@ -244,7 +257,7 @@ const Login = (props) => {
                             </div>
                         </div>
                         <div className="w-full md:w-50% bg-white md:rounded-l-3xl flex items-center justify-center p-32 pr-0 relative">
-                            <Image src={animals} />
+                            <Image alt={""} src={animals} />
                             <div className="absolute top-16 left-16 flex flex-col gap-y-16 items-end">
                                 <div className="hidden w-fit rounded-full bg-[#E4F7E8] px-24 py-6 h-38 md:flex justify-center items-center">
                                     <p className="text-14 font-medium text-[#21C45D] ">کد ورود ارسال شد</p>

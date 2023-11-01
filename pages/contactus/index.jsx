@@ -33,13 +33,13 @@ const ContactUs = () => {
                         <div className="text-right text-lime-950 text-xl font-normal">شبکه های اجتماعی:</div>
                         <div className="flex justify-center gap-x-16">
                             <Link href="#">
-                                <Image src={instagram} className="w-32 h-32" />
+                                <Image alt={""} src={instagram} className="w-32 h-32" />
                             </Link>
                             <Link href="#">
-                                <Image src={telegram} className="w-32 h-32" />
+                                <Image alt={""} src={telegram} className="w-32 h-32" />
                             </Link>
                             <Link href="#">
-                                <Image src={watsapp} className="w-32 h-32" />
+                                <Image alt={""} src={watsapp} className="w-32 h-32" />
                             </Link>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ const ContactUs = () => {
                             <span className="text-white">تلاش مجدد</span>
                         </button>
                     </div>
-                    <Image src={contactPNG} className="w-[330px] hidden lg:inline-block pt-30" />
+                    <Image alt={""} src={contactPNG} className="w-[330px] hidden lg:inline-block pt-30" />
                 </div>
             </div>
         </>

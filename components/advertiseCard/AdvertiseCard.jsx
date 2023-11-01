@@ -34,7 +34,7 @@ const Advertising = (props) => {
 
     return (
         <div className={`w-full sm:w-157 md:w-200 sm:h-238 md:h-307 shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] rounded-xl m-auto bg-white sm:bg-none flex flex-row sm:flex-col p-16 sm:p-0 gap-x-16`}>
-            <Image src={category} className="w-100 sm:w-157 md:w-200 h-100 sm:h-157 md:h-200 rounded-t-xl" />
+            <Image alt={""} src={category} className="w-100 sm:w-157 md:w-200 h-100 sm:h-157 md:h-200 rounded-t-xl" />
             <div className="sm:h-141 md:h-166 rounded-t-[16px] rounded-b-xl bg-white sm:mt-[-60px] w-full sm:w-157 md:w-200 sm:pt-8 sm:px-16 z-[2] relative">
                 <div className="w-full h-16 md:h-28 flex justify-between">
                     <p className="text-10 text-[#6B6B6B] sm:mt-4">همین الان</p>

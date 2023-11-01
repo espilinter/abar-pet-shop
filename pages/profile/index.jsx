@@ -31,7 +31,7 @@ const Profile = (props) => {
             <div className="flex flex-col lg:flex-row pt-100 lg:pt-150 justify-between px-16 md:px-70 gap-y-16">
                 <div className="bg-white w-full lg:w-27% rounded-3xl shadow-[0_0_8px_2px_rgba(0,0,0,0.12)] px-16 md:px-24 py-12 md:py-16 flex flex-col gap-y-12 lg:gap-y-24 h-fit">
                     <div className="bg-white lg:bg-[#F6F7F6] h-145 lg:h-185 rounded-2xl lg:shadow-[0_0_8px_2px_rgba(0,0,0,0.12)] items-center flex flex-col lg:pt-24">
-                        <Image src={""} className="bg-stone-500 rounded-full h-112 w-112" />
+                        <Image alt={""} src={""} className="bg-stone-500 rounded-full h-112 w-112" />
                         <span className="text-right text-[#1E1E1E] text-base font-bold mt-8">محمد محمدی</span>
                     </div>
                     <div className="w-full h-[73px] p-16 justify-center items-center lg:inline-flex hidden">

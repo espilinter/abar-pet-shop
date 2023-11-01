@@ -5,7 +5,7 @@ const ProfileAdCard = () => {
     return (
         <>
             <div className="flex flex-row p-16 bg-white rounded-xl gap-x-24 items-center">
-                <Image src={image} className="rounded-xl w-125 h-125" />
+                <Image alt={""} src={image} className="rounded-xl w-125 h-125" />
                 <div className="flex flex-col w-full">
                     <div className="flex flex-row justify-between items-center">
                         <span className=" text-right text-neutral-500 text-xs font-normal">۵ روز پیش</span>

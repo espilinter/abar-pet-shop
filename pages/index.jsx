@@ -358,7 +358,6 @@ export async function getStaticProps() {
     const filePath = path.join(process.cwd(), 'db.json');
     const jsonData = await fs.readFileSync(filePath);
     const data = JSON.parse(jsonData);
-    const pashm = await axios.get(`${process.env.BASE_API}/home/provinces`)
     //handle error 404
     if (data.framePage.length === 0) {
         return { notFound: true }
@@ -373,8 +372,7 @@ export async function getStaticProps() {
     // }
     return {
         props: {
-            data: data.framePage,
-            pashm: pashm.data
+            data: data.framePage
         },
         revalidate: 3600,
     }

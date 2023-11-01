@@ -27,7 +27,7 @@ const CityCard = (props) => {
             <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer" for={props.item.slug} onClick={cityClickHandler} id={props.item.slug}>
                 <lable className="text-right text-stone-900 text-sm font-normal" >{props.item.title}</lable>
                 {/* <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i> */}
-                <input type="checkbox" className="w-20 h-20 rounded-lg" name={props.item.slug} checked={checkedState} id={`cityCheckBox${props.item.province_id} cityCheckBoxAll`} />
+                <input type="checkbox" className="w-20 h-20 rounded-lg" name={props.item.slug} checked={checkedState} id={`cityCheckBox${props.item.province_id} cityCheckBoxAll`} key={props.item.title} />
             </div>
         </>
     );

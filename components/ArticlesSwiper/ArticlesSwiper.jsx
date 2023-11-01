@@ -35,7 +35,9 @@ const ArticlesSwiper = () => {
     return (
         <>
             <div className='flex items-center gap-x-30 articleSwiper relative '>
-                <button className="hidden md:inline-block h-50 w-100 absolute z-[2] right-5" onClick={handlePrev}><Image alt="" src={arrowCircle} /></button>
+                <button className="hidden md:inline-block h-50 w-100 absolute z-[2] right-5" onClick={handlePrev}>
+                    <Image alt="" src={arrowCircle} />
+                </button>
                 <Swiper
                     ref={sliderRef}
                     effect={'Fade'}
@@ -65,54 +67,56 @@ const ArticlesSwiper = () => {
                 >
                     <SwiperSlide className='pt-7 justify-center flex'>
                         <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
-                            <Image src={articleCat} className="w-full h-full" />
+                            <Image alt={""} src={articleCat} className="w-full h-full" />
                             <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='pt-7 justify-center flex'>
                         <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
-                            <Image src={articleCat} className="w-full h-full" />
+                            <Image alt={""} src={articleCat} className="w-full h-full" />
                             <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='pt-7 justify-center flex'>
                         <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
-                            <Image src={articleCat} className="w-full h-full" />
+                            <Image alt={""} src={articleCat} className="w-full h-full" />
                             <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='pt-7 justify-center flex'>
                         <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
-                            <Image src={articleCat} className="w-full h-full" />
+                            <Image alt={""} src={articleCat} className="w-full h-full" />
                             <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='pt-7 justify-center flex'>
                         <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
-                            <Image src={articleCat} className="w-full h-full" />
+                            <Image alt={""} src={articleCat} className="w-full h-full" />
                             <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='pt-7 justify-center flex'>
                         <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
-                            <Image src={articleCat} className="w-full h-full" />
+                            <Image alt={""} src={articleCat} className="w-full h-full" />
                             <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='pt-7 justify-center flex'>
                         <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
-                            <Image src={articleCat} className="w-full h-full" />
+                            <Image alt={""} src={articleCat} className="w-full h-full" />
                             <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='pt-7 justify-center flex'>
                         <div className='w-165 md:w-292 h-210 md:h-460 bg-stone-500 relative'>
-                            <Image src={articleCat} className="w-full h-full" />
+                            <Image alt={""} src={articleCat} className="w-full h-full" />
                             <div className='absolute bottom-0 h-65 bg-[#FFFFFF55] p-10'><p className="text-14 font-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p></div>
                         </div>
                     </SwiperSlide>
                 </Swiper >
-                <button className="hidden md:inline-block h-50 w-100 absolute z-[2] left-5" onClick={handleNext} ><Image alt="" src={arrowCircle} className="rotate-180" /></button>
+                <button className="hidden md:inline-block h-50 w-100 absolute z-[2] left-5" onClick={handleNext} >
+                    <Image alt={""} src={arrowCircle} className="rotate-180" />
+                </button>
             </div>
         </>
     );

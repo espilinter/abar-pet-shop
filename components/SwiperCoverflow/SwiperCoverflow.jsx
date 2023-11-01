@@ -45,7 +45,9 @@ export default function SwiperCoverflow(props) {
     return (
         <>
             <div className='flex items-center gap-x-30 commentSwiper'>
-                <button className="hidden md:inline-block h-50 w-100" onClick={handlePrev}><Image alt="" src={arrowCircle} /></button>
+                <button className="hidden md:inline-block h-50 w-100" onClick={handlePrev}>
+                    <Image alt="" src={arrowCircle} />
+                </button>
                 <Swiper
                     ref={sliderRef}
                     effect={swiperEffect}
@@ -79,7 +81,9 @@ export default function SwiperCoverflow(props) {
                         </SwiperSlide>
                     ))}
                 </Swiper >
-                <button className="hidden md:inline-block h-50 w-100" onClick={handleNext} ><Image alt="" src={arrowCircle} className="rotate-180" /></button>
+                <button className="hidden md:inline-block h-50 w-100" onClick={handleNext} >
+                    <Image alt="" src={arrowCircle} className="rotate-180" />
+                </button>
             </div>
         </>
     );

@@ -79,8 +79,8 @@ const Pricing = (props) => {
                         <div className="flex flex-col xl:flex-row items-center justify-between px-10% mt-80 gap-y-24 ">
                             {/* <div className="w-306 h-176 bg-[#69B663] rounded-xl"></div>
                             <div className="w-306 h-176 bg-[#959FB3] rounded-xl"></div> */}
-                            <Image src={cart1} className="w-230 sm:w-306 h-132 sm:h-176 rounded-xl" />
-                            <Image src={cart2} className="w-230 sm:w-306 h-132 sm:h-176 rounded-xl" />
+                            <Image alt={""} src={cart1} className="w-230 sm:w-306 h-132 sm:h-176 rounded-xl" />
+                            <Image alt={""} src={cart2} className="w-230 sm:w-306 h-132 sm:h-176 rounded-xl" />
                         </div>
                         <div className="flex justify-center sm:justify-start sm:pr-30 mt-40 gap-x-8">
                             <span className="text-[#0352EC] text-12 sm:text-xl font-normal">توجه:</span>

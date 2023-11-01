@@ -37,7 +37,7 @@ const Aside = (props) => {
                         <button className="rotate-45" onClick={closeAsideHandler}>
                             <i className="aps-add-o text-30"></i>
                         </button>
-                        <Image src={logo} />
+                        <Image alt={""} src={logo} />
                     </div>
                     <div className="w-full bg-[#D0D3DE] h-1 mt-10"></div>
                     <div className="flex flex-col gap-16 p-16">
