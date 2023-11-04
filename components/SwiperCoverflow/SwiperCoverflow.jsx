@@ -1,22 +1,16 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-
-import styles from '../../styles/components/SwiperCoverflow.module.css';
-
 // import required modules
 import { EffectCoverflow } from 'swiper/modules';
 import CommentCard from '../CommentCard/CommentCard';
 import { Navigation } from 'swiper/modules';
-import { useMediaQuery } from "@uidotdev/usehooks";
 import arrowCircle from "../../assets/image/arrow-circle-right.png"
 import Image from 'next/image';
-import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
 
 export default function SwiperCoverflow(props) {
     const [swiperGap, setSwiperGap] = useState(50)
@@ -55,11 +49,6 @@ export default function SwiperCoverflow(props) {
                     centeredSlides={true}
                     slidesPerView={'auto'}
                     spaceBetween={swiperGap}
-                    // breakpoints={{
-                    //     1440: {
-                    //         spaceBetween: 40
-                    //     },
-                    // }}
                     coverflowEffect={{
                         rotate: 0,
                         stretch: 0,
@@ -70,13 +59,12 @@ export default function SwiperCoverflow(props) {
                     }}
                     loop={true}
                     loopedSlides={3}
-                    loopAdditionalSlides={3}
                     modules={[EffectCoverflow, Navigation]}
                     className="mySwiper h-315 "
                     navigation={false}
                 >
-                    {props.data && props.data.map((item) => (
-                        <SwiperSlide className='pt-7 ' key={item.id}>
+                    {props.data && props.data.map((item, index) => (
+                        <SwiperSlide className='pt-7 ' key={index}>
                             <CommentCard item={item} />
                         </SwiperSlide>
                     ))}

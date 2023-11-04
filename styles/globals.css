@@ -74,6 +74,11 @@ body {
     width: 100% !important;
     height: 400px !important;
   }
+
+  .adLocation .leaflet-container {
+    width: 100% !important;
+    height: 400px !important;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -85,6 +90,11 @@ body {
   .advertise-leaflet .leaflet-container {
     width: 100% !important;
     height: 350px !important;
+  }
+
+  .adLocation .leaflet-container {
+    width: 100% !important;
+    height: 400px !important;
   }
 }
 

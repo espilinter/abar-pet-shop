@@ -29,7 +29,7 @@ const InsertAd = (props) => {
     function postData() {
         let array = multiImage.map((item) => { return item.id })
         const object = {
-            tltle: title,
+            title: title,
             phone: phone1,
             description: description,
             address: address,
@@ -39,7 +39,7 @@ const InsertAd = (props) => {
             image_ids: array,
             map: location
         }
-        axios.post(`${process.env.BASE_API}/home/advertise/store`, object).then((res) => {
+        axios.post(`${process.env.BASE_API}/advertise/store`, object).then((res) => {
             console.log(res);
         }).catch((error) => {
             console.log(error);
@@ -81,7 +81,7 @@ const InsertAd = (props) => {
         setProvience(event.target.value)
         console.log(event.target.value);
         if (event.target.value) {
-            axios.get(`https://api.abarpetshop.com/api/v1/home/cities/${event.target.value}`).then((res) => {
+            axios.get(`https://api.abarpetshop.com/api/v1/cities/${event.target.value}`).then((res) => {
                 // setProvience(res.data.data.id);
                 setCityData(res.data.data)
             })
@@ -235,7 +235,7 @@ const InsertAd = (props) => {
                                 <span className="text-right text-zinc-400 text-xs font-normal leading-snug">{item.size}MB</span>
                             </div>
                             <div className="relative h-100">
-                                <Image src={item.url} className="h-100" alt={""} />
+                                <Image src={item.url} className="h-100" alt={""} width={100} height={100} />
                                 {spinnerState === item.name ? <div className="w-full h-100 bg-[#00000062] flex justify-center items-center absolute top-0">
                                     <Spinner />
                                 </div> : ""}
@@ -254,8 +254,8 @@ const InsertAd = (props) => {
 
 export async function getStaticProps() {
     try {
-        const category = await axios.get("https://api.abarpetshop.com/api/v1/home/category")
-        const province = await axios.get("https://api.abarpetshop.com/api/v1/home/provinces")
+        const category = await axios.get("https://api.abarpetshop.com/api/v1/category")
+        const province = await axios.get("https://api.abarpetshop.com/api/v1/provinces")
         return {
             props: {
                 categoryData: category.data.data,

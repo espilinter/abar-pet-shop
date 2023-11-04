@@ -1,20 +1,22 @@
 import AdSwiper from "@/components/AdSwiper/AdSwiper";
 import Image from "next/image";
-import logo from "../../assets/image/electedLogo.png"
-import instagramGray from "../../assets/image/instagramGray.png"
-import watsappGray from "../../assets/image/watsappGray.png"
-import telegramGray from "../../assets/image/telegramGray.png"
-import unsave from "../../assets/image/unsave.png"
-import elementGray from "../../assets/image/elementGray.png"
-import locationGray from "../../assets/image/locationGray.png"
-import callGray from "../../assets/image/callGray.png"
-import AdvertiseCard from "../../components/advertiseCard/AdvertiseCard";
+import logo from "../../../assets/image/electedLogo.png"
+import instagramGray from "../../../assets/image/instagramGray.png"
+import watsappGray from "../../../assets/image/watsappGray.png"
+import telegramGray from "../../../assets/image/telegramGray.png"
+import unsave from "../../../assets/image/unsave.png"
+import elementGray from "../../../assets/image/elementGray.png"
+import locationGray from "../../../assets/image/locationGray.png"
+import callGray from "../../../assets/image/callGray.png"
+import AdvertiseCard from "../../../components/advertiseCard/AdvertiseCard";
+import LeafletContainer from "@/components/LeafletContainer/LeafletContainer";
 
 
 const Ad = (props) => {
+    console.log(props);
     return (
         <>
-            <div className="w-90% m-auto pt-100 lg:pt-160 ">
+            {/* <div className="w-90% m-auto pt-100 lg:pt-160 ">
                 <div className="flex flex-col lg:flex-row w-full m-auto items-center lg:justify-between gap-20 ">
                     <AdSwiper className="w-full lg:w-75% h-auto lg:h-[455px] " data={props.data.slider} />
                     <div className="w-full justify-between flex flex-row md:flex-col md:w-300 h-auto md:h-[455px] bg-white rounded-2xl shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] p-8 md:p-16">
@@ -42,14 +44,21 @@ const Ad = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="text-right w-full lg:w-58% mt-40">
-                    <h1 className="text-[#535353] font-bold text-24 text-right">پت‌شاپ بول داگ</h1>
-                    <p className="text-[#1E1E1E] font-norma text-right leading-[40px] text-16 mt-16">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد .</p>
-                </div>
-                <div className="text-right  w-full lg:w-58% mt-40 flex flex-col gap-y-6">
-                    <div className="flex items-center gap-x-8"><Image alt={""} src={elementGray} className="w-24 h-24" /><p className="text-[#1E1E1E] text-14 leading-[40px] font-medium">امکانات پت‌شاپ: پزشک ، لوازام حیوانات اهلی </p></div>
-                    <div className="flex items-center gap-x-8"><Image alt={""} src={locationGray} className="w-24 h-24" /><p className="text-[#1E1E1E] text-14 leading-[40px] font-medium">تهران - يوسف آباد - خيابان فتحی شقاقی - پلاک ۵۰ - طبقه همکف - واحد ۱۹ </p></div>
-                    <div className="flex items-center gap-x-8"><Image alt={""} src={callGray} className="w-24 h-24" /><p className="text-[#1E1E1E] text-14 leading-[40px] font-medium">۰۲۱-۸۸۵۵۲۴۰۷ , ۰۲۱-۸۸۵۵۲۴۰۷</p></div>
+                <div className="flex flex-col mt-40 lg:flex-row gap-32">
+                    <div className="w-full lg:flex-[2]">
+                        <div className="text-right ">
+                            <h1 className="text-[#535353] font-bold text-24 text-right">پت‌شاپ بول داگ</h1>
+                            <p className="text-[#1E1E1E] font-norma text-right leading-[40px] text-16 mt-16">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد .</p>
+                        </div>
+                        <div className="text-right  mt-40 flex flex-col gap-y-6">
+                            <div className="flex items-center gap-x-8"><Image alt={""} src={elementGray} className="w-24 h-24" /><p className="text-[#1E1E1E] text-14 leading-[40px] font-medium">امکانات پت‌شاپ: پزشک ، لوازام حیوانات اهلی </p></div>
+                            <div className="flex items-center gap-x-8"><Image alt={""} src={locationGray} className="w-24 h-24" /><p className="text-[#1E1E1E] text-14 leading-[40px] font-medium">تهران - يوسف آباد - خيابان فتحی شقاقی - پلاک ۵۰ - طبقه همکف - واحد ۱۹ </p></div>
+                            <div className="flex items-center gap-x-8"><Image alt={""} src={callGray} className="w-24 h-24" /><p className="text-[#1E1E1E] text-14 leading-[40px] font-medium">۰۲۱-۸۸۵۵۲۴۰۷ , ۰۲۱-۸۸۵۵۲۴۰۷</p></div>
+                        </div>
+                    </div>
+                    <div className="adLocation lg:flex-[1]">
+                        <LeafletContainer />
+                    </div>
                 </div>
                 <div className="overflow-y-scroll 1400:overflow-y-hidden ">
                     <div className="flex w-full m-auto justify-between mt-80 min-w-[900px] md:min-w-[1200px] px-3 py-10 [&>*:nth-child(6)]:hidden 1600:[&>*:nth-child(6)]:inline-block [&>*:nth-child(7)]:hidden 1500:[&>*:nth-child(7)]:inline-block ">
@@ -61,15 +70,28 @@ const Ad = (props) => {
                 <div className="w-full flex justify-center">
                     <a className=""><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">مشاهده همه</button></a>
                 </div>
-            </div >
+
+            </div > */}
+            <div>farshad</div>
         </>
     );
 }
 
-export default Ad;
 
-export async function getStaticProps() {
-    const res = await fetch("http://localhost:3001/ad")
+export async function getStaticPaths() {
+    return {
+        paths: [
+            {
+                params: { id: "1" }
+            }
+        ],
+        fallback: true
+    }
+}
+
+export async function getStaticProps(context) {
+    console.log(context.params.id);
+    const res = await fetch(`http://localhost:3001/ad/${context.params.id}`)
     const data = await res.json()
     if (data.length === 0) {
         return { notFound: true }
@@ -81,3 +103,8 @@ export async function getStaticProps() {
         revalidate: 10,
     }
 }
+
+export default Ad;
+// export default function Ad({ repo }) {
+//     return repo.stargazers_count
+// }

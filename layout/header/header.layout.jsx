@@ -45,7 +45,61 @@ const Header = (props) => {
     const [cityeData, setCityeData] = useState([])
     const [selectedCitys, setSelectedCitys] = useState([])
     const [categoryData, setCategoryData] = useState("")
-    function openCategoryModal(params) {
+    const [openModal, setOpenModal] = useState(false)
+    const estekhdam = [
+        {
+            id: 1,
+            title: "طراحی سایت (برنامه نویس) فر انت اند و بک اند",
+            num: "20"
+        },
+        {
+            id: 2,
+            title: "کار آموز طراح سایت",
+            num: "20"
+        },
+        {
+            id: 3,
+            title: "کارشناس سئو",
+            num: "20"
+        },
+        {
+            id: 4,
+            title: "کارآموز سئو",
+            num: "20"
+        },
+        {
+            id: 5,
+            title: "گرافیست - طراح ui/ux",
+            num: "20"
+        },
+        {
+            id: 6,
+            title: "کارآموز ui/ux",
+            num: "20"
+        },
+        {
+            id: 7,
+            title: "ادمین شبکه های مجازی (واتس اپ-تلگرام-اینستاگرام و...)",
+            num: "50"
+        },
+        {
+            id: 8,
+            title: "کارشناس تبلیغات-مقاله نویس",
+            num: "20"
+        },
+        {
+            id: 9,
+            title: "کارمند اداری",
+            num: "10"
+        },
+        {
+            id: 10,
+            title: "نیروی خدماتی",
+            num: "2"
+        },
+
+    ]
+    function openCategoryModal() {
         if (categoryModal === "opacity-0 h-0") {
             setCategoryDisplay("")
             // setTimeout(() => { setCategoryModal("opacity-100 h-472") }, (200))
@@ -67,10 +121,10 @@ const Header = (props) => {
         axios.get("http://localhost:3001/header").then((response) => {
             setData(response.data);
         });
-        axios.get(`${process.env.BASE_API}/home/provinces`).then((res) => {
+        axios.get(`${process.env.BASE_API}/provinces`).then((res) => {
             setProvinceData(res.data.data);
         })
-        axios.get(`${process.env.BASE_API}/home/category`).then((res) => {
+        axios.get(`${process.env.BASE_API}/category`).then((res) => {
             setCategoryData(res.data.data);
         }).catch((res) => { console.log(res); })
         setWindowSize(window.innerWidth);
@@ -79,11 +133,11 @@ const Header = (props) => {
         };
     }, [])
 
-    function responsiveHandler(params) {
+    function responsiveHandler() {
         setWindowSize(window.innerWidth);
     }
 
-    function openAsideHandler(params) {
+    function openAsideHandler() {
         dispatch(handleOpenAsideState(true));
     }
 
@@ -101,7 +155,7 @@ const Header = (props) => {
 
     function stateClickHandler(id) {
         setCityOrState(false)
-        axios.get(`${process.env.BASE_API}/home/cities/${id}`).then((res) => {
+        axios.get(`${process.env.BASE_API}/cities/${id}`).then((res) => {
             setCityeData(res.data.data);
         })
     }
@@ -120,7 +174,7 @@ const Header = (props) => {
         setCityOrState(true)
     }
 
-    function acceptButtonHandler(params) {
+    function acceptButtonHandler() {
         console.log(selectedCitys);
         setSelectedCitys([])
     }
@@ -137,7 +191,6 @@ const Header = (props) => {
                     <button className="mr-1 relative" onMouseEnter={openCategoryModal} onMouseLeave={openCategoryModal}>
                         <Image alt="" src={lines} className="inline-block" />
                         <p className="inline-block mr-7">دسته بندی</p>
-                        {/* <div className="bg-[#00000035] w-full h-[100vh] absolute  cursor-default"></div> */}
                         <div className={`absolute rounded-lg bg-white px-40 py-32 flex gap-x-40 justify-start cursor-default transition-all duration-200 ${categoryModal} ${categoryDisplay}`}>
                             <ul className="border-l-2 border-l-[#6E6E6E] w-230 text-[#1E1E1E] font-bold flex flex-col gap-12">
                                 {categoryData && categoryData.map((item, index) => (
@@ -199,15 +252,9 @@ const Header = (props) => {
                                     <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer"
                                     >
                                         <span className="text-right text-stone-900 text-sm font-normal">تمام شهر ها</span>
-                                        {/* <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i> */}
                                         <input type="checkbox" className="w-20 h-20 rounded-lg" />
                                     </div>
                                     {cityeData && cityeData.map((item, index) => (
-                                        // <div className="border-b border-[#DCDCDC] flex justify-between items-center pb-8 pt-16 cursor-pointer">
-                                        //     <lable className="text-right text-stone-900 text-sm font-normal" for={item.title}>{item.title}</lable>
-                                        //     {/* <i className="aps-arrow-left-o text-24 text-[#1E1E1E]"></i> */}
-                                        //     <input type="checkbox" className="w-20 h-20 rounded-lg" id={item.title} onClick={cityClickHandler} />
-                                        // </div>
                                         <CityCard item={item} setSelectedCitys={setSelectedCitys}
                                             selectedCitys={selectedCitys} key={item.title} />
                                     ))}
@@ -221,7 +268,7 @@ const Header = (props) => {
                     </div>
                 </div>
                 <div className=" h-40 flex justify-between ">
-                    <button className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center top-0 cursor-pointer">استخدام در هلدینگ</button>
+                    <button className="w-143 h-40 text-[#728A2D] leading-10 border border-[#728A2D] rounded-md ml-10 1150:ml-20 xl:ml-43 inline-block recruitment font-normal text-center top-0 cursor-pointer" onClick={() => { setOpenModal(true) }}>استخدام در هلدینگ</button>
                     <div className=" flex ">
                         <div className="w-1 h-38 mt-1 bg-[#8A8A8A]  text-[#ffffff8c] "></div>
                         <Link href="/insertad">
@@ -232,6 +279,33 @@ const Header = (props) => {
                         </Link>
                     </div>
                 </div>
+                {openModal && <div className="w-screen h-screen bg-[#00000080] z-[1000000] fixed top-[-32px] right-[-5.5%] " onClick={(event) => { event.target === event.currentTarget ? setOpenModal(false) : "" }}>
+                    <div className="w-70% bg-white m-auto flex flex-col items-center absolute top-[calc(50%-350px)] [1620px]:top-[calc(50%-330px)] right-15% pt-16 gap-y-12 rounded-xl">
+                        <h3 className="text-center text-zinc-950 text-xl font-normal leading-normal">استخدام در هلدینگ بزرگ کلید طلایی ایران</h3>
+                        <div className="text-center text-[#728A2D] text-lg font-normal ">www.kelidetalaeiiran.com</div>
+                        <div className="text-center py-[12px] bg-[#728A2D] rounded-lg inline-flex w-95% mx-auto">
+                            <p className="grow shrink basis-0 h-[22px] text-center text-white text-lg font-normal leading-normal">بزرگترین سازمان کارآفرینی و ایجاد اشتغال جوانان در فضای مجازی و واقعی در سراسر ایران</p>
+                        </div>
+                        <p className=" text-center text-zinc-950 text-lg font-normal leading-normal">تعدادی همکار بصورت حضوری (تمام وقت - نیمه وقت) جهت دفتر مرکزی تهران دعوت به همکاری میشوند.</p>
+                        <div className=" flex flex-col gap-y-12 pt-12 w-95% mx-auto">
+                            {estekhdam.map((item) => (
+                                <div className="flex justify-between">
+                                    <div className="flex gap-x-4 items-center ">
+                                        <i className="aps-arrow-left-o text-24 text-[#728A2D]"></i>
+                                        <span className="text-center text-zinc-950 text-base font-normal leading-normal">{item.title}</span>
+                                    </div>
+                                    <span className="text-center text-[#728A2D] text-base font-normal leading-normal">{item.num} نفر</span>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="text-center text-zinc-950 text-base font-normal leading-normal">همه روزه از ساعت 8 صبح الی 8 شب - حتی جمعه ها و روزهای تعطیل</div>
+                        <div className="bg-[#A6B677] justify-center w-full flex flex-row gap-y-16 py-16 px-32 flex-wrap gap-x-32 rounded-b-xl">
+                            <span className="text-center text-white text-base font-normal leading-normal ">آدرس دفتر مرکزی : تهران یوسف آباد خیابان فتحی شقاقی پلاک 50 واحد 2</span>
+                            <span className="text-center text-white text-base font-normal leading-normal">ارسال رزومه : 09021248883</span>
+                            <span className="text-center text-white text-base font-normal leading-normal">تلفن : 02188552190 - 02188550080 - 09121248883</span>
+                        </div>
+                    </div>
+                </div>}
             </header >
                 :
                 <header className="flex z-[1000] fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
