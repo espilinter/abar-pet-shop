@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 // import Leaflet from '../Leaflet/Leaflet';
 import dynamic from 'next/dynamic';
 
-const LeafletContainer = () => {
+const LeafletContainer = (props) => {
     const Map = useMemo(() => dynamic(
         () => import('@/components/Leaflet/Leaflet'),
         {
@@ -12,7 +12,7 @@ const LeafletContainer = () => {
     ), [])
     return (
         <>
-            <Map />
+            <Map location={props.location} />
         </>
     );
 }

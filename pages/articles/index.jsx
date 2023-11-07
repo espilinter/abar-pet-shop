@@ -2,6 +2,7 @@ import ArticleCardPopular from "@/components/ArticleCardPopular/ArticleCardPopul
 import ArticlePageCards from "@/components/ArticlePageCards/ArticlePageCards";
 import ArticlesSwiper from "@/components/ArticlesSwiper/ArticlesSwiper";
 import Title from "@/components/Title/Title";
+import axios from "axios";
 
 const Articles = (props) => {
     return (
@@ -22,7 +23,7 @@ const Articles = (props) => {
                     <Title title="بیشترین بازدید" className="" />
                 </div>
                 <div className="overflow-scroll mt-5 md:mt-80">
-                    <div className="pr-50  w-full flex gap-x-18  md:[&>*:nth-child(3)]:hidden xl:[&>*:nth-child(3)]:inline-block md:[&>*:nth-child(4)]:hidden 1440:[&>*:nth-child(4)]:inline-block min-w-[1350px] md:min-w-[950px]">
+                    <div className="pr-50  w-full flex gap-x-18  md:[&>*:nth-child(3)]:hidden xl:[&>*:nth-child(3)]:inline-block md:[&>*:nth-child(4)]:hidden 1440:[&>*:nth-child(4)]:inline-block min-w-[1350px] md:min-w-[950px] ">
                         {props.data.cards.slice(0, 4).map((item) => (
                             <ArticleCardPopular key={item.id} />
                         ))}
@@ -38,11 +39,11 @@ const Articles = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full flex mt-100 items-center justify-between overflow-scroll ">
+                <div className="w-full flex mt-100 items-center justify-between overflow-scroll hide_scrollbar">
                     <div className="hidden lg:inline-block w-250 pr-50">
                         <Title title="همه مقالات" />
                     </div>
-                    <div className="bg-[#A6B677] w-full lg:w-70% flex min-w-[700px] mr-20">
+                    <div className="bg-[#A6B677] w-full lg:w-70% flex min-w-[700px] mr-20 hide_scrollbar">
                         <div className="flex flex-col gap-y-16 py-10 px-25 w-116 items-center bg-[#44531B] text-white">
                             <i className="aps-pet text-[50px]"></i>
                             <span className="text-14 ">دسته بندی</span>
@@ -97,12 +98,14 @@ export default Articles;
 export async function getStaticProps() {
     const res = await fetch("http://localhost:3001/articles")
     const data = await res.json()
+    const articles = await axios.get(`https://api.abarpetshop.com/api/v1/mags`)
     if (data.length === 0) {
         return { notFound: true }
     }
     return {
         props: {
-            data: data
+            data: data,
+            articles: articles.data.data
         },
         revalidate: 10,
     }

@@ -3,8 +3,15 @@ import 'leaflet/dist/leaflet.css'
 import Image from 'next/image';
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
-const Leaflet = () => {
-    const position = [35.7238, 51.4078]
+import { useEffect } from 'react';
+const Leaflet = (props) => {
+    const position = [35.7238, 51.4078];
+    // let position;
+    // useEffect(() => {
+    //     const a = props.location.split(",")
+    //     props.location ? position = [a[0], a[1]] : position = [35.7238, 51.4078];
+    // }, [])
+
     return (
         <>
             <MapContainer center={position} zoom={13} scrollWheelZoom={false}>

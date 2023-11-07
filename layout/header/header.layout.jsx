@@ -259,10 +259,10 @@ const Header = (props) => {
                                             selectedCitys={selectedCitys} key={item.title} />
                                     ))}
                                 </div>
-                                <div className="flex justify-between bg-white mt-10">
+                                {/* <div className="flex justify-between bg-white mt-10">
                                     <ButtonLight text="لغو" className="w-48%" />
                                     <ButtonFilled text="تایید" className="w-48%" onClick={acceptButtonHandler} />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

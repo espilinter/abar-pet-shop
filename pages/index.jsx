@@ -175,30 +175,30 @@ const Home = (props) => {
             <div className="absolute z-[1] top-0 w-full">
                 <div className="w-full h-273 lg:h-[100vh] bg-[url('../assets/image/framePage.png')] bg-top bg-cover bg-no-repeat">
                 </div>
-                <Image alt="" src={bg1} className=" w-full mt-[720px] sm:mt-[1100px] md:mt-[1400px] 1440:mt-[1820px] 1600:mt-[1750px] relative z-[1]" />
-                <Image alt="" src={bg2} className=" mt-[-200px] sm:mt-[-405px] z-[0] relative" />
-                <Image alt="" src={bg3} className=" ml-0 mr-auto" />
+                <Image alt="" src={bg1} className=" w-full mt-[720px] sm:mt-[1100px] md:mt-[1400px] 1440:mt-[1820px] 1600:mt-[1750px] relative z-[1]" width="auto" height="auto" />
+                <Image alt="" src={bg2} className=" mt-[-200px] sm:mt-[-405px] z-[0] relative" width="auto" height="auto" />
+                <Image alt="" src={bg3} className=" ml-0 mr-auto" width="auto" height="auto" />
             </div>
             <div className="z-[2] relative">
                 <div className="mt-32 md:mt-40">
                     <Title title="سامانه های مشابه" />
                 </div>
-                <div className="w-full lg:w-90% 1400:w-70% h-120 items-center sm:h-170 m-auto md:mt-40 pt-12 overflow-x-scroll 900:overflow-x-hidden 900:mr-auto">
+                <div className="w-full lg:w-90% 1400:w-70% h-140 items-center sm:h-180 m-auto md:mt-40 pt-12 overflow-x-scroll 900:overflow-x-hidden 900:mr-auto hide_scrollbar">
                     <div className="flex gap-x-40 p-10 900:justify-around m-auto items-center ">
                         {data.similarSystems && data.similarSystems.slice(0, 6).map((item, index) => (<SimilarSystemsCard item={item} img={system} key={index} />))}
                         <div className="w-60 h-72 sm:h-130 pl-20"  >
-                            <div className="bg-[#ffffff] w-40 h-40 rounded-full sm:mt-40"><Image alt="" src={dot3} className="p-9" width={40} /></div>
+                            <div className="bg-[#ffffff] w-40 h-40 rounded-full sm:mt-40"><Image alt="" src={dot3} className="p-9" width="auto" height="auto" /></div>
                             <p className="text-12 mt-8 900:mt-28 text-center">بیشتر</p>
                         </div>
                     </div>
                 </div>
                 <div className="w-[1300] m-auto mt-32 md:mt-80">
-                    <Image alt="" className="m-auto" src={ad1} />
+                    <Image alt="" className="m-auto" src={ad1} width="auto" height="auto" />
                 </div>
                 <div className="mt-32 md:mt-40">
                     <Title title="دسته بندی" />
                 </div>
-                <div className="w-full 1440:w-90% m-auto mt-16 md:mt-48 overflow-x-scroll 1440:overflow-x-hidden">
+                <div className="w-full 1440:w-90% m-auto mt-16 md:mt-48 overflow-x-scroll 1440:overflow-x-hidden hide_scrollbar">
                     <div className="min-w-[800px] sm:min-w-[1400px] flex 1440:grid 1440:grid-cols-4 1440:gap-y-[68px] 1440:h-[700px] sm:h-250 h-120">
                         {data.categury && data.categury.map((item, index) => (<CategoryCard item={item} img={system} key={index} />))}
                     </div>
@@ -209,7 +209,7 @@ const Home = (props) => {
                 <div className="flex w-95% 940:w-90% 1440:w-75% m-auto sm:mt-50 900:mt-0">
                     <div className="m-auto w-116 h-141 900:w-268 900:h-254 1220:w-336 1220:h-318 relative mt-32 md:mt-80 500:scale-150 md:scale-[180%] 900:scale-100">
                         <div className="w-32 900:w-76 1220:w-96 h-32 900:h-76 1220:h-96 rounded-full bg-white pt-8 900:pt-19 1220:pt-24 mr-42 900:mr-96 1220:mr-120 z-[2] absolute mt-[-17px] 900:mt-[-37px] 1200:mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
-                            <Image alt="" src={timer1} className="w-16 900:w-38 1220:w-48 h-16 900:h-38 1220:h-48 m-auto" />
+                            <Image alt="" src={timer1} className="w-16 900:w-38 1220:w-48 h-16 900:h-38 1220:h-48 m-auto" width="auto" height="auto" />
                         </div>
                         <div className="w-116 900:w-268 h-124 900:h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-25 900:pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
                             <div className="w-103 900:w-212 1220:w-256 h-152 1220:h-190 m-auto">
@@ -220,7 +220,7 @@ const Home = (props) => {
                     </div>
                     <div className=" m-auto w-116 h-141 900:w-268 900:h-254 1220:w-336 1220:h-318 relative mt-70 md:mt-160 500:scale-150 md:scale-[180%] 900:scale-100">
                         <div className="w-32 900:w-76 1220:w-96 h-32 900:h-76 1220:h-96 rounded-full bg-white pt-8 900:pt-19 1220:pt-24 mr-42 900:mr-96 1220:mr-120 z-[2] absolute mt-[-17px] 900:mt-[-37px] 1200:mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
-                            <Image alt="" src={timer1} className="w-16 900:w-38 1220:w-48 h-16 900:h-38 1220:h-48 m-auto" />
+                            <Image alt="" src={timer1} className="w-16 900:w-38 1220:w-48 h-16 900:h-38 1220:h-48 m-auto" width="auto" height="auto" />
                         </div>
                         <div className="w-116 900:w-268 h-124 900:h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-25 900:pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
                             <div className="w-103 900:w-212 1220:w-256 h-152 1220:h-190 m-auto">
@@ -231,7 +231,7 @@ const Home = (props) => {
                     </div>
                     <div className="m-auto w-116 h-141 900:w-268 900:h-254 1220:w-336 1220:h-318 relative mt-32 md:mt-80 500:scale-150 md:scale-[180%] 900:scale-100">
                         <div className="w-32 900:w-76 1220:w-96 h-32 900:h-76 1220:h-96 rounded-full bg-white pt-8 900:pt-19 1220:pt-24 mr-42 900:mr-96 1220:mr-120 z-[2] absolute mt-[-17px] 900:mt-[-37px] 1200:mt-[-48px] shadow-[0_4px_44px_rgba(0,0,0,0.12)]">
-                            <Image alt="" src={timer1} className="w-16 900:w-38 1220:w-48 h-16 900:h-38 1220:h-48 m-auto" />
+                            <Image alt="" src={timer1} className="w-16 900:w-38 1220:w-48 h-16 900:h-38 1220:h-48 m-auto" width="auto" height="auto" />
                         </div>
                         <div className="w-116 900:w-268 h-124 900:h-254 1220:w-336 1220:h-318 shadow-[0_4px_44px_rgba(0,0,0,0.12)] pt-25 900:pt-60 1220:pt-88 m-auto bg-white z-0 rounded-[18px] ">
                             <div className="w-103 900:w-212 1220:w-256 h-152 1220:h-190 m-auto">
@@ -247,19 +247,19 @@ const Home = (props) => {
                 <div className="mt-32 md:mt-48 flex flex-row-reverse lg:flex-col h-[792px] lg:h-auto items-center lg:items-start m-auto">
                     <div className="flex gap-x-[7%] w-90% m-auto gap-y-48 flex-col lg:flex-row basis-3/4 lg:basis-1">
                         <div className={`w-264 lg:w-388 h-232 lg:h-298 rounded-[16px] ${firstBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
-                            <Image alt="" src={user} className="w-32 lg:w-100 h-32 lg:h-100 m-auto" />
+                            <Image alt="" src={user} className="w-32 lg:w-100 h-32 lg:h-100 m-auto" width="auto" height="auto" />
                             <h3 className="text-14 lg:text-18 mt-16 text-center">1.ثبت نام</h3>
                             <p className="font-medium text-12 lg:text-15 text-[#8A8A8A] leading-[30px] mt-20 text-center">به راحتی با یک کلیک می‌شود در لینک‌بورد ثبت نام کرد</p>
                             <div className="w-72 lg:w-96 h-36 lg:h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6 text-center text-14 lg:text-16">ثبت نام</div>
                         </div>
                         <div className={`w-264 lg:w-388 h-232 lg:h-298 rounded-[16px] ${secondBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
-                            <Image alt="" src={note} className="w-32 lg:w-100 h-32 lg:h-100 m-auto" />
+                            <Image alt="" src={note} className="w-32 lg:w-100 h-32 lg:h-100 m-auto" width="auto" height="auto" />
                             <h3 className="text-14 lg:text-18 mt-16 text-center">۲. میان آگهی ها جستجو کنید</h3>
                             <p className="font-medium text-12 lg:text-15 text-[#8A8A8A] leading-[30px] mt-20 text-center">مراحل ساده ثبت آگهی در دسته‌بندی های مختلف</p>
                             <div className="w-72 lg:w-96 h-36 lg:h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6 text-center text-14 lg:text-16">آگهی ها</div>
                         </div>
                         <div className={`w-264 lg:w-388 h-232 lg:h-298 rounded-[16px] ${thirdBoxShadow} pt-20 m-auto transition-shadow duration-1000`}>
-                            <Image alt="" src={addSquare} className="w-32 lg:w-100 h-32 lg:h-100 m-auto" />
+                            <Image alt="" src={addSquare} className="w-32 lg:w-100 h-32 lg:h-100 m-auto" width="auto" height="auto" />
                             <h3 className="text-14 lg:text-18 mt-16 text-center">۳. آگهی خود را ثبت کنید </h3>
                             <p className="font-medium text-12 lg:text-15 text-[#8A8A8A] leading-[30px] mt-20 text-center">مراحل ساده ثبت آگهی در دسته‌بندی های مختلف</p>
                             <div className="w-72 lg:w-96 h-36 lg:h-38 m-auto bg-[#728A2D] mt-20 rounded-[6px] font-medium text-white pt-6 text-center text-14 lg:text-16">ثبت آگهی</div>
@@ -276,7 +276,7 @@ const Home = (props) => {
                 <div className="m-auto flex px-16 w-full md:w-75% lg:w-90% 1150:w-80% justify-between mt-56 md:mt-212 items-center">
                     <div className="w-100 580:w-147 lg:w-246 h-100 580:h-147 lg:h-246 bg-[#728a2d33] pt-16 rounded-full">
                         <div className="w-86 580:w-127 lg:w-213 h-86 580:h-127 lg:h-213 m-auto relative">
-                            <Image alt="" src={dots} className="absolute mt-[-7px] 580:mt-[-12px] lg:mt-[-20px]" />
+                            <Image alt="" src={dots} className="absolute mt-[-7px] 580:mt-[-12px] lg:mt-[-20px]" width="auto" height="auto" />
                             <div className="w-72 580:w-104 lg:w-174 h-72 580:h-104 lg:h-174 m-auto mt-[-1px] 580:mt-7 lg:mt-20">
                                 <CircularProgressbarWithChildren value={firstCircleFill} strokeWidth={5} styles={buildStyles({ pathColor: '#728A2D', rotation: 0.5, trailColor: 'none' })} className="" >
                                     <p className="text-18 580:text-21 lg:text-35 leading-[36px] lg:leading-[60px] mt-[-10px]">{allAd}</p>
@@ -287,7 +287,7 @@ const Home = (props) => {
                     </div>
                     <div className="w-148 580:w-225 lg:w-376 h-148 580:h-225 lg:h-376 bg-[#728a2d33] pt-9 lg:pt-16 rounded-full">
                         <div className="w-128 580:w-195 lg:w-325 h-128 580:h-195 lg:h-325 m-auto mt-10 relative">
-                            <Image alt="" src={dots} className=" absolute mt-[-13px] 580:mt-[-22px] lg:mt-[-35px]" />
+                            <Image alt="" src={dots} className=" absolute mt-[-13px] 580:mt-[-22px] lg:mt-[-35px]" width="auto" height="auto" />
                             <div className="w-104 580:w-150 lg:w-250 h-104 580:h-150 lg:h-250 m-auto mt-15 580:mt-30 lg:mt-50">
                                 <CircularProgressbarWithChildren value={secondCircleFill} strokeWidth={5} styles={buildStyles({ pathColor: '#728A2D', rotation: 0.5, trailColor: 'none' })} className="" >
                                     <p className="text-32 580:text-37 lg:text-[62px] font-medium leading-[64px] lg:leading-[107px] mt-[-18px] 580:mt-[-24px] lg:mt-[-40px]">{activeAd}</p>
@@ -298,7 +298,7 @@ const Home = (props) => {
                     </div>
                     <div className="w-100 580:w-147 lg:w-246 h-100 580:h-147 lg:h-246 bg-[#728a2d33] pt-16 rounded-full">
                         <div className="w-86 580:w-127 lg:w-213 h-86 580:h-127 lg:h-213 m-auto relative">
-                            <Image alt="" src={dots} className=" absolute mt-[-7px] 580:mt-[-12px] lg:mt-[-20px]" />
+                            <Image alt="" src={dots} className=" absolute mt-[-7px] 580:mt-[-12px] lg:mt-[-20px]" width="auto" height="auto" />
                             <div className="w-72 580:w-104 lg:w-174 h-72 580:h-104 lg:h-174 m-auto mt-[-1px] 580:mt-7 lg:mt-20">
                                 <CircularProgressbarWithChildren value={thirdCircleFill} strokeWidth={5} styles={buildStyles({ pathColor: '#728A2D', rotation: 0.5, trailColor: 'none' })} className="" >
                                     <p className="text-18 580:text-21 lg:text-35 leading-[36px] lg:leading-[60px] mt-[-10px]">{membership}</p>
@@ -312,7 +312,7 @@ const Home = (props) => {
                     <Title title="آگهی های ویژه" />
                 </div>
                 <div className=" text-center">
-                    <div className="overflow-x-scroll 1400:overflow-x-hidden mt-32 md:mt-80 h-260 md:h-330">
+                    <div className="overflow-x-scroll 1400:overflow-x-hidden mt-32 md:mt-80 h-280 md:h-330 hide_scrollbar">
                         <div className="flex w-80% gap-16 sm:justify-between sm:m-auto min-w-[1050px] sm:min-w-[1200px] px-16 sm:px-3 py-10 [&>*:nth-child(6)]:inline-block md:[&>*:nth-child(6)]:hidden 1600:[&>*:nth-child(6)]:inline-block h-260 md:h-330">
                             {data.advertise && data.advertise.slice(0, 6).map((item, index) => (<AdvertiseCard item={item} key={index} />))}
                         </div>
@@ -323,7 +323,7 @@ const Home = (props) => {
                     <Title title="اعضای منتخب" />
                 </div>
                 <div className=" text-center">
-                    <div className=" overflow-x-scroll md:overflow-x-hidden">
+                    <div className=" overflow-x-scroll md:overflow-x-hidden bd-calendar hide_scrollbar">
                         <div className="w-90% 1400:w-71% mt-32 md:mt-80 mb-10 m-auto flex justify-between [&>*:nth-child(4)]:hidden 1600:[&>*:nth-child(4)]:inline-block min-w-[620px]">
                             {data.electedMembers && data.electedMembers.slice(0, 4).map((item, index) => (<ElectedMembersCard img={electedLogo} manager={item.manager} state={item.state} city={item.city} adNumber={item.adNumber} membershipPeriod={item.membershipPeriod}
                                 key={index} />))}
@@ -339,7 +339,7 @@ const Home = (props) => {
                 </div>
                 <div className="mt-32 md:mt-128 lg:w-90% w-full m-auto  text-center">
                     <Title title="مقالات" />
-                    <div className="overflow-x-scroll mt-26 md:">
+                    <div className="overflow-x-scroll mt-26 hide_scrollbar md:">
                         <div className="flex justify-around 900:[&>*:nth-child(5)]:hidden 1600:[&>*:nth-child(5)]:inline-block py-10 min-w-[1150px] 900:min-w-[900px]">
                             {data.articleCards && data.articleCards.slice(0, 5).map((item, index) => (
                                 <ArticleCard item={item} key={index} />

@@ -11,7 +11,8 @@ const Category = (props) => {
     }
 
     useEffect(() => {
-        axios.get("https://api.abarpetshop.com/api/v1/advertises").then((res) => { console.log(res.data); })
+        // axios.get("https://api.abarpetshop.com/api/v1/advertises").then((res) => { console.log(res.data); })
+        // console.log(props.advertises);
     }, [])
 
     return (
@@ -51,7 +52,7 @@ const Category = (props) => {
                         </div>
                         <div className="w-full">
                             <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 1750:grid-cols-6 gap-x-40 1500:gap-x-60 1600:grid-cols-5 1600:gap-x-25 gap-y-32 ">
-                                {props.data && props.data.advertise.map((item, index) => (<Advertising item={item} key={index} />))}
+                                {props.advertises && props.advertises.map((item, index) => (<Advertising item={item} key={index} />))}
                             </div>
                             <div className="w-280 h-24 m-auto mt-32 flex justify-between">
                                 <div className="text-center w-24 h-24 bg-white text-13 font-bold text-[#535353] p-3 rounded-lg border border-[#DCDCDC]">{"<<"}</div>
@@ -89,13 +90,15 @@ export default Category;
 
 export async function getStaticProps() {
     const res = await fetch("http://localhost:3001/categoryPage")
+    const advertises = await axios.get(`https://api.abarpetshop.com/api/v1/advertises`)
     const data = await res.json()
     if (data.length === 0) {
         return { notFound: true }
     }
     return {
         props: {
-            data: data
+            data: data,
+            advertises: advertises.data.data
         },
         revalidate: 10,
     }
