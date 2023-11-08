@@ -1,10 +1,11 @@
 import ArticleCardLast from "@/components/ArticleCardLast/ArticleCardLast";
 import Title from "@/components/Title/Title";
 import Image from "next/image";
-import cat1 from "../../assets/image/cat2.jpg"
-import cat2 from "../../assets/image/cat2.webp"
-import watsapp from "../../assets/image/watsapp.png"
-import telegram from "../../assets/image/telegram.png"
+import cat1 from "../../../assets/image/cat2.jpg"
+import cat2 from "../../../assets/image/cat2.webp"
+import watsapp from "../../../assets/image/watsapp.png"
+import telegram from "../../../assets/image/telegram.png"
+import axios from "axios";
 
 const Article = (props) => {
     return (
@@ -77,19 +78,19 @@ const Article = (props) => {
                             </div>
                             <div className="grid grid-cols-4 w-full mt-80 gap-16 items-center">
                                 <div className="col-span-full flex flex-col gap-y-4">
-                                    <lable className="text-right text-[#1E1E1E] text-sm font-medium leading-relaxed">نوشتن نظر</lable>
+                                    <label className="text-right text-[#1E1E1E] text-sm font-medium leading-relaxed">نوشتن نظر</label>
                                     <textarea className="p-12 rounded-md border border-[#8A8A8A] h-140" placeholder="..." />
                                 </div>
                                 <div className="flex flex-col gap-y-4 col-span-4 md:col-span-2 xl:col-span-1">
-                                    <lable className="text-right text-stone-900 text-sm font-medium leading-relaxed ">نام و نام خانوادگی</lable>
+                                    <label className="text-right text-stone-900 text-sm font-medium leading-relaxed ">نام و نام خانوادگی</label>
                                     <input type="text" placeholder="نام خود را وارد کنید" className="p-12 rounded-md border border-[#8A8A8A] h-50" />
                                 </div>
                                 <div className="flex flex-col gap-y-4 col-span-4 md:col-span-2 xl:col-span-1">
-                                    <lable className="text-right text-stone-900 text-sm font-medium leading-relaxed">آدرس ایمیل</lable>
+                                    <label className="text-right text-stone-900 text-sm font-medium leading-relaxed">آدرس ایمیل</label>
                                     <input type="text" placeholder="example@mail.com" className="p-12 rounded-md border border-[#8A8A8A] h-50" />
                                 </div>
                                 <div className="flex flex-col gap-y-4 col-span-4 md:col-span-2 xl:col-span-1">
-                                    <lable className="text-right text-stone-900 text-sm font-medium leading-relaxed">شماره تماس</lable>
+                                    <label className="text-right text-stone-900 text-sm font-medium leading-relaxed">شماره تماس</label>
                                     <input type="text" placeholder="********* 09 (اختیاری)" className="p-12 rounded-md border border-[#8A8A8A] h-50" />
                                 </div>
 
@@ -121,6 +122,40 @@ const Article = (props) => {
             </div>
         </>
     );
+}
+
+async function getData() {
+    const data = await axios.get(`https://api.abarpetshop.com/api/v1/mags`)
+    return data.data.data;
+}
+
+export async function getStaticProps(context) {
+    const { params } = context;
+    const articleSlug = params.slug;
+    const allData = await getData();
+    const data = allData.find((item) => item.slug === articleSlug);
+    if (!data) {
+        return { notFound: true };
+    }
+    return {
+        props: {
+            data: data
+        }
+    }
+}
+
+export async function getStaticPaths() {
+    const data = await getData()
+    const slugs = data.map((item) => item.slug);
+    const pathsWithParams = slugs.map((slug) => {
+        return {
+            params: { slug: slug.toString() }
+        }
+    });
+    return {
+        paths: pathsWithParams,
+        fallback: 'blocking'
+    }
 }
 
 export default Article;

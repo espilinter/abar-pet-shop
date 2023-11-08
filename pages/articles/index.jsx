@@ -3,8 +3,14 @@ import ArticlePageCards from "@/components/ArticlePageCards/ArticlePageCards";
 import ArticlesSwiper from "@/components/ArticlesSwiper/ArticlesSwiper";
 import Title from "@/components/Title/Title";
 import axios from "axios";
+import { useEffect } from "react";
 
 const Articles = (props) => {
+
+    useEffect(() => {
+        console.log(props.articles);
+    }, [])
+
     return (
         <>
             <div className="pt-80 md:pt-140">
@@ -22,8 +28,8 @@ const Articles = (props) => {
                 <div className="inline-block md:hidden w-120 md:w-200 self-start mt-25 mr-16 md:mr-68">
                     <Title title="بیشترین بازدید" className="" />
                 </div>
-                <div className="overflow-scroll mt-5 md:mt-80">
-                    <div className="pr-50  w-full flex gap-x-18  md:[&>*:nth-child(3)]:hidden xl:[&>*:nth-child(3)]:inline-block md:[&>*:nth-child(4)]:hidden 1440:[&>*:nth-child(4)]:inline-block min-w-[1350px] md:min-w-[950px] ">
+                <div className="overflow-scroll mt-5 md:mt-80 hiden_scrollbar">
+                    <div className="pr-50  w-full flex gap-x-18  md:[&>*:nth-child(3)]:hidden xl:[&>*:nth-child(3)]:inline-block md:[&>*:nth-child(4)]:hidden 1440:[&>*:nth-child(4)]:inline-block min-w-[1350px] md:min-w-[950px]">
                         {props.data.cards.slice(0, 4).map((item) => (
                             <ArticleCardPopular key={item.id} />
                         ))}
@@ -39,11 +45,11 @@ const Articles = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full flex mt-100 items-center justify-between overflow-scroll hide_scrollbar">
+                <div className="w-full flex mt-100 items-center justify-between overflow-scroll hiden_scrollbar">
                     <div className="hidden lg:inline-block w-250 pr-50">
                         <Title title="همه مقالات" />
                     </div>
-                    <div className="bg-[#A6B677] w-full lg:w-70% flex min-w-[700px] mr-20 hide_scrollbar">
+                    <div className="bg-[#A6B677] w-full lg:w-70% flex min-w-[700px] mr-20">
                         <div className="flex flex-col gap-y-16 py-10 px-25 w-116 items-center bg-[#44531B] text-white">
                             <i className="aps-pet text-[50px]"></i>
                             <span className="text-14 ">دسته بندی</span>
@@ -71,9 +77,9 @@ const Articles = (props) => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 1500:grid-cols-6 1750:grid-cols-7 w-full px-16 md:px-60 mt-130 gap-y-32">
-                    {props.data.cards.map((item) => (
-                        <div className="flex justify-center" key={item.id}>
-                            <ArticlePageCards />
+                    {props.articles.map((item, index) => (
+                        <div className="flex justify-center" key={index}>
+                            <ArticlePageCards item={item} />
                         </div>
                     ))}
                 </div>

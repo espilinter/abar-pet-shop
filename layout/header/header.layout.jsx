@@ -288,8 +288,8 @@ const Header = (props) => {
                         </div>
                         <p className=" text-center text-zinc-950 text-lg font-normal leading-normal">تعدادی همکار بصورت حضوری (تمام وقت - نیمه وقت) جهت دفتر مرکزی تهران دعوت به همکاری میشوند.</p>
                         <div className=" flex flex-col gap-y-12 pt-12 w-95% mx-auto">
-                            {estekhdam.map((item) => (
-                                <div className="flex justify-between">
+                            {estekhdam.map((item, index) => (
+                                <div className="flex justify-between" key={index}>
                                     <div className="flex gap-x-4 items-center ">
                                         <i className="aps-arrow-left-o text-24 text-[#728A2D]"></i>
                                         <span className="text-center text-zinc-950 text-base font-normal leading-normal">{item.title}</span>
