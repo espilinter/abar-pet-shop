@@ -1,5 +1,5 @@
 import Image from "next/image";
-import animals from "../../assets/image/image 25.svg"
+import animals from "../../assets/image/image 25.png"
 import logo from "../../assets/image/Logo.png"
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -134,11 +134,11 @@ const Login = (props) => {
         case "1":
             return (
                 <div className="pt-150">
-                    <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
+                    <div className="w-90% m-auto md:h-600 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
                             <Image alt={""} className="hidden md:inline-block" src={logo} />
                             <div className=" py-48 px-0 lg:px-48 ">
-                                <i className="hidden md:inline-block aps-home-2-o text-24"></i>
+                                <i className="hidden md:inline-block aps-home-2-o text-24  cursor-pointer" onClick={() => { setSwitchCase("1") }}></i>
                                 <input className="w-full h-50 p-10 rounded-md border border-[#8A8A8A] text-16 text-[#5e5e5e] bg-[#F1F1F1] md:bg-[#F3FBDF] md:mt-120" placeholder="شماره موبایل" value={phoneInputValue} onChange={phoneInputChangeHandler} />
                                 <button onClick={sendPhoneButton} className="w-full h-50 text-[#fff] border rounded-md bg-[#728A2D] font-medium text-center text-16 mt-65">وارد کردن رمزعبور</button>
                             </div>
@@ -160,11 +160,11 @@ const Login = (props) => {
         case "2":
             return (
                 <div className="pt-150">
-                    <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
+                    <div className="w-90% m-auto md:h-600 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
                             <Image alt={""} className="hidden md:inline-block " src={logo} />
                             <div className=" py-48 px-0 lg:px-48 flex flex-col items-center">
-                                <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto"></i>
+                                <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto  cursor-pointer" onClick={() => { setSwitchCase("1") }}></i>
                                 <input className="w-full h-50 p-10 rounded-md border border-[#8A8A8A] text-16 text-[#5e5e5e] bg-[#F1F1F1] md:bg-[#F3FBDF] md:mt-120" placeholder="رمز عبور" value={passwordInputValue} onChange={passwordInputChangeHandler} />
                                 <button onClick={sendPasswordButton} className="w-full h-50 text-[#fff] border rounded-md bg-[#728A2D] font-medium text-center text-16 mt-65">ورود</button>
                                 <button className="text-center text-[#728A2D] text-lg font-medium leading-[34px] mt-48 m-auto w-fit" onClick={getOTPButton}>ورود با کد</button>
@@ -187,11 +187,11 @@ const Login = (props) => {
         case "3":
             return (
                 <div className="pt-150">
-                    <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
+                    <div className="w-90% m-auto md:h-600 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
                             <Image alt={""} className="hidden md:inline-block " src={logo} />
                             <div className=" py-48 px-0 lg:px-48 flex flex-col items-center">
-                                <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto mb-[100px]"></i>
+                                <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto mb-[100px]  cursor-pointer" onClick={() => { setSwitchCase("1") }}></i>
                                 <InputOTP setOtp={setOtp} otp={otp} />
                                 <button onClick={sendOTPButton} className="w-full h-50 text-[#fff] border rounded-md bg-[#728A2D] font-medium text-center text-16 mt-65">ورود</button>
                                 {/* <button className="text-center text-[#728A2D] text-lg font-medium leading-[34px] mt-48 m-auto w-fit" onClick={() => { setSwitchCase("3") }}>ورود با کد</button> */}
@@ -214,11 +214,11 @@ const Login = (props) => {
         case "4":
             return (
                 <div className="pt-150">
-                    <div className="w-90% m-auto md:h-600 lg:h-800 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
+                    <div className="w-90% m-auto md:h-600 md:bg-[#F3FBDF] flex flex-col-reverse md:flex-row md:shadow-[0_0_16px_8px_rgba(0,0,0,0.35)] rounded-3xl items-center md:items-stretch">
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
                             <Image alt={""} className="hidden md:inline-block " src={logo} />
                             <div className=" py-48 px-0 lg:px-48 flex flex-col items-center">
-                                <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto mb-[100px]"></i>
+                                <i className="hidden md:inline-block aps-home-2-o text-24 mr-0 ml-auto mb-[100px]  cursor-pointer" onClick={() => { setSwitchCase("1") }}></i>
                                 <InputOTP setOtp={setOtp} otp={otp} />
                                 <button onClick={checkOTPButton} className="w-full h-50 text-[#fff] border rounded-md bg-[#728A2D] font-medium text-center text-16 mt-65">ورود</button>
                                 {/* <button className="text-center text-[#728A2D] text-lg font-medium leading-[34px] mt-48 m-auto w-fit" onClick={() => { setSwitchCase("3") }}>ورود با کد</button> */}
@@ -245,7 +245,7 @@ const Login = (props) => {
                         <div className="w-full md:w-50% rounded-r-3xl flex flex-col md:p-32">
                             <Image alt={""} className="hidden md:inline-block" src={logo} />
                             <div className=" py-48 px-0 lg:px-48 ">
-                                <i className="hidden md:inline-block aps-home-2-o text-24"></i>
+                                <i className="hidden md:inline-block aps-home-2-o text-24 cursor-pointer" onClick={() => { setSwitchCase("1") }}></i>
                                 <div className="flex flex-col gap-y-36 mt-45">
                                     <input className="w-full h-50 p-10 rounded-md border border-[#8A8A8A] text-16 text-[#5e5e5e] bg-[#F1F1F1] md:bg-[#F3FBDF] " placeholder="نام" value={firstNameInputValue} onChange={firstNameInputChangeHandler} />
                                     <input className="w-full h-50 p-10 rounded-md border border-[#8A8A8A] text-16 text-[#5e5e5e] bg-[#F1F1F1] md:bg-[#F3FBDF] " placeholder="نام خانوادگی" value={lastNameInputValue} onChange={lastNameInputChangeHandler} />

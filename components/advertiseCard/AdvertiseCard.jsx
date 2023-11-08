@@ -34,7 +34,7 @@ const Advertising = (props) => {
     }
 
     return (
-        <Link href={`/category/${props.item.id}`}>
+        <Link href={`/advertise/${props.item.id}`}>
             <div className={`w-full sm:w-157 md:w-200 sm:h-238 md:h-307 shadow-[0px_0px_8px_2px_rgba(0,0,0,0.12)] rounded-xl m-auto bg-white sm:bg-none flex flex-row sm:flex-col p-16 sm:p-0 gap-x-16`}>
                 <Image alt={""} src={category} className="w-100 sm:w-157 md:w-200 h-100 sm:h-157 md:h-200 rounded-t-xl" width={200} height={200} />
                 <div className="sm:h-141 md:h-166 rounded-t-[16px] rounded-b-xl bg-white sm:mt-[-60px] w-full sm:w-157 md:w-200 sm:pt-8 sm:px-16 z-[2] relative">
