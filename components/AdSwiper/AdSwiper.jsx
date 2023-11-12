@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -24,6 +24,10 @@ const AdSwiper = (props) => {
         if (!sliderRef.current) return;
         sliderRef.current.swiper.slideNext();
     }, []);
+
+    useEffect(() => {
+        console.log(props);
+    }, [])
 
     return (
         <>

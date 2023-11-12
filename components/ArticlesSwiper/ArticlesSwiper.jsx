@@ -60,7 +60,6 @@ const ArticlesSwiper = () => {
                     }}
                     loop={true}
                     loopedSlides={3}
-                    loopAdditionalSlides={3}
                     modules={[EffectCoverflow, Navigation]}
                     className="mySwiper h-210 md:h-[460px] "
                     navigation={true}

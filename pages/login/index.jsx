@@ -4,7 +4,6 @@ import logo from "../../assets/image/Logo.png"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import InputOTP from "@/components/InputOTP/InputOtp";
-
 const Login = (props) => {
     const [switchCase, setSwitchCase] = useState("1")
     const [phoneInputValue, setPhoneInputValue] = useState("")
@@ -13,11 +12,8 @@ const Login = (props) => {
     const [lastNameInputValue, setLastNameInputValue] = useState("")
     const [emailInputValue, setEmailInputValue] = useState("")
     const [repeatPasswordInputValue, setRepeatPasswordInputValue] = useState("")
-
     const [loginToken, setLoginToken] = useState("")
     const [otp, setOtp] = useState("")
-
-
     function sendPhoneButton() {
         let object = { mobile: phoneInputValue }
         axios.post("https://api.abarpetshop.com/api/v1/get-otp", object).then((res) => {
@@ -25,7 +21,6 @@ const Login = (props) => {
             res.data.data.status === "exists" ? setSwitchCase("2") : setSwitchCase("4")
         })
     }
-
     function sendPasswordButton() {
         let object = {
             login_token: loginToken,
@@ -36,7 +31,6 @@ const Login = (props) => {
             localStorage.setItem("Authorization_token", res.data.token)
         }).then(() => { window.location.href = "/profile"; })
     }
-
     function getOTPButton() {
         let object = {
             mobile: phoneInputValue

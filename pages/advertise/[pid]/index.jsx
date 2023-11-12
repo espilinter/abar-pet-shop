@@ -10,13 +10,13 @@ import locationGray from "../../../assets/image/locationGray.png"
 import callGray from "../../../assets/image/callGray.png"
 import AdvertiseCard from "../../../components/advertiseCard/AdvertiseCard";
 import LeafletContainer from "@/components/LeafletContainer/LeafletContainer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 // import fs from 'fs'
 // import path from 'path'
 
 const Ad = (props) => {
-
+    const [save, setSave] = useState(false)
     useEffect(() => {
         console.log(props);
     }, [])
@@ -24,6 +24,22 @@ const Ad = (props) => {
     const { data } = props;
     if (!data) {
         return <p>Loding ...</p>
+    }
+    function saveAdvertise(event) {
+        const object = {
+            "advertise_id": event.currentTarget.id
+        }
+        axios.post("https://api.abarpetshop.com/api/v1/favorite-advertise/store", object,
+            {
+                headers: {
+                    Authorization: "Bearer " + localStorage.getItem("Authorization_token"),
+                }
+            })
+            .then((res) => {
+                setSave(res.data.liked)
+            }).catch((error) => {
+                console.log(error);
+            })
     }
     return (
         <>
@@ -51,7 +67,10 @@ const Ad = (props) => {
                         </div>
                         <div className="flex gap-y-16 flex-col md:flex-row gap-x-8 md:mt-24 justify-between">
                             <button className="py-4 px-12 bg-[#728A2D] rounded-md w-135 h-38 text-white text-center leading-[30px]">ورود به سایت</button>
-                            <button className="py-4 px-12 text-[#728A2D] rounded-md w-135 h-38 bg-white leading-[30px] border border-[#728A2D] flex items-center justify-around text-center"><span>ذخیره آگهی</span><Image alt={""} src={unsave} className="w-12 h-15" /></button>
+                            <button className="py-4 px-12 text-[#728A2D] rounded-md w-135 h-38 bg-white leading-[30px] border border-[#728A2D] flex items-center justify-around text-center" onClick={saveAdvertise} id={props.data.id}>
+                                <span>{!save ? "ذخیره آگهی" : "ذخیره شده"}</span>
+                                <i className={`${!save ? "aps-bookmark-o" : "aps-bookmark"} text-18`}></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -107,7 +126,7 @@ export async function getStaticProps(context) {
     const { params } = context;
     const productId = params.pid;
     const allData = await getData();
-    const data = allData.find((item) => +item.id === +productId);
+    const data = allData.find((item) => item.id === productId);
     const res = await fetch(`http://localhost:3001/advertise`)
     const slider = await res.json()
     if (!data) {
@@ -117,7 +136,8 @@ export async function getStaticProps(context) {
         props: {
             data: data,
             slider: slider
-        }
+        },
+        revalidate: 10
     }
 }
 

@@ -19,7 +19,7 @@ const Advertising = (props) => {
         // if (props.type === "vip") {
         //     setAdType("")
         // }
-        // console.log(props.item);
+        console.log(props.item.id);
     }, [])
 
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -56,7 +56,7 @@ const Advertising = (props) => {
                         <div className="flex">
                             <Image alt="" className="w-18 h-18 mt-2" src={location} />
                             <p className="text-[#1E1E1E] text-12 mr-10 leading-[20px]">
-                                {props.item.province.title}
+                                {/* {props.item.province.title} */}
                             </p>
                             <p className="text-[#535353] text-10 mt-3 mr-8 leading-[17px]">
                                 {props.item.city.title}

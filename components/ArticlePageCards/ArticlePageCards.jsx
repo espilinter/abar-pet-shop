@@ -12,6 +12,7 @@ const ArticlePageCards = (props) => {
     useEffect(() => {
         moment.locale('fa');
         setReletivTime(moment.unix(props.item.created_at).fromNow())
+        console.log(props.item.slug);
     }, [])
     return (
         <>
@@ -25,7 +26,7 @@ const ArticlePageCards = (props) => {
                             <p className="text-[#8A8A8A] text-10">محمد محمدی</p>
                         </div>
                         <h3 className="text-14 text-[#1E1E1E] mt-8 md:mt-16">{props.item.title}</h3>
-                        <p className="text-[#8A8A8A] text-10 mt-4 md:mt-8">{props.item.description}</p>
+                        <p className="text-[#8A8A8A] text-10 mt-4 md:mt-8 line-clamp-2">{props.item.description}</p>
                     </div>
                 </div>
             </Link>
