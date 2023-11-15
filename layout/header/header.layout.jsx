@@ -163,7 +163,7 @@ const Header = (props) => {
     function openSearchHandler() {
         if (searchDisplay === "") {
             setSearchDisplay("hidden")
-            setSearchW("w-46% border border-[#6E6E6E] p-8")
+            setSearchW("w-30% 1050:w-32% 1220:w-[38%] 1440:w-46% border border-[#6E6E6E] p-8")
         } else {
             setSearchW("w-0")
             setSearchDisplay("")
@@ -182,12 +182,12 @@ const Header = (props) => {
     return (
         <>
             {windowSize >= 1024 ? <header className={`hidden h-104 lg:flex  py-32 text-14 fixed justify-between z-[1000] ${pathname === "/" ? "bg-[#ffffff8c] backdrop-blur-[10px] right-5%  w-90% top-32 rounded-3xl px-24" : "bg-white top-0 right-0 w-full px-70"}`}>
-                <div className="w-200 h-40 flex pl-8 border-l justify-between border-[#8A8A8A]">
+                <div className="w-200 h-40 flex pl-8 border-l justify-between border-[#8A8A8A] relative">
                     <Image alt="" src={logo} className="w-105 h-40" />
-                    <Image alt="" src={search} className="w-24 h-24 mt-8 mr-10% xl:mr-27%" onClick={openSearchHandler} />
+                    <i className="text-28 mt-8 mr-10% xl:mr-27% cursor-pointer aps-search-normal1" onClick={openSearchHandler}></i>
                 </div>
-                <input className={`${searchW} transition-all rounded-lg `} placeholder="جستجو" />
-                <div className={`w-46% h-40 justify-between text-[#728A2D] leading-10 mr-1% ${searchDisplay}`}>
+                <input className={`${searchW} transition-all rounded-lg absolute bg-white z-20 right-24% 1220:right-[23%] 1440:right-19%`} placeholder="جستجو" />
+                <div className={`w-41% h-40 justify-between text-[#728A2D] leading-10 mr-1%`}>
                     <button className="mr-1 relative" onMouseEnter={openCategoryModal} onMouseLeave={openCategoryModal}>
                         <Image alt="" src={lines} className="inline-block" />
                         <p className="inline-block mr-7">دسته بندی</p>
@@ -211,11 +211,11 @@ const Header = (props) => {
                             </ul>
                         </div>
                     </button>
-                    <Link href="/" className="mr-2% 1150:mr-4% inline-block">صفحه اصلی</Link>
-                    <Link href="articles" className="mr-2% 1150:mr-4% hidden 1150:inline-block">مقالات</Link>
-                    <Link href="/tariffs" className="mr-2% 1150:mr-4% hidden 1220:inline-block">تعرفه ها</Link>
-                    <Link href="contactus" className="mr-2% 1150:mr-4% hidden 1383:inline-block">تماس با ما</Link>
-                    <div className={`mr-2% 1150:mr-4% inline-block relative`} onMouseEnter={openStateDropdown} onMouseLeave={openStateDropdown}>
+                    <Link href="/" className="mr-4% inline-block">صفحه اصلی</Link>
+                    <Link href="articles" className="mr-4% hidden 1150:inline-block">مقالات</Link>
+                    <Link href="/tariffs" className="mr-4% hidden 1220:inline-block">تعرفه ها</Link>
+                    <Link href="contactus" className="mr-4% hidden 1383:inline-block">تماس با ما</Link>
+                    <div className={`mr-4% inline-block relative`} onMouseEnter={openStateDropdown} onMouseLeave={openStateDropdown}>
                         <p className="inline-block">انتخاب استان</p>
                         <Image alt="" src={arrow} className="inline-block mr-8" />
                         <div className={`w-[326px] ${stateHeight} ${stateDisplay} bg-white rounded-lg py-16 px-8 transition-all duration-200 absolute cursor-default`}>
