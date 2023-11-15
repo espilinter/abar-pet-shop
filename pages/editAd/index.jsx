@@ -9,7 +9,7 @@ function useForceUpdate() {
     return () => setState(!value);
 }
 
-const InsertAd = (props) => {
+const EditAd = (props) => {
 
     const [multiImage, setMultiImage] = useState([])
     const [title, setTitle] = useState("")
@@ -288,4 +288,4 @@ export async function getStaticProps() {
     // }
 
 }
-export default InsertAd;
+export default EditAd;
