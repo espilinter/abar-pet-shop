@@ -16,9 +16,9 @@ import axios from "axios";
 // import path from 'path'
 
 const Ad = (props) => {
-    const [save, setSave] = useState(false)
+    const [save, setSave] = useState(props.data.saved)
     useEffect(() => {
-        console.log(props);
+        console.log(props.data);
     }, [])
 
     const { data } = props;
@@ -29,6 +29,7 @@ const Ad = (props) => {
         const object = {
             "advertise_id": event.currentTarget.id
         }
+        console.log(object);
         axios.post("https://api.abarpetshop.com/api/v1/favorite-advertise/store", object,
             {
                 headers: {
@@ -36,6 +37,7 @@ const Ad = (props) => {
                 }
             })
             .then((res) => {
+                console.log(res);
                 setSave(res.data.liked)
             }).catch((error) => {
                 console.log(error);

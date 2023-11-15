@@ -1,9 +1,14 @@
 import ProgressBar from "@ramonak/react-progress-bar";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import telegram from "../../assets/image/telegramBlack.png"
 import ProfileAdCard from "@/components/profileAdCard/profileAdCard";
 import SavedCard from "@/components/SavedCard/SavedCard";
+import avatar from "../../assets/image/avatar.jpg"
+import axios from "axios";
+import { useRouter } from "next/router";
+
+
 function useForceUpdate() {
     const [value, setState] = useState(true);
     return () => setState(!value);
@@ -15,6 +20,24 @@ const Profile = (props) => {
     const [clickedButtonStyle] = useState("bg-[#CCD6AF]")
     const [clickedButtonId, setClickedButtonId] = useState("edit")
     const [linksArray, setLinkArray] = useState([{ id: "telegram", "value": "@espilinter2" }])
+    const [imageState, setImageState] = useState("")
+    const [imageDispaly, setImageDispaly] = useState(false)
+    const [userData, setUserData] = useState({})
+    const [provinces, setProvinces] = useState([])
+    const [cities, setCities] = useState([])
+    const [advertises, setAdvertises] = useState([])
+    const router = useRouter()
+
+    useLayoutEffect(() => {
+        axios.get("https://api.abarpetshop.com/api/v1/provinces").then((res) => {
+            setProvinces(res.data.data)
+        })
+        axios.get("https://api.abarpetshop.com/api/v1/dashboard/favorites/advertises").then((res) => {
+            setAdvertises(res.data.data)
+        })
+
+    }, [])
+
 
     function handlePagination(event) {
         setClickedButtonId(event.currentTarget.id)
@@ -26,16 +49,95 @@ const Profile = (props) => {
         setLinkArray(arrey)
         handleForceupdateMethod()
     }
+
+    function provincesChangeHandler(event) {
+        let object = userData;
+        object[event.target.id] = event.target.value;
+        setUserData(object)
+        axios.get(`https://api.abarpetshop.com/api/v1/cities/${event.target.value}`).then((res) => {
+            setCities(res.data.data)
+        })
+    }
+
+    async function getBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader()
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                resolve(reader.result)
+            }
+            reader.onerror = reject
+        })
+    }
+
+    function imageInputHandler(event) {
+        getBase64(event.target.files[0])
+            .then(res => {
+                fetch(res)
+                    .then((response) => response.blob())
+                    .then((blob) => {
+                        // let array = multiImage;
+                        // array.push({
+                        //     url: res,
+                        //     name: event.target.files[0].name,
+                        //     id: multiImage.length + 1,
+                        //     size: (event.target.files[0].size / 1000000).toFixed(1),
+                        //     upload: true
+                        // })
+                        // setMultiImage(array)
+                        // handleForceupdateMethod()
+                        const file = new File([blob], event.target.files[0].name, {
+                            type: `${event.target.files[0].type}`,
+                        });
+                        const formData = new FormData();
+                        formData.append("image", file);
+                        formData.append("type", "SLIDER");
+                        // SetSpinnerState(event.target.files[0].name)
+                        axios.post(`https://api.abarpetshop.com/api/v1/files`, formData)
+                            .then((res) => {
+                                // let array = multiImage;
+                                // array[multiImage.length - 1].id = res.data.data.id
+                                // setMultiImage(array)
+                                setImageState(res.data.data.url)
+                            }).then(() => {
+                                // SetSpinnerState("")
+                                // handleForceupdateMethod()
+                                setImageDispaly(true)
+                            })
+                    });
+            })
+            .catch(err => console.log(err))
+    };
+
+    function inputChangeHandler(event) {
+        let object = userData;
+        object[event.target.id] = event.target.value;
+        setUserData(object)
+    }
+
+    function sendUserData() {
+        console.log(userData);
+        axios.post(`https://api.abarpetshop.com/api/v1/dashboard/edit`, userData).then((res) => {
+            console.log(res);
+        })
+    }
+
+    function exitHandler(params) {
+        // axios.post("https://api.abarpetshop.com/api/v1/logout").then((res) => {
+        //     console.log(res);
+        // })
+    }
+
     return (
         <>
             <div className="flex flex-col lg:flex-row pt-100 lg:pt-150 justify-between px-16 md:px-70 gap-y-16">
                 <div className="bg-white w-full lg:w-27% rounded-3xl shadow-[0_0_8px_2px_rgba(0,0,0,0.12)] px-16 md:px-24 py-12 md:py-16 flex flex-col gap-y-12 lg:gap-y-24 h-fit">
                     <div className="bg-white lg:bg-[#F6F7F6] h-145 lg:h-185 rounded-2xl lg:shadow-[0_0_8px_2px_rgba(0,0,0,0.12)] items-center flex flex-col lg:pt-24">
-                        <Image alt={""} src={""} className="bg-stone-500 rounded-full h-112 w-112" />
+                        <Image alt={""} src={avatar} className="bg-stone-500 rounded-full h-112 w-112" />
                         <span className="text-right text-[#1E1E1E] text-base font-bold mt-8">محمد محمدی</span>
                     </div>
                     <div className="w-full h-[73px] p-16 justify-center items-center lg:inline-flex hidden">
-                        <span className="text-right text-[#8A8A8A] text-2xl">داشبرد</span>
+                        <span className="text-right text-[#8A8A8A] text-2xl">داشبورد</span>
                     </div>
                     <div className="flex flex-roe lg:flex-col gap-y-16">
                         <div className={`w-full h-65 lg:h-58 lg:p-16 p-8 pb-0 lg:pb-16 justify-between items-center flex flex-col lg:flex-row cursor-pointer rounded-xl ${clickedButtonId === "edit" ? clickedButtonStyle : ""}`} onClick={handlePagination} id="edit">
@@ -59,14 +161,14 @@ const Profile = (props) => {
                             </div>
                             <div className={`w-full h-5 lg:w-5 lg:h-24 bg-[#44531B] rounded-xl ${clickedButtonId === "myAd" ? "inline-block" : "hidden"}`}></div>
                         </div>
-                        <div className={`w-full h-65 lg:h-58 lg:p-16 p-8 pb-0 lg:pb-16 justify-between items-center flex flex-col lg:flex-row cursor-pointer rounded-xl ${clickedButtonId === "saved" ? clickedButtonStyle : ""}`} onClick={handlePagination} id="saved">
+                        <div className={`w-full h-65 lg:h-58 lg:p-16 p-8 pb-0 lg:pb-16 justify-between items-center flex flex-col lg:flex-row cursor-pointer rounded-xl ${clickedButtonId === "savedAd" || clickedButtonId === "savedMag" ? clickedButtonStyle : ""}`} onClick={handlePagination} id="savedAd">
                             <div className="flex flex-col lg:flex-row gap-x-8 items-center gap-y-4">
                                 <i className="aps-receipt-text-o text-22"></i>
                                 <div className="text-right text-zinc-500 text-10 md:text-sm font-normal">ذخیره شده</div>
                             </div>
-                            <div className={`w-full h-5 lg:w-5 lg:h-24 bg-[#44531B] rounded-xl ${clickedButtonId === "saved" ? "inline-block" : "hidden"}`}></div>
+                            <div className={`w-full h-5 lg:w-5 lg:h-24 bg-[#44531B] rounded-xl ${clickedButtonId === "savedAd" || clickedButtonId === "savedMag" ? "inline-block" : "hidden"}`}></div>
                         </div>
-                        <div className={`w-full h-65 lg:h-58 lg:p-16 p-8 pb-0 lg:pb-16 justify-between items-center flex flex-col lg:flex-row cursor-pointer rounded-xl ${clickedButtonId === "logOut" ? clickedButtonStyle : ""}`} onClick={handlePagination} id="logOut">
+                        <div className={`w-full h-65 lg:h-58 lg:p-16 p-8 pb-0 lg:pb-16 justify-between items-center flex flex-col lg:flex-row cursor-pointer rounded-xl ${clickedButtonId === "logOut" ? clickedButtonStyle : ""}`} onClick={exitHandler} id="logOut">
                             <div className="flex flex-col lg:flex-row gap-x-8 items-center gap-y-4">
                                 <i className="aps-logout-o text-22 text-[#EC0303]"></i>
                                 <span className="text-right text-[#EC0303] text-10 md:text-sm font-normal hidden lg:inline-block">خروج از حساب کاربری</span>
@@ -102,40 +204,41 @@ const Profile = (props) => {
                         switch (clickedButtonId) {
                             case "edit":
                                 return (<div className="flex flex-col gap-y-40">
-                                    <div className="w-218 h-118 bg-[#f4f4f4] mt-32 rounded-lg text-center border border-[#B9B9B9] relative justify-center items-center flex flex-col p-16 ">
-                                        <input type="file" className="opacity-0 absolute top-0 h-full cursor-pointer w-full right-0 rounded-3xl " onChange={""} />
+                                    <div className="w-200 h-200 bg-[#f4f4f4] mt-32 rounded-lg text-center border border-[#B9B9B9] relative justify-center items-center flex flex-col p-16 ">
+                                        <input type="file" className="opacity-0 absolute top-0 h-full cursor-pointer w-full right-0 rounded-3xl z-[2]" onChange={imageInputHandler} />
                                         <i className="aps-add-square-o text-24"></i>
                                         <h3 className=" text-16 leading-[30px] mt-4 font-semibold text-[#1E1E1E]">بارگذاری تصویر پروفایل</h3>
                                         <p className="text-10 leading-[22px] text-[#8A8A8A] ">فایل تا 5MB با فرمت PNG, JPG, GIF</p>
+                                        {imageDispaly && <Image className="absolute rounded-lg w-200 h-198 bg-[#f4f4f4]" src={imageState} width={200} height={200} />}
                                     </div>
                                     <div className="flex flex-col gap-y-8">
                                         <label className="text-right text-stone-900 text-sm font-normal">نام و نام خانوادگی</label>
-                                        <input type="text" className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" />
+                                        <input type="text" className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" onChange={inputChangeHandler} id="full_name" />
                                     </div>
                                     <div className="flex flex-col gap-y-8">
                                         <label className="text-right text-stone-900 text-sm font-normal">شماره تلفن</label>
-                                        <input type="tel" className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                                        <input type="tel" className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onChange={inputChangeHandler} id="mobile" />
                                     </div>
                                     <div className="flex flex-col gap-y-8">
                                         <label className="text-right text-stone-900 text-sm font-normal">آدرس ایمیل</label>
-                                        <input type="email" className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                                        <input type="email" className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onChange={inputChangeHandler} id="email" />
                                     </div>
                                     <div className="flex flex-col gap-y-8">
                                         <label className="text-right text-stone-900 text-sm font-normal">استان</label>
-                                        <select className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" >
+                                        <select className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" onChange={provincesChangeHandler} id="province_id">
                                             <option>انتخاب کنید</option>
-                                            <option value="tehran">تهران</option>
-                                            <option value="esfehan">اصفحان</option>
-                                            <option value="shiraz">شیراز</option>
+                                            {provinces.map((item) => (
+                                                <option value={item.id}>{item.title}</option>
+                                            ))}
                                         </select>
                                     </div>
                                     <div className="flex flex-col gap-y-8">
                                         <label className="text-right text-stone-900 text-sm font-normal">شهر</label>
-                                        <select className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md">
+                                        <select className="border border-[#DCDCDC] p-12 h-48 max-w-[372px] bg-[#f4f4f4] rounded-md" onChange={inputChangeHandler} id="city_id">
                                             <option>انتخاب کنید</option>
-                                            <option value="tehran">تهران</option>
-                                            <option value="esfehan">اصفحان</option>
-                                            <option value="shiraz">شیراز</option>
+                                            {cities.map((item) => (
+                                                <option value={item.id}>{item.title}</option>
+                                            ))}
                                         </select>
                                     </div>
 
@@ -144,7 +247,7 @@ const Profile = (props) => {
                                         {linksArray.map((item) => (
                                             <div className="flex gap-x-16" key={item.id}>
                                                 <input type="text" className="border border-[#DCDCDC] p-12 h-48 w-[372px] bg-[#f4f4f4] rounded-md" />
-                                                <select className="border border-[#DCDCDC] p-12 h-48 max-w-[90px] bg-[#f4f4f4] rounded-md" >
+                                                <select className="border border-[#DCDCDC] p-12 h-48 max-w-[90px] bg-[#f4f4f4] rounded-md" onChange={inputChangeHandler} id="social">
                                                     <option value="telegram">تلگرام</option>
                                                 </select>
                                             </div>
@@ -153,14 +256,13 @@ const Profile = (props) => {
                                             <i className="aps-add-square-o text-24 text-[#728A2D] "></i>
                                             <span className="text-right text-[#728A2D] text-sm font-normal">افزودن</span>
                                         </div>
-
                                     </div>
                                     <div className="flex flex-col gap-y-8">
                                         <label className="text-right text-stone-900 text-sm font-normal">توضیحات</label>
-                                        <textarea className="border border-[#B9B9B9] p-12 bg-[#f4f4f4] rounded-md" name="" id="" rows="6"></textarea>
+                                        <textarea className="border border-[#B9B9B9] p-12 bg-[#f4f4f4] rounded-md" name="" rows="6" onChange={inputChangeHandler} id="description"></textarea>
                                     </div>
                                     <div className="flex justify-end">
-                                        <button className="w-112 h-38 text-white rounded-[6px] text-16 font-medium text-center bg-[#728A2D] leading-[30px]">ثبت تغییرات</button>
+                                        <button className="w-112 h-38 text-white rounded-[6px] text-16 font-medium text-center bg-[#728A2D] leading-[30px]" onClick={sendUserData}>ثبت تغییرات</button>
                                     </div>
                                 </div>
                                 )
@@ -206,14 +308,32 @@ const Profile = (props) => {
                             case "myAd":
                                 return (
                                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-24 mt-40 gap-y-32 ">
-                                        {data.map((item) => (<ProfileAdCard key={item.id} />))}
+                                        {props.myAd && props.myAd.map((item, index) => (<ProfileAdCard key={index} item={item} />))}
                                     </div>
                                 )
-                            case "saved":
+                            case "savedAd":
                                 return (
-                                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-24 mt-40 gap-y-32 ">
-                                        {data.map((item) => (<SavedCard key={item.id} />))}
-                                    </div>
+                                    <>
+                                        <div className="flex flex-start w-full gap-x-[8px]  mt-40">
+                                            <div className="w-60 h-38 text-center border-b border-[#8A8A8A] p-8 text-12 text-[#8A8A8A] cursor-pointer">آگهی‌ها</div>
+                                            <div className="w-60 h-38 text-center p-8 text-12 text-[#8A8A8A] cursor-pointer" onClick={handlePagination} id="savedMag">مقالات</div>
+                                        </div>
+                                        <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-24 gap-y-32 mt-24">
+                                            {advertises && advertises.map((item) => (<SavedCard key={item.id} />))}
+                                        </div>
+                                    </>
+                                )
+                            case "savedMag":
+                                return (
+                                    <>
+                                        <div className="flex flex-start w-full gap-x-[8px]  mt-40">
+                                            <div className="w-60 h-38 text-center p-8 text-12 text-[#8A8A8A] cursor-pointer" onClick={handlePagination} id="savedAd">آگهی‌ها</div>
+                                            <div className="w-60 h-38 text-center p-8 text-12 text-[#8A8A8A] cursor-pointer border-b border-[#8A8A8A]">مقالات</div>
+                                        </div>
+                                        <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-24 mt-24 gap-y-32 ">
+                                            {advertises && advertises.map((item) => (<SavedCard key={item.id} />))}
+                                        </div>
+                                    </>
                                 )
                             default:
                                 return (
@@ -221,7 +341,6 @@ const Profile = (props) => {
                                 )
                         }
                     })()}
-
                 </div>
             </div >
         </>
@@ -229,3 +348,17 @@ const Profile = (props) => {
 }
 
 export default Profile;
+
+// export async function getStaticProps(context) {
+//     const res = await fetch(`https://api.abarpetshop.com/api/v1/dashboard/advertise`)
+//     const data = await res.json()
+//     if (data.length === 0) {
+//         return { notFound: true }
+//     }
+//     return {
+//         props: {
+//             myAd: data.data
+//         },
+//         revalidate: 10,
+//     }
+// }
