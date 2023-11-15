@@ -1,7 +1,7 @@
 import AdSwiper from "@/components/AdSwiper/AdSwiper";
 import ArticleCard from "@/components/ArticleCard/ArticleCard";
 import Title from "@/components/Title/Title";
-import Advertising from "@/components/advertiseCard/AdvertiseCard";
+import Advertising from "@/components/AdvertiseCard/AdvertiseCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from 'next/navigation'

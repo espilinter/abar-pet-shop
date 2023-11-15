@@ -21,12 +21,13 @@ import axios from "axios";
 import SimilarSystemsCard from "../components/similarSystemsCard/similarSystemsCard";
 import Title from "../components/Title/Title.jsx";
 import CategoryCard from "../components/CategoryCard/CategoryCard";
-import AdvertiseCard from "../components/advertiseCard/AdvertiseCard";
+import AdvertiseCard from "../components/AdvertiseCard/AdvertiseCard";
 import Image from "next/image";
 import SwiperCoverflow from "@/components/SwiperCoverflow/SwiperCoverflow";
 import ArticleCard from "@/components/ArticleCard/ArticleCard";
 import { revalidatePath } from "next/cache";
 import Head from "next/head";
+import IndexAdvetiseCard from "@/components/IndexAdvertiseCard/IndexAdvetiseCard";
 
 const Home = (props) => {
     const [data, setData] = useState([])
@@ -319,7 +320,7 @@ const Home = (props) => {
                 <div className=" text-center">
                     <div className="overflow-x-scroll 1400:overflow-x-hidden mt-32 md:mt-80 h-280 md:h-330 hide_scrollbar">
                         <div className="flex w-80% gap-16 sm:justify-between sm:m-auto min-w-[1050px] sm:min-w-[1200px] px-16 sm:px-3 py-10 [&>*:nth-child(6)]:inline-block md:[&>*:nth-child(6)]:hidden 1600:[&>*:nth-child(6)]:inline-block h-260 md:h-330">
-                            {data.advertise && data.advertise.slice(0, 6).map((item, index) => (<AdvertiseCard item={item} key={index} />))}
+                            {data.advertise && data.advertise.slice(0, 6).map((item, index) => (<IndexAdvetiseCard item={item} key={index} />))}
                         </div>
                     </div>
                     <a className=" text-center" href="/category"><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]  text-center">مشاهده همه</button></a>

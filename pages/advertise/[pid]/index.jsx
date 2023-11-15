@@ -8,7 +8,7 @@ import unsave from "../../../assets/image/unsave.png"
 import elementGray from "../../../assets/image/elementGray.png"
 import locationGray from "../../../assets/image/locationGray.png"
 import callGray from "../../../assets/image/callGray.png"
-import AdvertiseCard from "../../../components/advertiseCard/AdvertiseCard";
+import AdvertiseCard from "../../../components/AdvertiseCard/AdvertiseCard";
 import LeafletContainer from "@/components/LeafletContainer/LeafletContainer";
 import { useEffect, useState } from "react";
 import axios from "axios";
