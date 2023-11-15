@@ -11,9 +11,9 @@ const LeafletContainer = (props) => {
         }
     ), [])
     return (
-        <>
-            <Map location={props.location} />
-        </>
+
+        <Map location={props.location} />
+
     );
 }
 

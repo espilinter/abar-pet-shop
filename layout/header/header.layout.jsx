@@ -180,8 +180,8 @@ const Header = (props) => {
     }
 
     return (
-        <>
-            {windowSize >= 1024 ? <header className={`hidden h-104 lg:flex  py-32 text-14 fixed justify-between z-[1000] ${pathname === "/" ? "bg-[#ffffff8c] backdrop-blur-[10px] right-5%  w-90% top-32 rounded-3xl px-24" : "bg-white top-0 right-0 w-full px-70"}`}>
+        <header>
+            {windowSize >= 1024 ? <div className={`hidden h-104 lg:flex  py-32 text-14 fixed justify-between z-[1000] ${pathname === "/" ? "bg-[#ffffff8c] backdrop-blur-[10px] right-5%  w-90% top-32 rounded-3xl px-24" : "bg-white top-0 right-0 w-full px-70"}`}>
                 <div className="w-200 h-40 flex pl-8 border-l justify-between border-[#8A8A8A] relative">
                     <Image alt="" src={logo} className="w-105 h-40" />
                     <i className="text-28 mt-8 mr-10% xl:mr-27% cursor-pointer aps-search-normal1" onClick={openSearchHandler}></i>
@@ -306,9 +306,9 @@ const Header = (props) => {
                         </div>
                     </div>
                 </div>}
-            </header >
+            </div >
                 :
-                <header className="flex z-[1000] fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
+                <div className="flex z-[1000] fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
                     <button onClick={openAsideHandler}>
                         <Image alt={""} src={lines3} className="w-24 h-24" />
                     </button>
@@ -317,8 +317,8 @@ const Header = (props) => {
                         <Image alt={""} src={map} className="w-24 h-24" />
                         <Image alt={""} src={searchBlack} className="w-24 h-24" />
                     </div>
-                </header>}
-        </>
+                </div>}
+        </header>
     )
 }
 

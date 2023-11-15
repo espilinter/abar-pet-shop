@@ -3,7 +3,7 @@ import styles from "../../styles/components/similarSystemsCard.module.css"
 
 const SimilarSystemsCard = (props) => {
     return (
-        <a href={props.link} className="cursor-pointer">
+        <a href={"/"} className="cursor-pointer">
             <div className=" w-56 sm:w-100 h-72 sm:h-130 z-[1] 500:scale-125 sm:scale-100">
                 <div className={`bg-[#ffffff] rounded-full w-56 sm:w-100 h-56 sm:h-100 pt-14 ${styles.shadow}`}>
                     <Image alt="" src={props.img} className="w-32 sm:w-72 mx-14" />

@@ -15,15 +15,15 @@ const RangeSlider = () => {
     }
 
     return (
-        <>
-            <div className="App">
-                <Slider
-                    value={value}
-                    onChange={val => setValue(val)}
-                    {...sliderProps}
-                />
-            </div>
-        </>
+
+        <div className="App">
+            <Slider
+                value={value}
+                onChange={val => setValue(val)}
+                {...sliderProps}
+            />
+        </div>
+
     );
 }
 

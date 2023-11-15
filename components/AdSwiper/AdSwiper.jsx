@@ -30,34 +30,34 @@ const AdSwiper = (props) => {
     }, [])
 
     return (
-        <>
-            <div className={`AdSwiper ${props.className} relative rounded-xl`}>
-                <button className="hidden md:inline-block h-40 w-40 absolute top-[calc(50%-20px)] right-16 z-[2]" onClick={handlePrev}>
-                    <Image alt="" src={arrowCircle} />
-                </button>
-                <Swiper
-                    ref={sliderRef}
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    loop={true}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    navigation={false}
-                    modules={[Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    {props.data && props.data.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <img src={item.url} className='rounded-2xl' />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-                <button className="hidden md:inline-block h-40 w-40 absolute top-[calc(50%-20px)] left-16 z-[1]" onClick={handleNext} >
-                    <Image alt="" src={arrowCircle} className="rotate-180" />
-                </button>
-            </div>
-        </>
+
+        <div className={`AdSwiper ${props.className} relative rounded-xl`}>
+            <button className="hidden md:inline-block h-40 w-40 absolute top-[calc(50%-20px)] right-16 z-[2]" onClick={handlePrev}>
+                <Image alt="" src={arrowCircle} />
+            </button>
+            <Swiper
+                ref={sliderRef}
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={false}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+            >
+                {props.data && props.data.map((item, index) => (
+                    <SwiperSlide key={index}>
+                        <img src={item.url} className='rounded-2xl' />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+            <button className="hidden md:inline-block h-40 w-40 absolute top-[calc(50%-20px)] left-16 z-[1]" onClick={handleNext} >
+                <Image alt="" src={arrowCircle} className="rotate-180" />
+            </button>
+        </div>
+
     );
 }
 

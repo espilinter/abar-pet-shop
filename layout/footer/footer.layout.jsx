@@ -13,11 +13,24 @@ import telegramBlack from "../../assets/image/telegramBlack.png"
 import watsappBlack from "../../assets/image/watsappBlack.png"
 
 import "../../styles/layout/footer.layout.module.css"
+import { useEffect, useState } from 'react';
 
 const Footer = () => {
+    const [windowSize, setWindowSize] = useState("")
+
+    useEffect(() => {
+        window.addEventListener("resize", responsiveHandler)
+        setWindowSize(window.innerWidth);
+        return () => {
+            window.removeEventListener("resize", responsiveHandler);
+        };
+    }, [])
+    function responsiveHandler() {
+        setWindowSize(window.innerWidth);
+    }
     return (
-        <>
-            <footer className="hidden lg:block pb-28 shadow-[0px_-8px_16px_0px_rgba(0,0,0,0.16)] mt-30 bg-[url('../assets/image/2.png')] bg-no-repeat bg-[center_top_55px]">
+        <footer>
+            {windowSize >= 1024 ? <div className="pb-28 shadow-[0px_-8px_16px_0px_rgba(0,0,0,0.16)] mt-30 bg-[url('../assets/image/2.png')] bg-no-repeat bg-[center_top_55px]">
                 <div className="flex w-98% 1220:w-90% m-auto pt-40">
                     <div className="w-26% h-134">
                         <div className=" flex">
@@ -114,47 +127,48 @@ const Footer = () => {
                     </div>
                 </div>
                 <p className="mt-73 mb-28 text-[#8A8A8A] text-12">۱۴۰۲ © تمامی حقوق اين پايگاه (سايت) متعلق به ابر پت‌شاپ می باشد و استفاده غير قانونی از آن پيگرد قانونی دارد.</p>
-            </footer >
-            <footer className='flex lg:hidden flex-col gap-y-28 justify-center pt-10 shadow-[0px_-8px_16px_0px_rgba(0,0,0,0.16)] mt-20 pb-20'>
-                <div className='flex flex-col m-auto gap-4'>
-                    <p className='text-[#3B4054] text-12 leading-[24px] text-center'>تلفن پاسخگویی</p>
-                    <p className=' text-[#070707] text-14 leading-[24px]text-center'>021-88550080-88550080</p>
-                </div>
-                <div className="w-260 sm:w-390 h-90 sm:h-135 bg-[url('../assets/image/2.png')] bg-no-repeat bg-center bg-cover m-auto grid grid-cols-2">
-                    <h5 className='text-[#3B4054] text-12 leading-[24px] text-center col-span-full'>صفحات سایت</h5>
-                    <button className='text-[#070707] text-14 leading-[24px] text-right'>درباره ما</button>
-                    <button className='text-[#070707] text-14 leading-[24px] text-left'>تعرفه ها</button>
-                    <button className='text-[#070707] text-14 leading-[24px] text-right'>تماس با ما</button>
-                    <button className='text-[#070707] text-14 leading-[24px] text-left'>مقالات سایت</button>
-                </div>
-                <div className="grid grid-cols-4 w-full m-auto sm:w-600">
-                    <div className="w-75 m-auto">
-                        <Image alt="" src={kelidLogo} />
+            </div >
+                :
+                <div className='flex-col gap-y-28 justify-center pt-10 shadow-[0px_-8px_16px_0px_rgba(0,0,0,0.16)] mt-20 pb-20'>
+                    <div className='flex flex-col m-auto gap-4'>
+                        <p className='text-[#3B4054] text-12 leading-[24px] text-center'>تلفن پاسخگویی</p>
+                        <p className=' text-[#070707] text-14 leading-[24px]text-center'>021-88550080-88550080</p>
                     </div>
-                    <div className="w-75 m-auto">
-                        <Image alt="" src={kelidLogo} />
+                    <div className="w-260 sm:w-390 h-90 sm:h-135 bg-[url('../assets/image/2.png')] bg-no-repeat bg-center bg-cover m-auto grid grid-cols-2">
+                        <h5 className='text-[#3B4054] text-12 leading-[24px] text-center col-span-full'>صفحات سایت</h5>
+                        <button className='text-[#070707] text-14 leading-[24px] text-right'>درباره ما</button>
+                        <button className='text-[#070707] text-14 leading-[24px] text-left'>تعرفه ها</button>
+                        <button className='text-[#070707] text-14 leading-[24px] text-right'>تماس با ما</button>
+                        <button className='text-[#070707] text-14 leading-[24px] text-left'>مقالات سایت</button>
                     </div>
-                    <div className="w-75 m-auto">
-                        <Image alt="" src={kelidLogo} />
+                    <div className="grid grid-cols-4 w-full m-auto sm:w-600">
+                        <div className="w-75 m-auto">
+                            <Image alt="" src={kelidLogo} />
+                        </div>
+                        <div className="w-75 m-auto">
+                            <Image alt="" src={kelidLogo} />
+                        </div>
+                        <div className="w-75 m-auto">
+                            <Image alt="" src={kelidLogo} />
+                        </div>
+                        <div className="w-75 m-auto">
+                            <Image alt="" src={kelidLogo} />
+                        </div>
                     </div>
-                    <div className="w-75 m-auto">
-                        <Image alt="" src={kelidLogo} />
+                    <div className="flex h-40 gap-x-8 m-auto">
+                        <div className="w-32 h-32">
+                            <Image alt="" src={instegramBlcak} />
+                        </div>
+                        <div className="w-32 h-32">
+                            <Image alt="" src={telegramBlack} />
+                        </div>
+                        <div className="w-32 h-32">
+                            <Image alt="" src={watsappBlack} />
+                        </div>
                     </div>
-                </div>
-                <div className="flex h-40 gap-x-8 m-auto">
-                    <div className="w-32 h-32">
-                        <Image alt="" src={instegramBlcak} />
-                    </div>
-                    <div className="w-32 h-32">
-                        <Image alt="" src={telegramBlack} />
-                    </div>
-                    <div className="w-32 h-32">
-                        <Image alt="" src={watsappBlack} />
-                    </div>
-                </div>
-                <div className='text-[#1E1E1E] text-8 leading-[24px] m-auto'>۱۴۰۲ تمامی حقوق اين پايگاه (سايت) متعلق به گروه خدمات پزشکی می باشد و استفاده غير قانونی از آن پيگرد قانونی دارد</div>
-            </footer>
-        </>
+                    <div className='text-[#1E1E1E] text-8 leading-[24px] m-auto'>۱۴۰۲ تمامی حقوق اين پايگاه (سايت) متعلق به گروه خدمات پزشکی می باشد و استفاده غير قانونی از آن پيگرد قانونی دارد</div>
+                </div>}
+        </footer>
     )
 }
 

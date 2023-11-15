@@ -1,8 +1,8 @@
 const successful = () => {
     return (
-        <>
-            <div className="m-auto"></div>
-        </>
+
+        <div className="m-auto"></div>
+
     );
 }
 

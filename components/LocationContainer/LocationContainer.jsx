@@ -12,9 +12,9 @@ const LocationContainer = (props) => {
     ), [])
 
     return (
-        <>
-            <Map location={props.location} setLocation={props.setLocation} />
-        </>
+
+        <Map location={props.location} setLocation={props.setLocation} />
+
     );
 }
 

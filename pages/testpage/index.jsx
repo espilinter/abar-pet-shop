@@ -4,11 +4,11 @@ import React from "react";
 const testpage = () => {
 
     return (
-        <>
-            <div className="h-[800px] w-full pt-200">
-                <CatSpinner />
-            </div>
-        </>
+
+        <div className="h-[800px] w-full pt-200">
+            <CatSpinner />
+        </div>
+
     )
 }
 

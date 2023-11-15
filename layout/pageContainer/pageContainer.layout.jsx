@@ -8,15 +8,13 @@ import NavigationBar from "../navigationBar/navigationBar.layout";
 
 const PageContainer = ({ children, ...props }) => {
     return (
-        <>
-            <Provider store={store}>
-                <Header />
-                <Aside />
-                {children}
-                <NavigationBar />
-                <Footer />
-            </Provider>
-        </>
+        <Provider store={store}>
+            <Header />
+            <Aside />
+            {children}
+            <NavigationBar />
+            <Footer />
+        </Provider>
     )
 }
 

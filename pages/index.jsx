@@ -26,6 +26,7 @@ import Image from "next/image";
 import SwiperCoverflow from "@/components/SwiperCoverflow/SwiperCoverflow";
 import ArticleCard from "@/components/ArticleCard/ArticleCard";
 import { revalidatePath } from "next/cache";
+import Head from "next/head";
 
 const Home = (props) => {
     const [data, setData] = useState([])
@@ -167,6 +168,10 @@ const Home = (props) => {
 
     return (
         <div className="bg-[#f4f4f4] pb-96 relative">
+            <Head>
+                <meta name="description" content="ابر پت شاپ" />
+                <title>ابر پت شاپ</title>
+            </Head>
             <div className="w-full h-273 sm:h-400 lg:h-[100vh] bg-[url('../assets/image/framePage.png')] bg-top bg-cover bg-no-repeat">
             </div>
             {/* <div className="absolute left-0 top-[4472px] w-full bg-[url('../assets/image/bg1.png')]"></div>
@@ -317,7 +322,7 @@ const Home = (props) => {
                             {data.advertise && data.advertise.slice(0, 6).map((item, index) => (<AdvertiseCard item={item} key={index} />))}
                         </div>
                     </div>
-                    <a className=" text-center"><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]  text-center">مشاهده همه</button></a>
+                    <a className=" text-center" href="/category"><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px]  text-center">مشاهده همه</button></a>
                 </div>
                 <div className="mt-46 md:mt-102">
                     <Title title="اعضای منتخب" />
@@ -329,7 +334,7 @@ const Home = (props) => {
                                 key={index} />))}
                         </div>
                     </div>
-                    <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">مشاهده همه</button></a>
+                    <a href="/"><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">مشاهده همه</button></a>
                 </div>
                 <div className="mt-32 md:mt-128">
                     <Title title="نظرات" />
@@ -346,7 +351,7 @@ const Home = (props) => {
                             ))}
                         </div>
                     </div>
-                    <a><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">همه مقالات</button></a>
+                    <a href="/articles"><button className="w-112 h-38 m-auto border mt-32 border-[#A6B677] rounded-[6px] text-16 font-medium text-[#728A2D] leading-[30px] text-center">همه مقالات</button></a>
                 </div>
             </div>
         </div>

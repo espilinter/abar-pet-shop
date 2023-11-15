@@ -37,42 +37,40 @@ export default function SwiperCoverflow(props) {
     }, [])
 
     return (
-        <>
-            <div className='flex items-center gap-x-30 commentSwiper'>
-                <button className="hidden md:inline-block h-50 w-100" onClick={handlePrev}>
-                    <Image alt="" src={arrowCircle} />
-                </button>
-                <Swiper
-                    ref={sliderRef}
-                    effect={swiperEffect}
-                    grabCursor={true}
-                    centeredSlides={true}
-                    slidesPerView={'auto'}
-                    spaceBetween={swiperGap}
-                    coverflowEffect={{
-                        rotate: 0,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                        slideShadows: false,
-                        scale: 0.85,
-                    }}
-                    loop={true}
-                    loopedSlides={3}
-                    modules={[EffectCoverflow, Navigation]}
-                    className="mySwiper h-315 "
-                    navigation={false}
-                >
-                    {props.data && props.data.map((item, index) => (
-                        <SwiperSlide className='pt-7 ' key={index}>
-                            <CommentCard item={item} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper >
-                <button className="hidden md:inline-block h-50 w-100" onClick={handleNext} >
-                    <Image alt="" src={arrowCircle} className="rotate-180" />
-                </button>
-            </div>
-        </>
+        <div className='flex items-center gap-x-30 commentSwiper'>
+            <button className="hidden md:inline-block h-50 w-100" onClick={handlePrev}>
+                <Image alt="" src={arrowCircle} />
+            </button>
+            <Swiper
+                ref={sliderRef}
+                effect={swiperEffect}
+                grabCursor={true}
+                centeredSlides={true}
+                slidesPerView={'auto'}
+                spaceBetween={swiperGap}
+                coverflowEffect={{
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: false,
+                    scale: 0.85,
+                }}
+                loop={true}
+                loopedSlides={3}
+                modules={[EffectCoverflow, Navigation]}
+                className="mySwiper h-315 "
+                navigation={false}
+            >
+                {props.data && props.data.map((item, index) => (
+                    <SwiperSlide className='pt-7 ' key={index}>
+                        <CommentCard item={item} />
+                    </SwiperSlide>
+                ))}
+            </Swiper >
+            <button className="hidden md:inline-block h-50 w-100" onClick={handleNext} >
+                <Image alt="" src={arrowCircle} className="rotate-180" />
+            </button>
+        </div>
     );
 }
