@@ -1,6 +1,7 @@
 import LocationContainer from "@/components/LocationContainer/LocationContainer";
 import Spinner from "@/components/Spinner/Spinner";
 import axios from "axios";
+import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react"
 
@@ -67,12 +68,13 @@ const InsertAd = (props) => {
         setOptions(event.target.value)
     }
     function categoryChangeHandler(event) {
-        if (event.target.value) {
-            const subCategoryData = props.categoryData.filter((item) => {
-                return +item.id === +event.target.value
-            })
-            setSubCategoryArrey(subCategoryData[0].children)
-        }
+        // if (event.target.value) {
+        //     const subCategoryData = props.categoryData.filter((item) => {
+        //         return +item.id === +event.target.value
+        //     })
+        //     setSubCategoryArrey(subCategoryData[0].children)
+        // }
+        setCategory(event.target.value)
     }
     function subCategoryChangeHandler(event) {
         setCategory(event.target.value)

@@ -39,7 +39,7 @@ const Header = (props) => {
     const [categoryModal, setCategoryModal] = useState("opacity-0 h-0")
     const [categoryDisplay, setCategoryDisplay] = useState("hidden")
     const [cityOrState, setCityOrState] = useState(true)
-    const [searchW, setSearchW] = useState("w-0")
+    const [searchW, setSearchW] = useState(false)
     const [searchDisplay, setSearchDisplay] = useState("")
     const [provinceData, setProvinceData] = useState([])
     const [cityeData, setCityeData] = useState([])
@@ -161,13 +161,14 @@ const Header = (props) => {
     }
 
     function openSearchHandler() {
-        if (searchDisplay === "") {
-            setSearchDisplay("hidden")
-            setSearchW("w-30% 1050:w-32% 1220:w-[38%] 1440:w-46% border border-[#6E6E6E] p-8")
-        } else {
-            setSearchW("w-0")
-            setSearchDisplay("")
-        }
+        // if (searchDisplay === "") {
+        //     setSearchDisplay("hidden")
+        //     setSearchW("w-30% 1050:w-32% 1220:w-[38%] 1440:w-46% border border-[#6E6E6E] p-8")
+        // } else {
+        //     setSearchW("w-0")
+        //     setSearchDisplay("")
+        // }
+        setSearchW(!searchW);
     }
 
     function backButtonHandler() {
@@ -181,13 +182,13 @@ const Header = (props) => {
 
     return (
         <header>
-            {windowSize >= 1024 ? <div className={`hidden h-104 lg:flex  py-32 text-14 fixed justify-between z-[1000] ${pathname === "/" ? "bg-[#ffffff8c] backdrop-blur-[10px] right-5%  w-90% top-32 rounded-3xl px-24" : "bg-white top-0 right-0 w-full px-70"}`}>
+            {windowSize >= 1024 ? <div className={`h-104 flex  py-32 text-14 fixed justify-between z-[1000] ${pathname === "/" ? "bg-[#ffffff8c] backdrop-blur-[10px] right-5%  w-90% top-32 rounded-3xl px-24" : "bg-white top-0 right-0 w-full px-70"}`}>
                 <div className="w-200 h-40 flex pl-8 border-l justify-between border-[#8A8A8A] relative">
                     <Image alt="" src={logo} className="w-105 h-40" />
                     <i className="text-28 mt-8 mr-10% xl:mr-27% cursor-pointer aps-search-normal1" onClick={openSearchHandler}></i>
                 </div>
-                <input className={`${searchW} transition-all rounded-lg absolute bg-white z-20 right-24% 1220:right-[23%] 1440:right-19%`} placeholder="جستجو" />
-                <div className={`w-41% h-40 justify-between text-[#728A2D] leading-10 mr-1%`}>
+                <input className={`${searchW ? `${pathname === "/" ? "w-32% 1050:w-33% 1220:w-[40.5%] 1440:w-46% right-21% 1220:right-[20.5%] 1440:right-19%" : "w-30% 1050:w-32% 1220:w-[38%] 1440:w-46% right-[23.5%] 1220:right-[23%] 1440:right-19%"} border border-[#6E6E6E] p-8` : "w-0 right-24% 1220:right-[23%] 1440:right-19%"} transition-all rounded-lg absolute bg-white z-20 `} placeholder="جستجو" />
+                <div className={`w-[42.5%] h-40 justify-between text-[#728A2D] leading-10 mr-1%`}>
                     <button className="mr-1 relative" onMouseEnter={openCategoryModal} onMouseLeave={openCategoryModal}>
                         <Image alt="" src={lines} className="inline-block" />
                         <p className="inline-block mr-7">دسته بندی</p>
@@ -308,15 +309,16 @@ const Header = (props) => {
                 </div>}
             </div >
                 :
-                <div className="flex z-[1000] fixed lg:hidden bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
+                <div className="flex z-[1000] fixed  bg-[#35A362] w-full h-72 pt-20 pb-15 px-16 justify-between items-center">
                     <button onClick={openAsideHandler}>
                         <Image alt={""} src={lines3} className="w-24 h-24" />
                     </button>
-                    <div><Image src={logo} alt={""} /></div>
+                    <div><Image className={`${searchW ? "hidden" : ""}`} src={logo} alt={""} /></div>
                     <div className="flex gap-x-8">
                         <Image alt={""} src={map} className="w-24 h-24" />
-                        <Image alt={""} src={searchBlack} className="w-24 h-24" />
+                        <Image alt={""} src={searchBlack} className="w-24 h-24" onClick={openSearchHandler} />
                     </div>
+                    <input className={`${searchW ? "w-54% p-4" : "w-0"} transition-all rounded-lg absolute bg-white z-20 right-23% h-32 `} placeholder="جستجو" />
                 </div>}
         </header>
     )
